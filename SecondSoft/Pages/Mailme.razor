@@ -1,0 +1,101 @@
+﻿@using System.ComponentModel.DataAnnotations;
+@using SecondSoft.Helpers;
+@using SecondSoft.Models
+@inject IEmails emails;
+
+<style>
+    #page {
+        background-color: black;
+    }
+
+    .activityblok {
+        color: white;
+        margin-left: 40%;
+    }
+
+    .title {
+        color: white;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 140px;
+    }
+</style>
+
+<div style="clear:both;">
+    @if (guid != null && guid.Contains("37143b7a-53aa-419c-8194-79164a62dc10"))
+    {
+        <div style="margin:10% 0 0 20%;">
+            <a href="@($"/Dinand.pdf")" target="_blank" style="text-decoration:none; color:wheat; font-size:120%;">
+
+                <div class="float-start"><i class="fas fa-external-link-alt fa-3x"></i></div>
+                <div class="float-start">
+                    Dank je voor je belangstelling.<br />
+                    Klik hier voor mijn uitgebreide portfolio
+                </div>
+            </a>
+        </div>
+    }
+    else if (ThankYou)
+    {
+        <i class="far fa-check-square fa-5x" style="color:antiquewhite"></i>
+        <div style="color:antiquewhite">Een bevestiging is per email verstuurd. <br> Alvast bedankt. Dinand </div>
+    }
+    else
+    {
+        <a style="color:wheat">Uitgebreide Portfolio bekijken?<br>Volgens AVG richtlijnen, vraag ik hiervoor contact met me op te nemen</a>
+        <br />
+        <EditForm Model="@contact" OnValidSubmit="@HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <table style="color:white">
+
+                <tr>
+                    <td><label>Naam</label></td>
+                    <td><InputText id="name" @bind-Value="contact.Name" />*</td>
+                </tr>
+                <tr>
+                    <td><label>Bedrijfsnaam</label></td>
+                    <td><InputText id="name" @bind-Value="contact.CompanyName" />*</td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><InputText id="name" @bind-Value="contact.Email" />*</td>
+                </tr>
+                <tr>
+                    <td><label>Telefoon</label></td>
+                    <td><InputText id="name" @bind-Value="contact.Phone" /></td>
+                </tr>
+                <tr>
+                    <td><label>Bericht</label></td>
+                    <td><InputTextArea id="name" @bind-Value="contact.Message" /></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Verzenden</button></td>
+                </tr>
+            </table>
+        </EditForm>
+    }
+</div>
+@code
+{
+    [Parameter]
+    public string guid { get; set; }
+    [Parameter]
+    public bool ThankYou { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+
+    }
+
+    private Contact contact = new();
+
+    private void HandleValidSubmit()
+    {
+        // Process the valid form
+        emails.ContactEmail(contact, "Aanvraag portfolio");
+        ThankYou = true;
+    }
+}
