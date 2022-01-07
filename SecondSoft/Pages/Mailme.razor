@@ -47,7 +47,8 @@
             <DataAnnotationsValidator />
             <ValidationSummary />
 
-            <table style="color:white">
+            <div style="clear:both"></div>
+            <table style="color:white;">
 
                 <tr>
                     <td><label>Naam</label></td>
@@ -71,12 +72,16 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><button type="submit">Verzenden</button></td>
+                    <td><button type="submit">Verzenden</button> <div style="color:white; font-size:10px"><i class="fas fa-exclamation-circle"></i> Gegevens worden maximaal 10 dagen bewaard</div></td>
                 </tr>
             </table>
         </EditForm>
     }
 </div>
+
+
+<br/>
+<br/>
 @code
 {
     [Parameter]

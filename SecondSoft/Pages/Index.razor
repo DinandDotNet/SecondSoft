@@ -8,16 +8,31 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 140px;
     }
-   
+ 
+img {
+    width: 80%;
+  height: 300px;
+}
 </style>
+
 <PageTitle>SecondSoft</PageTitle>
 <div class="title" style="text-align:center">
-    Welcome <br/> to <br/> secondsoft.
+       <img src="@imageSource" class="imgSize"  /> 
+       <br/>
+    secondsoft.
     
 </div>
 
+@code{
+    private string? imageSource;
+    protected override async Task OnParametersSetAsync()
+    {
 
- 
+        ShowImage();
+    }
+    private void ShowImage()
+    {
+        imageSource = $"welcome.jpg";
+    }
 
-
-
+}
