@@ -1,5 +1,5 @@
 ﻿@page "/PortFolio"
-@page "/PortFolio/{guid}"
+
 @using System.ComponentModel.DataAnnotations;
 @using SecondSoft.Helpers;
 @using SecondSoft.Models
@@ -25,28 +25,7 @@
         font-size: 140px;
     }
 </style>
-<PageTitle>Dinand</PageTitle>
+<PageTitle>Hello I am Dinand</PageTitle>
 
-<div class="title text-center">
-    Hello.<br />
-    I am Dinand
-</div>
+<iframe width="100%" height="800" src="https://dinanddotnet.github.io/Dinand/index.html" frameborder="0" allowfullscreen></iframe>
 
-<div class="activityblok">
-    <div class="float-start"><i class="fas fa-chevron-circle-right fa-3x"></i> </div>
-    <div class="float-start">
-        <ul style="list-style-type:none">
-            <li>Developer</li>
-            <li>software Architect</li>
-            <li>Freelance</li>
-        </ul>
-    </div>
-</div>
-
- <Mailme guid="@guid"></Mailme>
-
-@code
-{
-    [Parameter]
-    public string guid { get; set; }
-}
