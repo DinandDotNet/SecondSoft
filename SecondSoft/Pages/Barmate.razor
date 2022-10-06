@@ -1,0 +1,69 @@
+﻿@page "/Barmate"
+
+<style>
+    body {
+        background-color: white !important;
+    }
+
+    .title {
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 100px;
+        font-weight: bold
+    }
+
+    img {
+        width: 80%;
+        height: 300px;
+    }
+</style>
+
+<PageTitle>The best Mate you ever have</PageTitle>
+<div class="title" style="text-align:center">
+    Your mate is<br />
+    ready<br />
+    for orders
+</div>
+<div style="text-align:center">Under contruction. More information (including pictures will follow soon) </div>
+
+<div>
+    <div><img style="width:20%; height:100%; float: left;" src="./Images/Terrace.jpg" alt="" /></div>
+    <div><h3 style="float: left; margin : 10%">A web-app that gives you the best overview. <br /> <br />With less staff you will be able to <br /> manage large sites or outdoor spaces.</h3></div>
+</div>
+
+<div style="clear: both;"></div>
+<br />
+
+<ul>
+    <li>Staff and customers can order. Barmate will handle them all.</li>
+    <li>Handles the order through the stations like different bars or kitchens.</li>
+    <li>It is even capable of serving a food court with multiple bars and restaurants or food trucks.</li>
+    <li>Customers can request help or service and are able to see there order history and there status.</li>
+    <li>The staff can handle the payment. In the near future customers will be able to pay.</li>
+    <li>The staff will always be informed and can check the status.</li>
+</ul>
+
+<p>
+    The web app is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
+    And dynamically designed to accommodate all different situations on the spot. <br />
+    Conveniently designed with colors and quick popups to enter information in a logical way. <br />
+    The colors indicate the status of each order without the need for details.<br />
+</p>
+<br />
+<br />
+@code {
+    private string? imageSource;
+    protected override async Task OnParametersSetAsync()
+    {
+
+        ShowImage();
+    }
+    private void ShowImage()
+    {
+        imageSource = $"welcome.jpg";
+    }
+
+}
+
+
+
