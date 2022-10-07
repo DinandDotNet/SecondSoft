@@ -101,4 +101,24 @@ i.fas, i.fab, a.fas {
         width: 50%;
     }
 }
+.upperblock {
+    background: rgba(255, 255, 255, 0.175);
+    color: #ffffff;
+    height: 4rem;
+    margin: 0 2rem;
+    max-width: 72rem;
+    text-align: center !important
+}
+
+.maintext {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-weight: 900;
+    line-height: 1.5;
+    font-size: 3rem;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none !important;
+    */
+}
 

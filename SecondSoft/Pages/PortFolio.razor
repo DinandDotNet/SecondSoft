@@ -3,111 +3,117 @@
 @using System.ComponentModel.DataAnnotations;
 @using SecondSoft.Helpers;
 @using SecondSoft.Models
-@inject IEmails emails;
 
 <PageTitle>PortFolio Dinand</PageTitle>
 
 <style>
     body {
-        background-color: white !important;
+        background-color: black !important;
     }
-
-    .main {
-        font-family: 
-        /*"Merriweather", Georgia, serif;*/
-        "Source Sans Pro", Helvetica, sans-serif;
-        font-weight: 900;
-        line-height: 1.5;
-        font-size: 3rem;
-        letter-spacing: 0.075em;
-        text-transform: uppercase;
-        margin: 0 0 1rem 0;
-        text-align: center;
-        text-decoration: none !important;
-    }
-
     .activityblok {
         color: white;
         margin-left: 40%;
     }
 
     /*.title {
-        color: white;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 140px;
-    }*/
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 140px;
+        }*/
 </style>
 
-@*<embed width="100%" height="800px" src="https://dinand.azurewebsites.net/" />*@
+<body class="is-preload">
 
-<div id="main">
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
 
-    <!-- Featured Post -->
-    @*<article class="post featured">*@
-        <header class="main">
-            <a href="Portfolio">My name is Dinand</a>
-        </header>
-        <br/>
-        <div class="main">
-            <div style="margin: 0 auto 0 auto; font-size:1rem">
-                Passionate .net developer <br /> and <br /> software architect
-            </div ><br />
-            <a href="Dinand" style="width: 30%; margin: 0 auto 0 auto; display: block;">
-            <img style="width: 60%;" src="images/code.jpg"
-                     alt="" />
-            </a>
+        <!-- Intro -->
+        <div id="intro">
+            <h1>My Portfolio</h1>
+            <p>A showcase of my projects and abilities</p>
+            <ul class="actions">
+                <li><AnchorLink href="#Passioned" class="button icon solid solo fa-arrow-down scrolly">Continue</AnchorLink></li>
+            </ul>
         </div>
-        <br />
 
-        <ul class="actions special">
-            <li><a href="Dinand" class="button large">My story</a></li>
-        </ul>
-    @*</article>*@
+        <!-- Header -->
+        @*<header id="header">
+            <a href="Portfolio" class="logo">Welcome, I am Dinand</a>
+        </header>*@
+        <br/>
 
-    <!-- Posts -->
-    <section class="posts">
+        <!-- Nav -->
+        <div class="upperblock maintext">My name is Dinand</div>
+        <div id="main">
 
-        <article>
-            <header>
-                <h2><a href="Barmate">Barmate</a></h2>
-            </header>
-            <a href="#" class="image fit"><img src="images/bar.jpg" alt="" /></a>
-            <p>Barmate is a order webapp for any bar or restaurant. </p>
-            <ul class="actions special">
-                <li><a href="barmate" class="button">Full Story</a></li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h2><a href="#">Micro portal</a></h2>
-            </header>
-            <a href="MicroPortal" class="image fit"><img src="images/LabPins.jpg" alt="" /></a>
-            <p>
-                One stop medical portal for a serie of programs to collect and analyse blood results.<br />
+            <!-- Featured Post -->
+            @*<article class="post featured">*@
+               @* <header class="main">
+                    <a href="Portfolio">My name is Dinand</a>
+                </header>*@
                 <br />
-            </p>
-            <ul class="actions special">
-                <li><a href="MicroPortal" class="button">Full Story</a></li>
-            </ul>
-        </article>
-        <article>
-            <header>
-                <h2><a href="#">Fitmate</a></h2>
-            </header>
-            <a target="_blank" href="http://fitmate.secondsoft.nl/" class="image fit"><img src="images/group1.jpg" alt="" /></a>
-            <p>
-                A gym program. Members can track and review their performance. Gyms can monitor and adapt the
-                developments of their members..
-            </p>
-            <ul class="actions special">
-                <li>
-                    <a target="_blank" href="http://fitmate.secondsoft.nl/" class="button">
-                        Fitmate site
-                        (Dutch)
+                <div id="Passioned" class="maintext">
+                    <div style="margin: 0 auto 0 auto; font-size:1rem">
+                        Passionate .net developer <br /> and <br /> software architect
+                    </div><br />
+                    <a href="Dinand" style="width: 30%; margin: 0 auto 0 auto; display: block;">
+                        <img style="width: 60%;" src="images/code.jpg"
+                             alt="" />
                     </a>
-                </li>
-            </ul>
-        </article>
-    </section>
-</div>
+                </div>
+                <br />
+
+                <ul class="actions special">
+                    <li><a href="Dinand" class="button large">My story</a></li>
+                </ul>
+            @*</article>*@
+
+            <!-- Posts -->
+            <section class="posts">
+
+                <article>
+                    <header>
+                        <h2><a href="Barmate">Barmate</a></h2>
+                    </header>
+                    <a href="#" class="image fit"><img src="images/bar.jpg" alt="" /></a>
+                    <p>Barmate is a order webapp for any bar or restaurant. </p>
+                    <ul class="actions special">
+                        <li><a href="barmate" class="button">Full Story</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <header>
+                        <h2><a href="#">Micro portal</a></h2>
+                    </header>
+                    <a href="MicroPortal" class="image fit"><img src="images/LabPins.jpg" alt="" /></a>
+                    <p>
+                        One stop medical portal for a serie of programs to collect and analyse blood results.<br />
+                        <br />
+                    </p>
+                    <ul class="actions special">
+                        <li><a href="MicroPortal" class="button">Full Story</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <header>
+                        <h2><a href="#">Fitmate</a></h2>
+                    </header>
+                    <a target="_blank" href="http://fitmate.secondsoft.nl/" class="image fit"><img src="images/group1.jpg" alt="" /></a>
+                    <p>
+                        A gym program. Members can track and review their performance. Gyms can monitor and adapt the
+                        developments of their members..
+                    </p>
+                    <ul class="actions special">
+                        <li>
+                            <a target="_blank" href="http://fitmate.secondsoft.nl/" class="button">
+                                Fitmate site
+                                (Dutch)
+                            </a>
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </div>
+</body>
 
