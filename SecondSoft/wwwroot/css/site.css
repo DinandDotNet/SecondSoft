@@ -93,7 +93,7 @@ i.fas, i.fab, a.fas {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width:30%;
+    /*width:30%;*/
 }
 
 @media screen and (max-width: 640px) {

@@ -1,0 +1,26 @@
+﻿@page "/Test2"
+
+<input type="checkbox" bind="@boolvalue" /><br/>
+Boolvalue: @boolvalue<br/>
+<button onclick="@toggle">toggle</button>
+
+@functions
+{
+
+   public bool boolvalue { get; set; }
+
+   void toggle()
+   {
+       boolvalue = !boolvalue;
+   }
+}
+<input type="checkbox" checked="@IsChecked" @onchange="CheckboxChanged">
+@code{
+      [Parameter]
+      public bool IsChecked { get; set; } = true;
+      private void CheckboxChanged()
+      {
+           Console.WriteLine($"Checkbox changed {IsChecked}");
+      }
+}
+

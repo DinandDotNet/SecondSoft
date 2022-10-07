@@ -6,27 +6,31 @@
     .title {
         color: black;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 140px;
+        font-size: 100px;
     }
  
-img {
+/*img {
     width: 80%;
   height: 300px;
-}
+}*/
 </style>
 
 <PageTitle>SecondSoft</PageTitle>
-<div class="title" style="text-align:center">
-       <img src="@imageSource" class="imgSize"  /> 
-       <br/>
-    secondsoft
-    <br/>
+<div class="row">
     
-    <img style="width:400px" src="./images/under.jpg" />
+    <div class="title col" style="text-align:center; ">
+    secondsoft<br/>
+        <img src="@imageSource" class="imgcenter" />
+</div>
+    <a href="UnderConstruction" style="margin-top:80px; color: #FAC533;" class="col"> <i class="fa-solid fa-person-digging fa-2x" style="float:right;"></i></a>
+    @*<a class="col" href="underConstruction" style="float:right;  font-size:.75em; margin-top:80px;"> <i class="fa-solid fa-person-digging fa-2x"></i></a>*@
 
-    
 </div>
 
+
+
+
+<br />
 @code{
     private string? imageSource;
     protected override async Task OnParametersSetAsync()
