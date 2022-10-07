@@ -1,7 +1,7 @@
 ﻿@page "/MicroPortal"
 <style>
     body {
-        background-color: white !important;
+        background-color: #222B31 !important;
     }
 
     .title {
@@ -18,73 +18,91 @@
 </style>
 <PageTitle>Micro Portal project</PageTitle>
 
-<!-- Main -->
-<div id="main">
-    <!-- Post -->
-    <section class="post">
-        <header class="major">
-            <h1>Micro Portal project</h1>
-            <p>
-                All-in-one medical portal with a suite of tools for collecting and analyzing blood results.<br />
-                One point of contact for healthcare providers to push, analyze and receive results from a reliable service.
-            </p>
+<body class="is-preload">
+    <!-- Wrapper -->
+			<div id="wrapper">
+        <header id="header">
+            <a href="MicroPortal.html" class="logo">Micro Portal project</a>
         </header>
-        <div class="image main"><img style="width:28%" src="images/MicroLab.jpg" alt="" /></div>
-        <p>
-            <h5>Handsome</h5>
-            Collect the results of different brands of microlabs sending their measurements to the main system.<br />
-            The program checks the results after verifying the status of the microlab. All results are stored in a central storage system. <br />
-            The logged in user is the user of the microlab. It is crucial to check the results, the status of the results to receive the approval back.
+        <div class="upperblock maintext">All-in-one medical portal</div>
 
-            <div class="image main"><img style="width:28%" src="images/LabTubeWheel.jpg" alt="" /></div>
+        <!-- Main -->
+    <div id="main" style="padding-left:20px" >
+        <!-- Post -->
+        (content under contruction)
+        <h3>About</h3>
+            <div>
+                Medical portal is a large-scale global project.<br/>
+                Global databases shared data provided by laboratory and handy mini labs.<br/>
+                These big and small labs communicated via web services.
+                Control service for the state of the minilab to approve the correctness of the results.
+                The results were analyzed by microservices and webservices.<br />
+                Ultimately shown to all types of patient care providers.<br />
+                All with the highest data transfer security. Tested by security hackers.
+                Meta data was created to see trends
+            </div>
+                <p>
+                    All-in-one medical portal with a suite of tools for collecting and analyzing blood results.<br />
+                    One point of contact for healthcare providers to push, analyze and receive results from a reliable service.
+                </p>
+            <div class="image main"><img style="width:28%" src="images/MicroLab.jpg" alt="" /></div>
+            <p>
+                <h5>Handsome</h5>
+                Collect the results of different brands of microlabs sending their measurements to the main system.<br />
+                The program checks the results after verifying the status of the microlab. All results are stored in a central storage system. <br />
+                The logged in user is the user of the microlab. It is crucial to check the results, the status of the results to receive the approval back.
 
-            <h5>X-tracked</h5>
-            Various suppliers of blood measurements, such as laboratory, micro-analysis systems, send their results to this system to store them in the main system.
-            Summary and checksums confirm that the results have been successfully received and saved.<br />
-            <div class="image main"><img style="width:28%" src="images/Analyse.jpg" alt="" /></div>
-            <h5>Debriever</h5>
-            All results are analyzed and assessed. Add advice and warnings to the results.<br />
-            <div class="image main"><img style="width:28%" src="images/Database.jpg" alt="" /></div>
-            <h5>Result portal</h5>
-            A website that gives you the results of stored blood values, depending on the purpose.
-            New results are featured since the last visit.
-            The result can be exported in various formats to suit client care systems.<br />
-            <div class="image main"><img style="width:28%" src="images/Z-Analyse.jpg" alt="" /></div>
+                <div class="image main"><img style="width:28%" src="images/LabTubeWheel.jpg" alt="" /></div>
 
-            <h5>Z-Analyse</h5>
-            This system analyzes the history of the data to create a logical timeline by displaying the fluctuations.
-            This can be on one or more records to produce information for imaging of medical personnel, sales, methods used, etc.
-            <br />
-            <br />
-            <h5>Log service</h5>
-            Single logging service for logging all messages on any application to keep more than 5 years of data.
-            Personal data is not allowed, only reference codes.
-            Every x (configurable number of) days the rules are archived to a separate big data service.
-            It keeps the service up to speed with only the most necessary data.
-            Service desk gets access to the data per user.
-            Systems Analyst reports on multiple concurrent issues and can view all log data.
-        </p>
-    </section>
-    <section class="post">
-        <h5>Architecture</h5>
-        <p>
-            The application runs on separate hosted servers in different places on the internet.<br />
-            This bullet list is an overview of the decisions made within the project.
-        </p>
-        <ul>
-            <li>By creating a read service to read from the storage, and a separate write service to write to the storage, we spread the network load as much as possible.</li>
-            <li>Primarily connected to a security service, all communication is secured by default (such as SSL and standard security protocols) and whitelisting, as well as custom secured with unique codes that are only known to the sender and receiver</li>
-            <li>An OAuth2 user security covers the front-end security. While this security at the back communicates with a unique key pair every time, it protects hacking from within to other caregivers.</li>
-            <li>By keeping all plugins and technologies used at a basic level, it prevents problems after upgrading. Therefore, any extensions are built outside of the default modules, and the log tells their problem for troubleshooting.</li>
-            <li>Modular/microservice usage prevents complex codestrokes in a large app. Takes less effort for maintenance. Can easily switch to external or internal services.</li>
-            <li>All applications are written in .net 6 or newer, and will be upgraded to any new LTS version.</li>
-            <li>The services are redundantly distributed over multiple overload hosts with an uptime of more than 99%. The risk of failure is kept to the absolute minimum.</li>
-            <li>We create a central log service with tenants and tags for the use of the servicedesk. This service must use the default .net log routine.</li>
-        </ul>
-    </section>
-</div>
-<br/>
-<br/>
+                <h5>X-tracked</h5>
+                Various suppliers of blood measurements, such as laboratory, micro-analysis systems, send their results to this system to store them in the main system.
+                Summary and checksums confirm that the results have been successfully received and saved.<br />
+                <div class="image main"><img style="width:28%" src="images/Analyse.jpg" alt="" /></div>
+                <h5>Debriever</h5>
+                All results are analyzed and assessed. Add advice and warnings to the results.<br />
+                <div class="image main"><img style="width:28%" src="images/Database.jpg" alt="" /></div>
+                <h5>Result portal</h5>
+                A website that gives you the results of stored blood values, depending on the purpose.
+                New results are featured since the last visit.
+                The result can be exported in various formats to suit client care systems.<br />
+                <div class="image main"><img style="width:28%" src="images/Z-Analyse.jpg" alt="" /></div>
+
+                <h5>Z-Analyse</h5>
+                This system analyzes the history of the data to create a logical timeline by displaying the fluctuations.
+                This can be on one or more records to produce information for imaging of medical personnel, sales, methods used, etc.
+                <br />
+                <br />
+                <h5>Log service</h5>
+                Single logging service for logging all messages on any application to keep more than 5 years of data.
+                Personal data is not allowed, only reference codes.
+                Every x (configurable number of) days the rules are archived to a separate big data service.
+                It keeps the service up to speed with only the most necessary data.
+                Service desk gets access to the data per user.
+                Systems Analyst reports on multiple concurrent issues and can view all log data.
+            </p>
+        
+        <section class="post">
+            <h5>Architecture</h5>
+            <p>
+                The application runs on separate hosted servers in different places on the internet.<br />
+                This bullet list is an overview of the decisions made within the project.
+            </p>
+            <ul>
+                <li>By creating a read service to read from the storage, and a separate write service to write to the storage, we spread the network load as much as possible.</li>
+                <li>Primarily connected to a security service, all communication is secured by default (such as SSL and standard security protocols) and whitelisting, as well as custom secured with unique codes that are only known to the sender and receiver</li>
+                <li>An OAuth2 user security covers the front-end security. While this security at the back communicates with a unique key pair every time, it protects hacking from within to other caregivers.</li>
+                <li>By keeping all plugins and technologies used at a basic level, it prevents problems after upgrading. Therefore, any extensions are built outside of the default modules, and the log tells their problem for troubleshooting.</li>
+                <li>Modular/microservice usage prevents complex codestrokes in a large app. Takes less effort for maintenance. Can easily switch to external or internal services.</li>
+                <li>All applications are written in .net 6 or newer, and will be upgraded to any new LTS version.</li>
+                <li>The services are redundantly distributed over multiple overload hosts with an uptime of more than 99%. The risk of failure is kept to the absolute minimum.</li>
+                <li>We create a central log service with tenants and tags for the use of the servicedesk. This service must use the default .net log routine.</li>
+            </ul>
+        </section>
+    </div>
+    <br />
+    <br />
+    </div>
+</body>
 @code {
 
 }
