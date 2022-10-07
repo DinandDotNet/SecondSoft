@@ -84,7 +84,7 @@ a, .btn-link {
 
 i.fas, i.fab, a.fas {
     display: inline-block;
-    border-radius: 60px;
+    border-radius: 60px !important;
     box-shadow: 0 0 2px #888;
     padding: 0.5em 0.6em;
 }
