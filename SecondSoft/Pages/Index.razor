@@ -3,35 +3,37 @@
     body {
         background-color: white !important;
     }
+
     .title {
         color: gray;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 80px;
+        font-size: 50px;
+        text-align: center;
     }
- 
-/*img {
-    width: 80%;
-  height: 300px;
-}*/
+
+    @@media screen and (max-width: 640px) {
+        .title {
+            font-size: 14px;
+        }
+    }
+    /*img {
+                        width: 80%;
+                      height: 300px;
+                    }*/
 </style>
 
 <PageTitle>SecondSoft</PageTitle>
-<div class="row">
-    
-    <div class="title col" style="text-align:center; ">
-    Thinking twice makes the differents<br/>
-        <img src="@imageSource" class="imgcenter" />
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-sm-4"><img src="@imageSource" class="image fit" /></div>
+        <div style="clear:both"></div>
+        <div class=" col-4 col-sm-4 title"> Thinking twice makes the differents</div>
+    </div>
 </div>
-    @*<a href="UnderConstruction" style="margin-top:80px; color: #FAC533;" class="col"> <i class="fa-solid fa-person-digging fa-2x" style="float:right;"></i></a>*@
-    @*<a class="col" href="underConstruction" style="float:right;  font-size:.75em; margin-top:80px;"> <i class="fa-solid fa-person-digging fa-2x"></i></a>*@
-
-</div>
-
-
-
-
 <br />
-@code{
+<br />
+<br />
+@code {
     private string? imageSource;
     protected override async Task OnParametersSetAsync()
     {
@@ -42,5 +44,4 @@
     {
         imageSource = $"./images/2ndsoft.png";
     }
-
-}
+    }

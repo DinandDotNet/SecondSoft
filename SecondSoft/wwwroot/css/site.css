@@ -20,7 +20,7 @@ a, .btn-link {
 
 .requestbutton {
     background-color: #888B8D; /* Green */
-    border-radius: 37px 50px 30px 5px;
+    border-radius: 37px 37px 30px 5px;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -30,10 +30,12 @@ a, .btn-link {
     float: right;
     text-align: center;
 }
+
 .subtitle {
     color: #888B8D !important;
     font-family: 'Merriweather, Georgia, serif';
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 900;
     font-style: italic;
 }
 
@@ -96,11 +98,6 @@ i.fas, i.fab, a.fas {
     /*width:30%;*/
 }
 
-@media screen and (max-width: 640px) {
-    .imgcenter {
-        width: 50%;
-    }
-}
 .upperblock {
     background: rgba(255, 255, 255, 0.175);
     color: #ffffff;
@@ -120,5 +117,20 @@ i.fas, i.fab, a.fas {
     text-align: center;
     text-decoration: none !important;
     */
+}
+@media screen and (max-width: 640px) {
+    .imgcenter {
+        width: 50%;
+    }
+
+    .requestbutton {
+        /*width:28%;*/
+        width: 7rem;
+        font-size: 12px;
+    }
+
+    .maintext {
+        font-size: 2rem;
+    }
 }
 

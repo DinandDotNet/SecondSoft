@@ -9,19 +9,8 @@
         font-family: "Source Sans Pro", Helvetica, sans-serif;
     }
 
-    .title {
-        color: black;
-        font-size: 25px;
-        font-weight: 600;
-        line-height: 1.5;
-        letter-spacing: 0.075em;
-        text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    img {
-        max-height: 75px;
+    @@media screen and (max-width: 1000px) {
+        
     }
 </style>
 
@@ -35,33 +24,32 @@
     <div class="upperblock maintext" >Choose?</div>
     
     <!-- Main -->
-    <div id="main">
+    <div id="main" class="col-3">
         <a target="_blank" href="https://airtable.com/shr4bkeuciESQk03D" class="requestbutton">
             <i style="float: right;" class="fas fa-circle-info"></i><br />Request<br /> my<br />Resume.
         </a>
         <br />
-        <div class="container">
+        <div class="container col-5 ">
             <div class="subtitle" style="float:left;">
                 Looking for a developer ? <br />
-                I dream in code<br />
-                <br />
-                <img src="images/EatSleepCodeRepeat_gray.png" alt="" /><br />
+                <div style="font-size: 0.85em;">I dream in code</div>
+                
+                <img src="images/EatSleepCodeRepeat_gray.png" style="max-height: 75px;top:-20px" alt="" /><br />
+                
             </div>
         </div>
         <div class="container">
             <div class="subtitle" style="text-align: center; float:right;">
                 Need a software achitect ?
-
                 <div style="font-size: 0.75em">
                     I create cost efficient, easy maintainable<br />
                     and <br />sustainable environments.<br />
                 </div>
-                <br />
-                <div style="clear:both">
-                    <br />
-                    That concept and the ability to program, is in my DNA.
-                </div>
             </div>
+        </div>
+        <div class="subtitle" style="clear:both; text-align: center;">
+            <br />
+            That concept and the ability to program, is in my DNA.
         </div>
         <div style="clear:both;"></div>
         <br />
