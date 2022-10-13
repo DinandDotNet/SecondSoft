@@ -32,12 +32,15 @@ a, .btn-link {
 }
 
 .subtitle {
-    color: #888B8D !important;
     font-family: 'Merriweather, Georgia, serif';
     font-size: 1.5rem;
     font-weight: 900;
     font-style: italic;
 }
+
+    .subtitle.grey {
+        color: #888B8D !important;
+    }
 
 .content {
     padding-top: 1.1rem;
@@ -118,6 +121,7 @@ i.fas, i.fab, a.fas {
     text-decoration: none !important;
     */
 }
+
 @media screen and (max-width: 640px) {
     .imgcenter {
         width: 50%;
@@ -130,7 +134,11 @@ i.fas, i.fab, a.fas {
     }
 
     .maintext {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        line-height: 2.5;
+    }
+
+    .letterspacesm {
+        letter-spacing: -0.925em !important;
     }
 }
-

@@ -2,6 +2,7 @@
 <style>
     body {
         background-color: #222B31 !important;
+        color: #888B8D !important;
     }
 
     .title {
@@ -30,20 +31,22 @@
             <section class="post">
                 <h3>About..</h3>
                 <div>
-                    An architectural storie over a large-scale global project.<br />
-                    Global databases<img style="width:40px; height:40px;" src="./images/microportal/clouddb.png" /> share there data provided by laboratory <img style="width:40px; height:40px;" src="./images/microportal/lab.png" /> and handy MicroLabs<img style="width:40px; height:40px;" src="./images/microportal/mini lab.png" />.<br />
-                    These big and small labs communicated via web services<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
-                    Control service for the state of the minilab to approve<img style="width:40px; height:40px;" src="./images/microportal/approve.png" /> the correctness of the results.<br />
-                    The results were analyzed by microservices<img style="width:40px; height:40px;" src="./images/microportal/microservices.png" /> and webservices<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
-                    Finally shown to all kinds of caregivers of the patient.<img style="width:40px; height:40px;" src="./images/microportal/Health CareProvider.png" />.<br />
-                    All with the highest data transfer security<img style="width:40px; height:40px;" src="./images/microportal/datasecurity.png" />. Tested by security hackers <img style="width:40px; height:40px;" src="./images/microportal/crime-hacker-icon.png" />.<br />
-                    Meta<img style="width:40px; height:40px;" src="./images/microportal/meta.png" /> data was created to discover different trends <img style="width:40px; height:40px;" src="./images/microportal/trends.png" />.
+                    This one-stop-shop contains a range of programs with collected and analyzed results. <br />
+                    Made for healthcare providers to push, analyze and receive results from a reliable service <br />
+                    The system connects and secures, with easy management for secure access. <br />
+                    Patient data is only visible to the own healthcare provider. <br />
+                    This application has been tested by hackers and security agents.
                 </div>
-                <p>
-                    All-in-one medical portal <img style="width:40px; height:40px;" src="./images/microportal/portal.png" /> with a suite of tools for collecting and analyzing blood <img style="width:40px; height:40px;" src="./images/microportal/blood analyse.png" /> results.<br />
-                    One point of contact for healthcare providers to push, analyze and receive results from a reliable service <img style="width:40px; height:40px;" src="./images/microportal/reliable service.png" />.
-                </p>
+                
+                <br/>
+                <br />
 
+               @* <h4><a href="@Details(true)">A more detailed description</a></h4>
+                @if (seeme)
+                {
+                    <div>details</div>
+                }
+*@
                 <div class="image main"><img style="max-width:80px; height:auto;float:left;" src="images/MicroPortal/Mini lab.png" alt="" /></div>
                 <div style="clear:both;"></div>
                 <h5>Handsome</h5>
@@ -100,7 +103,15 @@
                 Systems analyst reports on multiple concurrent issues and can view all log data.
             </section>
             <section class="post">
-                <h5>Architecture</h5>
+                <h4>Architecture</h4>
+                An architectural storie over a large-scale global project.<br />
+                Global databases<img style="width:40px; height:40px;" src="./images/microportal/clouddb.png" /> share there data provided by laboratory <img style="width:40px; height:40px;" src="./images/microportal/lab.png" /> and handy MicroLabs<img style="width:40px; height:40px;" src="./images/microportal/mini lab.png" />.<br />
+                These big and small labs communicated via web services<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
+                Control service for the state of the minilab to approve<img style="width:40px; height:40px;" src="./images/microportal/approve.png" /> the correctness of the results.<br />
+                The results were analyzed by microservices<img style="width:40px; height:40px;" src="./images/microportal/microservices.png" /> and webservices<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
+                Finally shown to all kinds of caregivers of the patient.<img style="width:40px; height:40px;" src="./images/microportal/Health CareProvider.png" />.<br />
+                All with the highest data transfer security<img style="width:40px; height:40px;" src="./images/microportal/datasecurity.png" />. Tested by security hackers <img style="width:40px; height:40px;" src="./images/microportal/crime-hacker-icon.png" />.<br />
+                Meta<img style="width:40px; height:40px;" src="./images/microportal/meta.png" /> data was created to discover different trends <img style="width:40px; height:40px;" src="./images/microportal/trends.png" />.
                 <p>
                     The application runs on separate hosted servers in different places on the internet.<br />
                     This bullet list is an overview of the decisions made within the project.
@@ -118,9 +129,9 @@
                 </ul>
                 <br />
                 <div class="subtitle" style="font-size:0.85em;margin-left:15px;">
-                    <h3 class="subtitle" style=" font-size:1em">Curious - questions - interest.</h3>
+                    <div class="subtitle" style=" font-size:2em">Curious - questions - interest.</div>
                     <!-- Calendly link widget begin -->
-                    <a href="" class="subtitle" style="font-size:1em;text-decoration:underline;" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;"><img style="max-height:25px;" src="images/logo-square-cd364a3c33976d32792a.png" alt="" /> Plan a meeting with me</a>
+                    <a href="" class="subtitle" style="font-size:1em;text-decoration:underline;color: #888B8D !important;" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;"><img style="max-height:25px;" src="images/logo-square-cd364a3c33976d32792a.png" alt="" /> Plan a meeting with me</a>
                     <!-- Calendly link widget end -->
                     <p><a @onclick="() => Alert(message)">Or contact me. <i class="fas fa-arrow-circle-down"></i></a></p>
                 </div>
@@ -133,9 +144,15 @@
 @code {
 
     string message = "You can choose from the icons below how to contact me ";
-
+    //bool seeme = false;
     private async Task Alert(string msg)
     {
         await JsRuntime.InvokeAsync<object>("Alert", msg);
     }
+
+    //private async Task Details(bool letMeSee)
+    //{
+    //    seeme = letMeSee;
+    //    await InvokeAsync(StateHasChanged);
+    //}
 }
