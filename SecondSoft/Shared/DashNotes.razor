@@ -1,0 +1,22 @@
+﻿@using SecondSoft.Models
+<link href="./css/dashnotes.css" rel="stylesheet" />
+
+<div class="page-content container note-has-grid">
+    <div class="tab-content bg-transparent">
+        <div id="note-full-container" class="note-has-grid row">
+            @if (Notes.Count() != 0 )
+            {
+                foreach (var item in Notes)
+                {
+                    <DashNoteSingle Note=item />
+                }
+            }
+            
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<DashNote> Notes {get;set;}
+}

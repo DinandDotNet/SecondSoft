@@ -1,4 +1,5 @@
 ﻿@page "/MicroPortal"
+@using SecondSoft.Models
 <style>
     body {
         background-color: #222B31 !important;
@@ -17,6 +18,10 @@
         height: auto;
         float: left;
         padding-right: 20px;
+    }
+
+    .subtitle {
+        color: #888B8D !important;
     }
 
     @@media screen and (max-width: 640px) {
@@ -40,18 +45,10 @@
             <!-- Post -->
             <section class="post">
                 <h3>About..</h3>
-                <div>
-                    <ul>
-                        <li>This one-stop-shop contains a range of programs with collected and analyzed results. </li>
-                        <li>Made for healthcare providers to push, analyze and receive results from a reliable service. </li>
-                        <li>The system connects and secures, with easy management for secure access.</li>
-                        <li>Patient data is only visible to the own healthcare provider.</li>
-                        <li>This application has been tested by hackers and security agents.</li>
-                    </ul>
-                </div>
+                <DashNotes Notes="Dnotes"/>
 
-                <div><h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
-                    <h5 style="float:left;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                <div><h5 style="float:left; margin-left:1rem;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                    <h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
                 </div>
                 <br/>
                 <br />
@@ -146,15 +143,19 @@
     </div>
 </body>
 @code {
-
-    //string message = "You can choose from the icons below how to contact me ";
     private bool ShowDetails { get; set; } = true;
     private bool ShowArchitecture { get; set; } = true;
-
-    //private async Task Alert(string msg)
-    //{
-    //    await JsRuntime.InvokeAsync<object>("Alert", msg);
-    //}
+    private List<DashNote> Dnotes { get; set; }
+    
+    protected override async Task OnParametersSetAsync()
+    {
+        Dnotes = new List<DashNote>();
+        Dnotes.Add(new DashNote() { Title = "This one-stop-shop", Text = "Contains a range of programs with collected and analyzed results.", Group = "" });
+        Dnotes.Add(new DashNote() { Title = "Made for healthcare providers", Text = "Push, analyze and receive results from a reliable service.", Group = "important" });
+        Dnotes.Add(new DashNote() { Title = "The system connects and secures", Text = "With easy management for secure access.", Group = "social" });
+        Dnotes.Add(new DashNote() { Title = "Patient data", Text = "Only visible to theire own healthcare provider.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "This application has been tested", Text = "and approved by hackers and security officers.", Group = "important" });
+    }
 
     private void Details()
     {

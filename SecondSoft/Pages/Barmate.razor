@@ -1,4 +1,5 @@
 ﻿@page "/Barmate"
+@using SecondSoft.Models
 
 <style>
     body {
@@ -41,15 +42,7 @@
 
             <div style="clear: both;"></div>
             <br />
-
-            <ul>
-                <li>Staff and customers can order. Barmate takes care of them all.</li>
-                <li>Sends the order through the stations such as different bars or kitchens.</li>
-                <li>Able to serve a &nbsp; <i>'food'</i>court with multiple bars and restaurants or food trucks.</li>
-                <li>Customers can call on staff. They can see their order history and status.</li>
-                <li>Staff arrange payment, while customers will be able to pay themselves in the near future.</li>
-                <li>Staff are always informed and can check status.</li>
-            </ul>
+            <DashNotes Notes="Dnotes" />
             <br/>
             <p style="font-size:.75rem">
                 The web app is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
@@ -64,16 +57,22 @@
 </body>
 @code {
     private string? imageSource;
+    private List<DashNote> Dnotes { get; set; } = new List<DashNote>();
+
     protected override async Task OnParametersSetAsync()
     {
-
+        Dnotes.Add(new DashNote() { Title = "Staff and customers can order", Text = "Barmate takes care of it all.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "Sends the order through the stations", Text = "Various bars or cuisines.", Group = "" });
+        Dnotes.Add(new DashNote() { Title = "Able to serve a food court", Text = "With multiple bars and restaurants or food trucks.", Group = "important" });
+        Dnotes.Add(new DashNote() { Title = "Customers can", Text = "enable staff, can see their order history and status.", Group = "social" });
+        Dnotes.Add(new DashNote() { Title = "Staff takes care of the payment", Text = "While customers will be able to pay themselves in the near future.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "Staff is always aware", Text = "And can check status in real time.", Group = "important" });
         ShowImage();
     }
     private void ShowImage()
     {
         imageSource = $"welcome.jpg";
     }
-
 }
 
 
