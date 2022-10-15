@@ -11,7 +11,6 @@
     }
 
     @@media screen and (max-width: 1000px) {
-        
     }
 </style>
 
@@ -22,11 +21,11 @@
     <header id="header">
         <a href="Dinand.html" class="logo">Developer or achitect</a>
     </header>
-    <div class="upperblock maintext" >Choose?</div>
-    
+    <div class="upperblock maintext">Choose?</div>
+
     <!-- Main -->
-    <div id="main" class="col-3">
-        <a target="_blank" href="https://airtable.com/shr4bkeuciESQk03D" class="requestbutton">
+    <div id="main">
+        <a target="_blank" href="https://airtable.com/shr4bkeuciESQk03D" class="requestbutton" style="transform:scale(0.9)">
             <i style="float: right;" class="fas fa-circle-info"></i><br />Request<br /> my<br />Resume.
         </a>
         <br />
@@ -34,9 +33,9 @@
             <div class="subtitle " style="float:left;">
                 Looking for a developer? <br />
                 <div style="font-size: 0.85em;">I dream in code</div>
-                
-                <img src="images/EatSleepCodeRepeat_gray.png" style="max-height: 75px;top:-20px" alt="" /><br />
-                
+
+                <img src="images/EatSleepCodeRepeat_gray.png" style="transform:scale(0.7);top:-20px" alt="" /><br />
+
             </div>
         </div>
         <div class="container">
@@ -54,25 +53,37 @@
         </div>
         <div style="clear:both;"></div>
         <br />
-        <br />
-        
-        <div class="subtitle" style="font-size:0.85em;margin-left:15px;">
-            <div class="subtitle" style=" font-size:2em">Curious - questions - interest.</div>
-            <!-- Calendly link widget begin -->
-            <a href="" class="subtitle" style="font-size:1em;text-decoration:underline;color: #888B8D !important;" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;"><img style="max-height:25px;" src="images/logo-square-cd364a3c33976d32792a.png" alt="" /> Plan a meeting with me</a>
-            <!-- Calendly link widget end -->
-            <p><a @onclick="() => Alert(message)">Or contact me. <i class="fas fa-arrow-circle-down"></i></a></p>
+        <div style="margin-left:20px;">
+            <div class="subtitle">Skills</div>
+
+            <div class="col-lg-4 col-7" style="float:left;">.net webdevelopment</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">Architecture</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">Webservices</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">Cyber security</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">C#</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">Blazor</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">OAuth</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">HTML</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">CSS</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">Javascript</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+            <div class="col-lg-4 col-7" style="float:left;">Linq</div> <div class="col-lg-7 col-8"><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i><i class="fa-solid fa-square"></i></div>
+
+            and much more..
         </div>
+
+        <br />
+        <br />
+        <Calender/>
         <br />
         <br />
     </div>
 </div>
 
 @code {
-    string message = "You can choose from the icons below how to contact me ";
+    //string message = "You can choose from the icons below how to contact me ";
 
-    private async Task Alert(string msg)
-    {
-        await JsRuntime.InvokeAsync<object>("Alert", msg);
-    }
+    //private async Task Alert(string msg)
+    //{
+    //    await JsRuntime.InvokeAsync<object>("Alert", msg);
+    //}
 }

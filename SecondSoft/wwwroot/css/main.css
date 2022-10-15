@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
 
 /*
@@ -3788,7 +3788,7 @@ input::-moz-focus-inner {
 		}
 
 		#main > .post {
-			padding: 6rem 8rem 0 8rem ;
+			padding: 0rem 4rem 0 4rem ;
 		}
 
 			#main > .post header.major > .date {
@@ -3808,7 +3808,7 @@ input::-moz-focus-inner {
 			@media screen and (max-width: 1280px) {
 
 				#main > .post {
-					padding: 6rem 4rem 4rem 4rem ;
+					padding: 0rem 2rem 0rem 2rem ;
 				}
 
 			}
@@ -3816,7 +3816,7 @@ input::-moz-focus-inner {
 			@media screen and (max-width: 736px) {
 
 				#main > .post {
-					padding: 4rem .5rem 0 1rem ;
+					padding: 0rem .5rem 0 0rem ;
 				}
 
 					#main > .post header.major > .date {

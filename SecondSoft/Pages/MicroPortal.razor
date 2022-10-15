@@ -11,8 +11,18 @@
         font-size: 100px;
         font-weight: bold
     }
+    .imgDetail
+    {
+        max-width: 80px;
+        height: auto;
+        float: left;
+        padding-right: 20px;
+    }
+
     @@media screen and (max-width: 640px) {
-        .maintext{ font-size: 20px;}
+        .maintext {
+            font-size: 20px;
+        }
     }
 </style>
 <PageTitle>Micro Portal project</PageTitle>
@@ -31,110 +41,104 @@
             <section class="post">
                 <h3>About..</h3>
                 <div>
-                    This one-stop-shop contains a range of programs with collected and analyzed results. <br />
-                    Made for healthcare providers to push, analyze and receive results from a reliable service <br />
-                    The system connects and secures, with easy management for secure access. <br />
-                    Patient data is only visible to the own healthcare provider. <br />
-                    This application has been tested by hackers and security agents.
+                    <ul>
+                        <li>This one-stop-shop contains a range of programs with collected and analyzed results. </li>
+                        <li>Made for healthcare providers to push, analyze and receive results from a reliable service. </li>
+                        <li>The system connects and secures, with easy management for secure access.</li>
+                        <li>Patient data is only visible to the own healthcare provider.</li>
+                        <li>This application has been tested by hackers and security agents.</li>
+                    </ul>
                 </div>
-                
+
+                <div><h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                    <h5 style="float:left;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                </div>
                 <br/>
                 <br />
-
-               @* <h4><a href="@Details(true)">A more detailed description</a></h4>
-                @if (seeme)
-                {
-                    <div>details</div>
-                }
-*@
-                <div class="image main"><img style="max-width:80px; height:auto;float:left;" src="images/MicroPortal/Mini lab.png" alt="" /></div>
-                <div style="clear:both;"></div>
-                <h5>Handsome</h5>
-                Web-service to collect the results from different brands of microlabs sending their measurements.<br />
-                The program checks the results after verifying the status of the microlab. All results are stored in a central storage system. <br />
-                The user of the microlab is informed about the status and receives the approval back.
-                <br />
-
-                <div class="image main"><img style="width:80px; height:auto;float:left" src="images/MicroPortal/lab.png" alt="" /></div>
-                <div style="clear:both;"></div>
-                <h5>X-tracked</h5>
-                Web-service for various suppliers of blood measurements, such as laboratory and other Hematology Analyzers, send their results with HL7 standard to this system to store them in the main system.
-                Summary and checksums confirm that the results have been successfully received and saved.
-                <br />
-
-                <div class="image main"><img style="width:80px;height:auto;float:left" src="images/MicroPortal/MicroServices.png" alt="" /><img style="width:80px;height:auto;float:left" src="images/MicroPortal/Blood Analyse.png" alt="" /></div>
-                <div style="clear:both;"></div>
-                <h5>Debriever</h5>
-                Web-service with connections to some microservices. <br />
-                All results are analyzed and assessed. Add advice and warnings to the results.
-                <br />
-
-                <div class="image main"><img style="width:80px;height:auto;float:left;" src="images/MicroPortal/portal.png" alt="" /></div>
-                <div style="clear:both;"></div>
-                <h5>Result portal</h5>
-                A website that gives you the results of stored blood values, depending on the purpose.
-                New results are featured since the last visit.
-                The result can be exported in various formats to suit client care systems.
-                <br />
-
-                <div class="image main"><img style="width:80px;height:auto;float:left;" src="images/MicroPortal/Trends.png" alt="" /></div>
-                <div style="clear:both;"></div>
-                <h5>Z-Analyse</h5>
-                Web-service to analyze the history of the data to create a logical timeline by displaying the fluctuations.
-                This provides information for drug imaging, methods used, etc.
-                <br />
-
-                <div class="image main"><img style="width:80px;height:auto;float:left;" src="images/Microportal/Meta.png" alt="" /></div>
-                <div style="clear:both;"></div>
-                <h5>Z-Meta</h5>
-                Web-service to collect data to discover trends, effective methods to provide information for medical analyzer, sales and management.
-                <br />
-                <a href="http://logservice.secondsoft.nl/" target="_blank" style="text-decoration:underline !important;">
-                    <div class="image main"><img style="width:80px;height:auto;float:left;" src="images/2ndLog.png" alt="" /></div>
+                <div hidden="@ShowDetails">
+                    <div class="image main"><img class="imgDetail" src="images/MicroPortal/Mini lab.png" alt="" /></div>
                     <div style="clear:both;"></div>
-                    <h5>Service</h5>
-                    My own 2ndLog service (project)
-                </a>
-                for logging all messages from an app or service to keep more than 5 years of data.
-                For security, no personal information is allowed, only reference codes.
-                Every x days the rules are archived to a separate big data service.
-                It keeps the service up to speed with only the most necessary data.
-                Service desk has access to the data and can search with unique references what has been recorded.
-                Systems analyst reports on multiple concurrent issues and can view all log data.
-            </section>
-            <section class="post">
-                <h4>Architecture</h4>
-                An architectural storie over a large-scale global project.<br />
-                Global databases<img style="width:40px; height:40px;" src="./images/microportal/clouddb.png" /> share there data provided by laboratory <img style="width:40px; height:40px;" src="./images/microportal/lab.png" /> and handy MicroLabs<img style="width:40px; height:40px;" src="./images/microportal/mini lab.png" />.<br />
-                These big and small labs communicated via web services<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
-                Control service for the state of the minilab to approve<img style="width:40px; height:40px;" src="./images/microportal/approve.png" /> the correctness of the results.<br />
-                The results were analyzed by microservices<img style="width:40px; height:40px;" src="./images/microportal/microservices.png" /> and webservices<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
-                Finally shown to all kinds of caregivers of the patient.<img style="width:40px; height:40px;" src="./images/microportal/Health CareProvider.png" />.<br />
-                All with the highest data transfer security<img style="width:40px; height:40px;" src="./images/microportal/datasecurity.png" />. Tested by security hackers <img style="width:40px; height:40px;" src="./images/microportal/crime-hacker-icon.png" />.<br />
-                Meta<img style="width:40px; height:40px;" src="./images/microportal/meta.png" /> data was created to discover different trends <img style="width:40px; height:40px;" src="./images/microportal/trends.png" />.
-                <p>
-                    The application runs on separate hosted servers in different places on the internet.<br />
-                    This bullet list is an overview of the decisions made within the project.
-                </p>
-                <ul>
-                    <li>By creating a read service to read from the storage, and a separate write service to write to the storage, we spread the network load.</li>
-                    <li>Primarily connected to a security service, all communication is secured by default (such as SSL and standard security protocols) and whitelisting.</li>
-                    <li>All outside communication and inside requestes are custom secured with unique codes that are only known to the sender and receiver</li>
-                    <li>OAuth2 authentication and authorization covers the front-end access security. While this security at the back communicates with a unique key pair every time, it protects hacking from the inside to other caregivers or patient data.</li>
-                    <li>By keeping all plugins and technologies used at a basic level, it prevents problems after upgrading. Therefore, any extensions are built outside of the default modules, and the log tells their problem for troubleshooting.</li>
-                    <li>Modular/microservice usage prevents complex codestrokes in a large app. Takes less effort for maintenance. Can easily switch to external or internal services.</li>
-                    <li>All applications are written in .net 6 or newer, and will be upgraded to any new LTS version.</li>
-                    <li>The services are redundantly distributed over multiple overload hosts with an uptime of more than 99%. The risk of failure is kept to the absolute minimum.</li>
-                    <li>We create a central log service with tenants and tags for the use of the servicedesk. This service will use the default(basic) .net log routine.</li>
-                </ul>
-                <br />
-                <div class="subtitle" style="font-size:0.85em;margin-left:15px;">
-                    <div class="subtitle" style=" font-size:2em">Curious - questions - interest.</div>
-                    <!-- Calendly link widget begin -->
-                    <a href="" class="subtitle" style="font-size:1em;text-decoration:underline;color: #888B8D !important;" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;"><img style="max-height:25px;" src="images/logo-square-cd364a3c33976d32792a.png" alt="" /> Plan a meeting with me</a>
-                    <!-- Calendly link widget end -->
-                    <p><a @onclick="() => Alert(message)">Or contact me. <i class="fas fa-arrow-circle-down"></i></a></p>
+                    <br/>
+                    <br />
+                    <h5>Handsome</h5>
+                    Web-service to collect the results from different brands of microlabs sending their measurements.<br />
+                    The program checks the results after verifying the status of the microlab. All results are stored in a central storage system. <br />
+                    The user of the microlab is informed about the status and receives the approval back.
+                    <br />
+
+                    <div class="image main"><img class="imgDetail" src="images/MicroPortal/lab.png" alt="" /></div>
+                    <div style="clear:both;"></div>
+                    <h5>X-tracked</h5>
+                    Web-service for various suppliers of blood measurements, such as laboratory and other Hematology Analyzers, send their results with HL7 standard to this system to store them in the main system.
+                    Summary and checksums confirm that the results have been successfully received and saved.
+                    <br />
+
+                    <div class="image main"><img class="imgDetail" src="images/MicroPortal/MicroServices.png" alt="" /><img class="imgDetail" src="images/MicroPortal/Blood Analyse.png" alt="" /></div>
+                    <div style="clear:both;"></div>
+                    <h5>Debriever</h5>
+                    Web-service with connections to some microservices. <br />
+                    All results are analyzed and assessed. Add advice and warnings to the results.
+                    <br />
+
+                    <div class="image main"><img class="imgDetail" src="images/MicroPortal/portal.png" alt="" /></div>
+                    <div style="clear:both;"></div>
+                    <h5>Result portal</h5>
+                    A website that gives you the results of stored blood values, depending on the purpose.
+                    New results are featured since the last visit.
+                    The result can be exported in various formats to suit client care systems.
+
+                    <div class="image main"><img class="imgDetail" src="images/MicroPortal/Trends.png" alt="" /></div>
+                    <div style="clear:both;"></div>
+                    <h5>Z-Analyse</h5>
+                    Web-service to analyze the history of the data to create a logical timeline by displaying the fluctuations.
+                    This provides information for drug imaging, methods used, etc.
+
+                    <div class="image main"><img class="imgDetail" src="images/Microportal/Meta.png" alt="" /></div>
+                    <div style="clear:both;"></div>
+                    <h5>Z-Meta</h5>
+                    Web-service to collect data to discover trends, effective methods to provide information for medical analyzer, sales and management.
+                    <a href="http://logservice.secondsoft.nl/" target="_blank" style="text-decoration:underline !important;">
+                        <div class="image main"><img class="imgDetail" src="images/2ndLog.png" alt="" /></div>
+                        <div style="clear:both;"></div>
+                        <h5>Service</h5>
+                        My own 2ndLog service (project)
+                    </a>
+                    for logging all messages from an app or service to keep more than 5 years of data.
+                    For security, no personal information is allowed, only reference codes.
+                    Every x days the rules are archived to a separate big data service.
+                    It keeps the service up to speed with only the most necessary data.
+                    Service desk has access to the data and can search with unique references what has been recorded.
+                    Systems analyst reports on multiple concurrent issues and can view all log data.
                 </div>
+            </section>
+
+            <section class="post">
+                <div hidden="@ShowArchitecture">
+                    <b>An architecture story</b><br /> about a large-scale global project.<br />
+                    Global Databases<img style="width:40px; height:40px;" src="./images/microportal/clouddb.png" /> share lab data <img style="width:40px; height:40px;" src="./images/microportal/lab.png" /> and MicroLabs<img style="width:40px; height:40px;" src="./images/microportal/mini lab.png" />.<br />
+                    These labs large and small communicated through web services<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
+                    Control service to approve minilab status<img style="width:40px; height:40px;" src="./images/microportal/approve.png" /> the correctness of the results.<br />
+                    The results were analyzed by microservices<img style="width:40px; height:40px;" src="./images/microportal/microservices.png" /> and webservices<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
+                    Shown to a variety of patient caregivers.<img style="width:40px; height:40px;" src="./images/microportal/Health CareProvider.png" />.<br />
+                    All with highest data transfer security<img style="width:40px; height:40px;" src="./images/microportal/datasecurity.png" />. Tested by security hackers <img style="width:40px; height:40px;" src="./images/microportal/crime-hacker-icon.png" />.<br />
+                    Meta<img style="width:40px; height:40px;" src="./images/microportal/meta.png" /> data was created to discover different trends <img style="width:40px; height:40px;" src="./images/microportal/trends.png" />.
+                    <p>
+                        The application runs on separate hosted servers or serverless in different places on the internet.<br />
+                        This bullet list is an overview of the decisions made within the project.
+                    </p>
+                    <ul>
+                        <li>By separating read and write from storage, we spread the load on network and web services. </li>
+                        <li>Mainly connected to a security service, all communication is secured (SSL, standard security protocols and whitelisting).</li>
+                        <li>All external communications and internal requests are custom secured with unique hashes.</li>
+                        <li>OAuth2 authentication and authorization covers front-end access security. At the back, security communicates with unique key pairs. It protects hacking from within and leaks data to other patient data.</li>
+                        <li>Using all basic plug-ins and technologies prevents issues after upgrading. Extensions are built outside the standard modules and are logged separately for troubleshooting.</li>
+                        <li>Modular / microservice usage prevents complex code attacks and large apps. Takes less effort for maintenance. Can be easily switched to internal or external.</li>
+                        <li>All applications are written in .net 6 or newer and are upgraded to each new LTS version.</li>
+                        <li>The services are redundantly distributed over multiple overload hosts with an uptime of more than 99%. The risk of failure is reduced to the absolute minimum.</li>
+                        <li>A central logging service with tenants and tags for use by the service desk. This service uses the standard .net log routine.</li>
+                    </ul>
+                </div>
+                <Calender/>
                 <br />
             </section>
         </div>
@@ -143,16 +147,23 @@
 </body>
 @code {
 
-    string message = "You can choose from the icons below how to contact me ";
-    //bool seeme = false;
-    private async Task Alert(string msg)
-    {
-        await JsRuntime.InvokeAsync<object>("Alert", msg);
-    }
+    //string message = "You can choose from the icons below how to contact me ";
+    private bool ShowDetails { get; set; } = true;
+    private bool ShowArchitecture { get; set; } = true;
 
-    //private async Task Details(bool letMeSee)
+    //private async Task Alert(string msg)
     //{
-    //    seeme = letMeSee;
-    //    await InvokeAsync(StateHasChanged);
+    //    await JsRuntime.InvokeAsync<object>("Alert", msg);
     //}
+
+    private void Details()
+    {
+        ShowDetails = !ShowDetails;
+        ShowArchitecture = true;
+    }
+    private void Architecture()
+    {
+        ShowArchitecture = !ShowArchitecture;
+        ShowDetails = true;
+    }
 }

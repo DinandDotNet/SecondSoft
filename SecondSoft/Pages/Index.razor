@@ -16,26 +16,21 @@
             font-size: 14px;
         }
     }
-    /*img {
-                        width: 80%;
-                      height: 300px;
-                    }*/
+
 </style>
 
 <PageTitle>SecondSoft</PageTitle>
 <div class="container">
     <div class="row">
         <div class="col-7 col-sm-4"><img src="@imageSource" class="image fit" /></div>
-        @*<div style="clear:both"></div>*@
         <div class=" col-4 col-sm-4 title"> Thinking twice makes the differents</div>
-        @*<div class="col-6 col-sm-4"><img src="@imageSource" class="image fit" /></div>
-        <div style="clear:both"></div>
-        <div class=" col-4 col-sm-4 title"> Thinking twice makes the differents</div>*@
     </div>
 </div>
 <br />
+
 <br />
 <br />
+<Carousel Components="types" DelayTime="3000" />
 @code {
     private string? imageSource;
     protected override async Task OnParametersSetAsync()
@@ -43,8 +38,15 @@
 
         ShowImage();
     }
+
     private void ShowImage()
     {
         imageSource = $"./images/2ndsoft.png";
     }
-    }
+    Type[] types =
+    {
+        typeof(BarmateOverview),
+        typeof(FitmateOverview),
+        typeof(MicroPortalOverview)
+    };
+}

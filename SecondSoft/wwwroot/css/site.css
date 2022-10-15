@@ -19,7 +19,7 @@ a, .btn-link {
 }
 
 .requestbutton {
-    background-color: #888B8D; /* Green */
+    background-color: #888B8D;
     border-radius: 37px 37px 30px 5px;
     color: white;
     padding: 15px 32px;
@@ -142,3 +142,12 @@ i.fas, i.fab, a.fas {
         letter-spacing: -0.925em !important;
     }
 }
+/*carouselsize {
+    height: 400px;
+}
+
+@media screen and (max-width: 736px) {
+    carouselsize {
+        height: 300px;
+    }
+}*/

@@ -1,4 +1,4 @@
-﻿@page "/Design"
+﻿@page "/ShowCase"
 
 <style>
     body {
@@ -60,7 +60,7 @@
                 Sample pages <br />
                 <div class="sampleblock">
                     <a target="_blank" href="https://secondsoft.nl/" style="color:burlywood;text-decoration:underline; white-space:nowrap">
-                        <img src="./Images/Design/2ndSoft.jpg" style="height: 140px; width:auto;" /><br />
+                        <img src="./Images/ShowCase/2ndSoftPage.jpg" style="height: 140px; width:auto;" /><br />
                         Secondsoft (this website) &nbsp; <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                     <br />
@@ -68,7 +68,7 @@
                 </div>
                 <div class="sampleblock">
                     <a target="_blank" href=" http://fitmate.secondsoft.nl/" style="color:burlywood;text-decoration:underline;">
-                        <img src="./Images/Design/FitmatePage.jpg" style="height: 140px; width:auto;" /><br />
+                        <img src="./Images/ShowCase/FitmatePage.jpg" style="height: 140px; width:auto;" /><br />
                         Fitmate &nbsp; <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                     <br />
@@ -77,7 +77,7 @@
                 </div>
                 <div class="sampleblock">
                     <a target="_blank" href="https://logservice.secondsoft.nl/" style="color:burlywood; text-decoration:underline;">
-                        <img src="./Images/Design/2ndLog.jpg" style="height: 140px; width:auto;" /><br />
+                        <img src="./Images/ShowCase/2ndLogPage.jpg" style="height: 140px; width:auto;" /><br />
                         2ndLog &nbsp; <i class="fa-solid fa-up-right-from-square"></i>
                     </a>
                     <br />
@@ -93,8 +93,12 @@
 
             <div style="clear:both;">
                 <br />
-                Technologies used<br />
                 <table class="table table-sm table-responsive" style="color:burlywood">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="text-align:center;color:burlywood">Technologies used</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
                             <td>Blazor</td>
@@ -113,14 +117,7 @@
             </div>
         </div>
         <div style="clear:both;"></div>
-
-        <div class="subtitle" style="font-size:0.85em;margin-left:15px;">
-            <h3 class="subtitle" style=" font-size:2em;color:burlywood; ">Curious - questions - interest.</h3>
-            <!-- Calendly link widget begin -->
-            <a href="" class="subtitle" style="font-size:1em;text-decoration:underline;color:burlywood;" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;"><img style="max-height:25px;" src="images/logo-square-cd364a3c33976d32792a.png" alt="" /> Plan a meeting with me</a>
-            <!-- Calendly link widget end -->
-            <p><a @onclick="() => Alert(message)">Or contact me. <i class="fas fa-arrow-circle-down"></i></a></p>
-        </div>
+        <Calender/>
         <br />
         <br />
     </div>
