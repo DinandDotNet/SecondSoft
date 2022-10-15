@@ -1,17 +1,24 @@
-﻿<div style="transform:scale(0.7)">
-<header>
-    <h2><a href="Barmate">Barmate</a></h2>
-</header>
-<a href="#" class="image fit"><img src="images/bar.jpg" alt="" /></a>
-<p>Barmate is an order webapp for any bar or restaurant. </p>
-<ul class="actions special">
-    <li><a href="barmate" class="button">Full Story</a></li>
-</ul>
-</div>
+﻿<div style="transform:scale(@scalesize)">
+        <header>
+            <h2><a href="Barmate">Barmate</a></h2>
+        </header>
+        <a href="#" class="image fit"><img src="images/bar.jpg" alt="" /></a>
+        <p>Barmate is an order webapp for any bar or restaurant. </p>
+        <ul class="actions special">
+            <li><a href="barmate" class="button">Full Story</a></li>
+        </ul>
+    </div>
+
+
+   
 @code {
     [Parameter]
-    public bool Carousel { get; set; } = false;
-    string scalesize { get; set; } = "transform:scale(0.7)";
+    public bool Carousel { get; set; } = true;
+    string scalesize { get; set; }
 
-
+    protected override async Task OnParametersSetAsync()
+    {
+        scalesize = Carousel ? "0.7" : "1.0";
+    }
 }
+

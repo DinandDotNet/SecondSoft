@@ -1,4 +1,4 @@
-﻿<div style="transform:scale(0.7)">
+﻿<div style="transform:scale(@scalesize)">
     <header>
         <h2><a href="#">Fitmate</a></h2>
     </header>
@@ -17,5 +17,12 @@
 </div>
 
 @code {
+    [Parameter]
+    public bool Carousel { get; set; } = true;
+    string scalesize { get; set; }
 
+    protected override async Task OnParametersSetAsync()
+    {
+        scalesize = Carousel ? "0.7" : "1.0";
+    }
 }
