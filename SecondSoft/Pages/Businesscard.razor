@@ -1,0 +1,29 @@
+﻿@page "/Businesscard"
+
+<style>
+    .cardsize {
+        width: auto;
+        height: 300px;
+    }
+
+    @@media screen and (max-width: 640px) {
+        .cardsize {
+            height: auto;
+            width: 325px;
+        }
+    }
+</style>
+<div>
+<img class="cardsize imgcenter" src="./images/logo/2ndsoft_front.png" />
+<br/>
+<img class="cardsize imgcenter" src="./images/logo/2ndsoft_back.png" />
+</div>
+<br/>
+<BusinessCallMe/>
+<br/>
+<br/>
+<br />
+<br />
+@code {
+
+}
