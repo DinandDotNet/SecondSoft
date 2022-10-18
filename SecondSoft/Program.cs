@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using SecondSoft.Data;
 using SecondSoft.Helpers;
 using SecondSoft.Services;
 
@@ -11,7 +10,6 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<IMailService, MailService>();
 builder.Services.AddScoped<IEmails, Emails>();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 
 var app = builder.Build();

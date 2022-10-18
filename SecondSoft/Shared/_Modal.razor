@@ -1,0 +1,26 @@
+﻿<div class="modal fade-scale-sidebar " id="myModal" style="display:@Collapse" aria-modal="true" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            @*Modal Header *@
+            <div class="modal-header" style="display:block; padding:0px 7px; border-bottom:none">
+                <a class="close" style="float: right; text-decoration: none;" @onclick="@ModalCancel"><h2>&times;</h2></a>
+            </div>
+            @*modal-body*@
+            <div class="modal-body">
+                <img src="./images/logo/qr call dinand.jpg" />
+            </div>
+        </div>
+    </div>
+</div>
+@*<hr />*@
+@code
+{
+  public void ModalCancel() => Collapse = "none";
+}
+@functions {
+    [Parameter]
+    public string Collapse { get; set; } = "none";
+    [Parameter] 
+    public EventCallback<string> OnClickFunction { get; set; }
+}

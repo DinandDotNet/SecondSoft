@@ -4,14 +4,13 @@
 @using SecondSoft.Models
 @inject IEmails emails;
 <style>
-    
+
     body {
-        color: white;
         background-color: #222B31 !important;
     }
 </style>
 <div class=" col-5" style="float:left;">
-<img class="imgcenter"  src="./images/underconstruction.png" alt="under construction" />
+    <img class="imgcenter" src="./images/underconstruction.png" alt="under construction" />
     <div style="font-size:.80em; text-align:center; color:#FAC533">And thank you for your understanding.</div>
 </div>
 <div class="main col-5" style="text-align:center; font-size:2em; margin:10px; display:block; float:left">
@@ -21,91 +20,100 @@
 <div style="clear:both;"></div>
 <hr />
 
+<div style="color: white;">
+    <div class="col-6" style="font-size:.75em;float:left;">
+        <i style="color:crimson" class="fa-solid fa-circle-right"></i> This site will be maintained between projects.  <br />
+        <i style="color:#FAC533" class="fa-solid fa-circle-info"></i> About my recent projects and activities. <br />
+        <img style="width:20px; height:20px;" src="./images/blazor_icon.png" alt="under construction" />  &nbsp; &nbsp;This webapp is made in Blazor
+    </div>
+    <div class="col-6" style="font-size:.75em; float:left; margin-bottom:50px">
+        <table>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Create a page for 2ndLog with content </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Create a page for Fitmate with content </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Rewrite full story for Barmate and add to page by a link or button (19-10) </td>
+            </tr>
 
-<div class="col-6" style="font-size:.75em;float:left;">
-    <i style="color:crimson" class="fa-solid fa-circle-right"></i> This site will be maintained between projects.  <br />
-    <i style="color:#FAC533" class="fa-solid fa-circle-info"></i> About my recent projects and activities. <br />
-    <img style="width:20px; height:20px;" src="./images/blazor_icon.png" alt="under construction" />  &nbsp; &nbsp;This webapp is made in Blazor
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Contact part modification, too busy and to many styles now (18-10) </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Add carousel on homepage and add pages to it (15-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Replace about and bullet area's with design (14-10) </td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Content for Home page (12-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Make content for the Home page and restyle it (11-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Rewrite MicroPortal page and restyle it(9-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Rewrite Barmate page and restyle it</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Restore styling in MicroPortal page(8/10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Restore styling in Barmate page(8-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Restore styling in About me page (7/10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Restore styling in portfolio (7/10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Insert About me (raw data) into secondsoft.nl(6/10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Insert Portfolio page (raw data) into secondsoft.nl(5/10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Insert Barmate page (raw data) into secondsoft.nl(4-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Insert Microportal page (raw data) into secondsoft.nl(2-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Quick fix: Iframe my github site into the portfolio page(2-10)</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" checked /></td>
+                <td>Bring this website, my github portfolio page, and several project descriptions together into one website. Preparation (30-09)</td>
+            </tr>
+        </table>
+    </div>
 </div>
-<div class="col-6" style="font-size:.75em; float:left; margin-bottom:50px">
-    <table>
-        <tr>
-            <td><input type="checkbox" /></td>
-            <td>Create a page for 2ndLog with content </td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" /></td>
-            <td>Create a page for Fitmate with content </td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Add carousel on homepage and add pages to it (15-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Replace about and bullet area's with design (14-10) </td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Content for Home page (12-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Make content for the Home page and restyle it (11-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Rewrite MicroPortal page and restyle it(9-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" /></td>
-            <td>Rewrite Barmate page and restyle it</td>
-        </tr>
-          <tr>
-            <td><input type="checkbox" checked/></td>
-            <td>Restore styling in MicroPortal page(8/10)</td>
-        </tr>
-          <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Restore styling in Barmate page(8-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Restore styling in About me page (7/10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Restore styling in portfolio (7/10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Insert About me (raw data) into secondsoft.nl(6/10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Insert Portfolio page (raw data) into secondsoft.nl(5/10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Insert Barmate page (raw data) into secondsoft.nl(4-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Insert Microportal page (raw data) into secondsoft.nl(2-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Quick fix: Iframe my github site into the portfolio page(2-10)</td>
-        </tr>
-        <tr>
-            <td><input type="checkbox" checked /></td>
-            <td>Bring this website, my github portfolio page, and several project descriptions together into one website. Preparation (30-09)</td>
-        </tr>
-    </table>
-</div>
-
-<br/>
-<br/>
+<br />
+<br />
 @code {
 
 }

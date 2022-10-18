@@ -13,8 +13,15 @@
     .subtitle {
         color: #888B8D !important;
     }
+    .imgsize{
+        transform:scale(0.7);
+        top:-20px;
+    }
 
-    @@media screen and (max-width: 1000px) {
+    @@media screen and (max-width: 640px) {
+        .imgsize {
+            width: 180px;
+        }
     }
 </style>
 
@@ -38,7 +45,7 @@
                 Looking for a developer? <br />
                 <div style="font-size: 0.85em;">I dream in code</div>
 
-                <img src="images/EatSleepCodeRepeat_gray.png" style="transform:scale(0.7);top:-20px" alt="" /><br />
+                <img class="imgsize" src="images/EatSleepCodeRepeat_gray.png" alt="" /><br />
 
             </div>
         </div>
@@ -53,7 +60,7 @@
         </div>
         <div class="subtitle" style="clear:both; text-align: center;">
             <br />
-            That concept and the ability to program, is in my DNA.
+            This concept and the ability to program, is in my DNA.
         </div>
         <div style="clear:both;"></div>
         <br />
@@ -77,7 +84,7 @@
 
         <br />
         <br />
-        <Calender/>
+        <Contact />
         <br />
         <br />
     </div>

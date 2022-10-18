@@ -1,0 +1,36 @@
+﻿<style>
+    .button {
+    margin: 2px;
+        border-radius: 37px ;
+    }
+</style>
+
+<div class="subtitle" style="font-size:0.85em;margin-left:15px;">
+    <div class="subtitle" style="font-size:2em">Curious - questions - interest.</div>
+    <!-- Calendly link widget begin -->
+    <a href="" class="subtitle button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;">
+        Meet with me</a>
+    <!-- Calendly link widget end -->
+    
+    <div class="button subtitle" @onclick="@SiteBarShow">
+        Call me
+        </div>
+    <a class="subtitle button" target="_blank" href="https://www.secondsoft.nl/businesscard">see my Business card</a>
+    <div style="clear:both; padding-bottom:10px;"></div>
+    <p><a @onclick="() => Alert(message)">or contact me by <i class="fas fa-arrow-circle-down"></i></a></p>
+</div>
+
+@if (showSitebar)
+{
+    <_Modal Collapse="@(showSitebar?"block":"none")"></_Modal>
+}
+
+@code {
+    string message = "You can choose from the icons below how to contact me ";
+    public bool showSitebar { get; set; }
+    void SiteBarShow() => showSitebar = true;
+    private async Task Alert(string msg)
+    {
+        await JsRuntime.InvokeAsync<object>("Alert", msg);
+    }
+}
