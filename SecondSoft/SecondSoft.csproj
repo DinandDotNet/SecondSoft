@@ -11,4 +11,10 @@
     <PackageReference Include="SecretServiceExternalPack" Version="1.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Pages\SecondLogOverview.razor">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+    </Content>
+  </ItemGroup>
+
 </Project>

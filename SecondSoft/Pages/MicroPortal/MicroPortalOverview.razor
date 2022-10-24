@@ -1,6 +1,6 @@
 ﻿<div style="transform:scale(@scalesize)">
     <header>
-        <h2><a href="#">Micro portal</a></h2>
+        <h3><a href="#">Micro portal</a></h3>
     </header>
     <a href="MicroPortal" class="image fit"><img src="images/LabPins.jpg" alt="" /></a>
     <p>
@@ -8,17 +8,22 @@
         <br />
     </p>
     <ul class="actions special">
-        <li><a href="MicroPortal" class="button">Full Story</a></li>
+        <li><a href="MicroPortal" class="button textcolor">Full Story</a></li>
     </ul>
 </div>
 
 @code {
     [Parameter]
     public bool Carousel { get; set; } = true;
-    string scalesize { get; set; }
+    [Parameter]
+    public string scalesize { get; set; } = "1.0";
 
     protected override async Task OnParametersSetAsync()
     {
-        scalesize = Carousel ? "0.7" : "1.0";
+        if (Carousel)
+        {
+            scalesize = "0.7";
+        }
+
     }
 }

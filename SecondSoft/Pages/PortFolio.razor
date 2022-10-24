@@ -9,8 +9,13 @@
 <style>
     body {
         background-color: #222B31 !important;
+        font-family: Font Awesome 6 Free;
     }
- 
+
+    .sampleblock {
+        float: left;
+        padding-right: 20px;
+    }
 </style>
 
 <body class="is-preload">
@@ -42,27 +47,74 @@
                 <div >
                     <ul class="actions special" >
                     <li><a href="Dinand" class="button large">My story</a></li>
-                    <li><a href="Showcase" class="button large">Showcase</a></li>
+                    @*<li><a href="Showcase" class="button large">Showcase</a></li>*@
                     </ul>
                 </div>
-            </div>
-            <br />
-           
-
-            <!-- Posts -->
-            <section class="posts">
-
-                <article>
-                   <BarmateOverview Carousel=false/>
-                </article>
-                <article>
-                    <MicroPortalOverview Carousel=false />
-                </article>
-                <article>
-                    <FitmateOverview Carousel=false />
-                </article>
-            </section>
+               
+            
         </div>
+            <div class="container">
+                <div style="clear:both;"></div>
+
+                <div style="font-size: 0.85em;">
+                    <h2 class="body">Blazor projects</h2> <br />
+                    <div class="sampleblock col-12 col-md-6 col-lg-3" style="display:block;">
+                        <SecondsoftOverview Carousel=false />
+                    </div>
+                    <div class="sampleblock col-12 col-md-6 col-lg-3" style="display:block; ">
+                        <BarmateOverview Carousel=false />
+                    </div>
+                    <div class="sampleblock col-6 col-md-3">
+                        <h3>  <i class="fa-regular fa-comment-dots"></i>More to come.</h3>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div style="clear:both;"></div>
+                    <h2 class="body textcolor">MVC projects</h2> <br />
+                    <div class="sampleblock col-12 col-md-6 col-lg-3" style="display:block; ">
+                        <FitmateOverview Carousel=false />
+                    </div>
+                    <div class="sampleblock col-12 col-md-6 col-lg-3" style="display:block; ">
+                        <SecondLogOverview Carousel=false />
+                    </div>
+                    <div class="sampleblock col-12 col-md-6 col-lg-3" style="display:block; ">
+                        <MicroPortalOverview Carousel=false />
+                    </div>
+                </div>
+
+                <div style="clear:both;">
+                    <br />
+                    <table class="table table-sm table-responsive textcolor">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" class="textcolor" style="text-align:center;">Technologies used</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Blazor</td>
+                                <td>Bootstrap</td>
+                            </tr>
+                            <tr>
+                                <td>HTML</td>
+                                <td>CSS</td>
+                            </tr>
+                            <tr>
+                                <td>Javascript</td>
+                                <td>Jquery</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <Contact />
+            <br />
+            <br />
+        </div>
+        <br />
+        @*<ShowCase></ShowCase>*@
     </div>
 </body>
 

@@ -142,7 +142,12 @@ i.fas, i.fab, a.fas {
         letter-spacing: -0.925em !important;
     }
 }
-/*carouselsize {
+@media screen and (max-width: 450px) {
+    .upperblock {
+        margin: 0 0rem;
+    }
+}
+    /*carouselsize {
     height: 400px;
 }
 
