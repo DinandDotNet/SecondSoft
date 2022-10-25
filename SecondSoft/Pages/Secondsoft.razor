@@ -1,0 +1,106 @@
+﻿@page "/secondsoft"
+
+<style>
+   .content {
+        background-color: #222B31 !important;
+        color: whitesmoke !important;
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+    }
+
+    h2, .link {
+       background-color:transparent !important;
+        color: whitesmoke !important;
+    }
+    .link {
+    text-decoration:underline;
+    }
+    #content {
+    padding:0 40px;
+    }
+</style>
+
+<PageTitle>About Dinand</PageTitle>
+
+<!-- Wrapper -->
+<div id="wrapper">
+    <header id="header">
+        <a href="secondsoft" class="logo">My own blazor showcase</a>
+    </header>
+    <div class="upperblock maintext">About this website</div>
+
+    <!-- Main -->
+    <div id="content">
+        <br/>
+        
+        <p>
+            Working with <img style="max-height:2em;" src="./images/blazor_icon.png" /> blazor technology means using simple things with a hugh impact.<br />
+            It is the same in a large system, wise to avoid DRY (Don't Repeat Yourself)<br />
+        <br/>
+        That's possible with Blazor.<br />
+            You create (razor) components to store your content and functionality.<br />
+            Insert that as a tag on the page or use it as a page itself. Parameters allow you to influence behavior.<br />
+        <br/>
+            You do all this without converting data, because blazor works with back-end data in the front-end.<br />
+        <br/>
+            Now you can work without Javascript and js libraries.<img style="max-height:1.5em" src="./images/nojs_red.png" /><br /> Instead, blazor has its own libraries to meet your needs.<br />
+            <a target="_blank" href="https://mudblazor.com/"> <img style="max-height:2em;" src="./images/mudblazor.png" /></a> &nbsp;
+            <a target="_blank" href="https://blazor.radzen.com/"> <img style="max-height:2em;" src="./images/radzen.png" /></a> &nbsp;
+            <a target="_blank" href="https://blazorstrap.io/V5/"> <img style="max-height:2.5em;" src="./images/blazorstrap.png" /></a> &nbsp;
+            <a target="_blank" href="https://github.com/Blazored"> <img style="max-height:2.5em;" src="./images/blazored.png" /></a>&nbsp;
+            <a target="_blank" href="https://blazorise.com/"> <img style="max-height:2.5em;" src="./images/blazorise.png" /></a>&nbsp;
+            <a target="_blank" href="https://blazorboilerplate.com/"> <img style="max-height:2.5em;" src="./images/BlazorBoilerplate.png" /></a>&nbsp;
+            <a target="_blank" href="https://www.htmlelements.com/blazor/blazor-ui/demos/"> <img style="max-height:1.5em;" src="./images/SmartHtml.png" /></a>&nbsp;
+            <a target="_blank" href="https://blazor.syncfusion.com/demos/"> <img style="max-height:1.5em;background-color:white;" src="./images/SyncFusion.png" /></a>&nbsp;
+            
+            <br />
+            And to make it even better, you can work with JS if you need to.
+        </p>
+        <div style="float:left; margin-left:1rem;"><a @onclick="() => Details(1)" style="text-decoration:underline">Example 1 Contact component<i class="fa-solid fa-square-caret-down"></i></a></div>
+        <div style="float:left; margin-left:1rem;"><a @onclick="() => Details(2)" style="text-decoration:underline">Example 2 Project overview components<i class="fa-solid fa-square-caret-down"></i></a></div>
+        <br/>
+        <div hidden="@ShowExample1">
+            <br/>
+            <a class="link" target="_blank" href="contact"> Contact component &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            <img src="./images/showcase/component_contact.jpg" /><br/>
+            To get all text white, on this page, was set by a parameter. <i class="fa-solid fa-bullseye"></i> <br />
+            As the same parameter turned all text black on the <a class="link" target="_blank" href="Portfolio">Portfolio page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a>
+            <br />
+            On the <a class="link" target="_blank" href="Dinand">Dinand page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a>it was set to turn the text grey and some (in the buttons) black, to present them better.
+            <br />
+            Now we simply used the same component 3 times differently.<br />
+            <br/>
+            And it even gets better.
+        </div>
+        <div hidden="@ShowExample2">
+            <br />
+            I have created an overview component of every project <br />
+
+            Those pages are used in the SampleBlocks on the <a target="_blank" class="link" href="portfolio">Portfolio page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a> and the carousel on the<a class="link" target="_blank" href="/"> home page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            <img style="max-height:4em;" src="./images/showcase/samplepages.jpg" />&nbsp; <img style="max-height:4em;" src="./images/showcase/samplecarousel.jpg" /><br />
+            As all pages are responsive, I still had to scale the pages for the carousel with a parameter to 70 %.<br/>
+            <br/>
+            The project pages are without background. When you visit them native they don't look that nice.<br/>
+            <a target="_blank" class="link" href="secondsoftOverview">Secondsoft Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            <a target="_blank" class="link" href="secondlogOverview">Secondlog Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            <a target="_blank" class="link" href="MicroportalOverview">Microportal Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            <a target="_blank" class="link" href="BarmateOverview">Barmate Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            <a target="_blank" class="link" href="FitmateOverview">Fitmate Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            With a ligth background, by design all text turns black and all other behavior will be done with Parameters.
+        </div>
+        <br />
+        <br />
+        <Contact mycolor="white"/>
+        <br />
+        <br />
+    </div>
+</div>
+
+@code {
+    private bool ShowExample1 { get; set; } = true;
+    private bool ShowExample2 { get; set; } = true;
+    private void Details(int exNumber)
+    {
+        ShowExample1 = !(exNumber == 1);
+        ShowExample2 = !(exNumber == 2);
+    }
+}

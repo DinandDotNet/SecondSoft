@@ -3022,7 +3022,7 @@ input::-moz-focus-inner {
 	}
 
 		table tbody tr {
-			border: solid 1px;
+			/*border: solid 1px;*/
 			border-left: 0;
 			border-right: 0;
 		}
@@ -3063,7 +3063,7 @@ input::-moz-focus-inner {
 		}
 
 			table.alt tbody tr td {
-				border: solid 1px;
+				/*border: solid 1px;*/
 				border-left-width: 0;
 				border-top-width: 0;
 			}
@@ -3088,9 +3088,9 @@ input::-moz-focus-inner {
 		border-color: #eeeeee;
 	}
 
-		table tbody tr:nth-child(2n + 1) {
+		/*table tbody tr:nth-child(2n + 1) {
 			background-color: rgba(220, 220, 220, 0.25);
-		}
+		}*/
 
 	table th {
 		color: #212931;

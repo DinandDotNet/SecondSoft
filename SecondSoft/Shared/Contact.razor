@@ -1,7 +1,9 @@
-﻿<style>
+﻿@page "/contact"
+<style>
     .button {
     margin: 2px;
         border-radius: 37px ;
+        color: @mycolor !important;
     }
 </style>
 
@@ -12,7 +14,7 @@
         Meet with me</a>
     <!-- Calendly link widget end -->
     
-    <div class="button subtitle" @onclick="@SiteBarShow">
+    <div class="button subtitle" @onclick="@SiteBarShow" style="">
         Call me
         </div>
     <a class="subtitle button" target="_blank" href="https://www.secondsoft.nl/businesscard">see my Business card</a>
@@ -26,6 +28,8 @@
 }
 
 @code {
+    [Parameter]
+    public string mycolor { get; set; } = "black";
     string message = "You can choose from the icons below how to contact me ";
     public bool showSitebar { get; set; }
     void SiteBarShow() => showSitebar = true;
