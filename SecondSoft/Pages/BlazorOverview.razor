@@ -1,0 +1,25 @@
+﻿@page "/BlazorOverview"
+<div style="transform:scale(@scalesize)">
+    <h3>  <i class="fa-regular fa-comment-dots"></i>More to come.</h3>
+    <br/>
+    <a class="button" style="font-size:1em;" href="Blazor">Why Dinand chooses Blazor</a>
+</div>
+
+
+
+@code {
+    [Parameter]
+    public bool Carousel { get; set; } = true;
+    [Parameter]
+    public string scalesize { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Carousel)
+        {
+            scalesize = "0.7";
+        }
+
+    }
+}
+
