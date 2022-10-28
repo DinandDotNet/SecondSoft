@@ -1,5 +1,8 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+:root {
+    --minmax: 80px;
+}
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -17,6 +20,31 @@ a, .btn-link {
     background-color: #1b6ec2;
     border-color: #1861ac;
 }
+.dgrid {
+    display: grid;
+    gap: 1rem;
+    /* grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(var(--minmax), 1fr));
+}
+.dcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+/*    height: 100%;
+    width: 100%;*/
+    border-radius: 4px;
+    transition: all 500ms;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background: #565353;
+    font-size: 1rem;
+    color: #fff;*/
+}
+  
 
 .requestbutton {
     background-color: #888B8D;

@@ -9,9 +9,17 @@
         font-family: Font Awesome 6 Free;
     }
 
-    .sampleblock {
-        float: left;
-        padding-right: 20px;
+    .sampleblock, .container>.dgrid {
+        /*float: left;*/
+        padding: 20px;
+        --minmax: 240px;
+    }
+
+    #technologies>.dgrid{
+        --minmax: 90px;
+    }
+    .dgrid>.dcard{
+        font-size: 0.85em;
     }
 </style>
 
@@ -50,64 +58,52 @@
             </div>
             <div class="container">
                 <div style="clear:both;"></div>
-
-                <div style="font-size: 0.85em;">
-                    <h2 class="body">Blazor projects</h2> <br />
-                    <div class="sampleblock col-12 col-md-6 col-lg-4" style="display:block;">
+                <h2 class="body">Blazor projects</h2> <br />
+                <section class="dgrid" style="font-size: 0.85em;">
+                   
+                    <div class="sampleblock dcard ">
                         <SecondsoftOverview Carousel=false />
                     </div>
-                    <div class="sampleblock col-12 col-md-6 col-lg-4" style="display:block; ">
+                    <div class="sampleblock dcard ">
                         <BarmateOverview Carousel=false />
                     </div>
-                    <div class="sampleblock col-6 col-md-4">
+                    <div class="sampleblock dcard ">
                         <BlazorOverview></BlazorOverview>
                     </div>
-                    <br />
-                    <br />
-                    <br />
-                    <div style="clear:both;"></div>
-                    <h2 class="body textcolor">MVC projects</h2> <br />
-                    <div class="sampleblock col-12 col-md-6 col-lg-4" style="display:block; ">
+                </section>
+                <div style="clear:both"></div>
+                <h2 class="body textcolor">MVC projects</h2> <br />
+                <section class="dgrid" style="font-size: 0.85em;">
+                    
+                    <div class="sampleblock dcard ">
                         <FitmateOverview Carousel=false />
                     </div>
-                    <div class="sampleblock col-12 col-md-6 col-lg-4" style="display:block; ">
+                    <div class="sampleblock dcard ">
                         <SecondLogOverview Carousel=false />
                     </div>
-                    <div class="sampleblock col-12 col-md-6 col-lg-4" style="display:block; ">
+                    <div class="sampleblock dcard ">
                         <MicroPortalOverview Carousel=false />
                     </div>
-                </div>
+                </section>
 
                 <div style="clear:both;">
                     <br />
-                    <table class="table table-sm table-responsive">
-                        <thead>
-                            <tr>
-                                <th colspan="4" class="textcolor" style="text-align:center;">Technologies used overall</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="col-4">
-                                <td>Blazor</td>
-                                <td>MVC</td>
-                                <td>C#</td>
-                                <td>Razor</td>
-                            </tr>
-                            <tr class="col-4">
-                                <td>Bootstrap</td>
-                                <td>HTML</td>
-                                <td>CSS</td>
-                                <td>XML</td>
-                            </tr>
-                            <tr class="col-4">
-                                <td>Javascript</td>
-                                <td>Jquery</td>
-                                <td>SQL</td>
-                                <td>LinQ</td>
-                               
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div id="technologies">Technologies used overall
+                    <section class="dgrid">
+                        <div class="dcard">Blazor</div>
+                        <div class="dcard">MVC</div>
+                        <div class="dcard">C#</div>
+                        <div class="dcard">Razor</div>
+                        <div class="dcard">Bootstrap</div>
+                        <div class="dcard">HTML</div>
+                        <div class="dcard">CSS</div>
+                        <div class="dcard">XML</div>
+                        <div class="dcard">Javascript</div>
+                        <div class="dcard">Jquery</div>
+                        <div class="dcard">SQL</div>
+                        <div class="dcard">LinQ</div>
+                    </section>
+                    </div>
                 </div>
             </div>
             <div style="clear:both;"></div>
