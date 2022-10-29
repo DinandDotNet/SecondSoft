@@ -27,7 +27,7 @@ a, .btn-link {
     grid-template-columns: repeat(auto-fill, minmax(var(--minmax), 1fr));
 }
 .dcard {
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -44,8 +44,22 @@ a, .btn-link {
     font-size: 1rem;
     color: #fff;*/
 }
-  
 
+.dbutton:hover {
+    background-color: transparent;
+    border-color: #18bfef;
+}
+
+.dbutton {
+    border-radius: 37px 37px;
+    border-width: 2px;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 900;
+    letter-spacing: 0.075em;
+    white-space: nowrap;
+    --bs-btn-padding-x: 1.75rem;
+}
 .requestbutton {
     background-color: #888B8D;
     border-radius: 37px 37px 30px 5px;

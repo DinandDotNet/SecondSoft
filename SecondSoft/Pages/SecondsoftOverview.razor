@@ -1,25 +1,26 @@
 ﻿@page "/SecondsoftOverview"
+
 <div style="transform:scale(@scalesize)">
-        <header>
+    <header>
         <h3><a href="secondsoft">Secondsoft</a></h3>
-        </header>
-        <br/>
+    </header>
+    <br />
     <a href="secondsoft" style="text-decoration:underline;">
         <img style="max-width:100%;" src="./Images/ShowCase/2ndSoftPage.jpg" /><br />
     </a>
     <p>The main website is his own showcase in Blazor technology</p>
-        <ul class="actions special">
-        <li><a href="secondsoft" class="button textcolor">Full Story</a></li>
-        </ul>
+    <div class="absolute"  style="text-align:center; ">
+        <a href="secondsoft" class="btn btn-outline-dark dbutton textcolor" >Full Story</a>
     </div>
+</div>
 
 
-   
+
 @code {
     [Parameter]
     public bool Carousel { get; set; } = true;
     [Parameter]
-    public string scalesize { get; set; } 
+    public string scalesize { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -27,7 +28,7 @@
         {
             scalesize = "0.7";
         }
-       
+
     }
 }
 
