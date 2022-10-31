@@ -1,25 +1,22 @@
 ﻿@page "/BarmateOverview"
 <div style="transform:scale(@scalesize)">
-        <header>
+    <header>
         <h3 class="logo"><a href="Barmate">Barmate</a></h3>
-        </header>
-        <a href="barmate" class="image fit"><img src="images/bar.jpg" alt="" /></a>
-        <p>Barmate is an order webapp for any bar or restaurant. </p>
-       @* <ul class="actions special">
-        <li><a href="barmate" class="btn btn-outline-dark dbutton textcolor">Full Story</a></li>
-        </ul>*@
-    <div class="d-flex justify-content-center">
-        <a href="secondsoft" class="btn btn-outline-dark dbutton textcolor">Full Story</a>
+    </header>
+    <a href="barmate" class="image fit"><img src="images/bar.jpg" alt="" /></a>
+    <p>Barmate is an order webapp for any bar or restaurant. </p>
+    <div>
+        <a href="secondsoft" class="btn btn-outline-dark dbutton ">Full Story</a>
     </div>
-    </div>
+</div>
 
 
-   
+
 @code {
     [Parameter]
     public bool Carousel { get; set; } = true;
     [Parameter]
-    public string scalesize { get; set; } 
+    public string scalesize { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
@@ -27,7 +24,7 @@
         {
             scalesize = "0.7";
         }
-       
+
     }
 }
 

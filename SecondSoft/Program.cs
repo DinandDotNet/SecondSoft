@@ -1,15 +1,13 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using SecondSoft.Helpers;
-using SecondSoft.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddScoped<IMailService, MailService>();
-builder.Services.AddScoped<IEmails, Emails>();
+
 
 
 var app = builder.Build();

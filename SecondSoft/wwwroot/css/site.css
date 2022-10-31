@@ -60,6 +60,9 @@ a, .btn-link {
     white-space: nowrap;
     --bs-btn-padding-x: 1.75rem;
 }
+.dhidden_bg_color {
+    background-color:whitesmoke;
+}
 .requestbutton {
     background-color: #888B8D;
     border-radius: 37px 37px 30px 5px;
