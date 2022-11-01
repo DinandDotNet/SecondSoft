@@ -3,6 +3,14 @@
         display: inline-block;
         margin-right: 1em;
     }
+    .fading{
+	animation:fadingText 12s infinite;
+}
+    @@keyframes fadingText{
+        0%, 100% {color: #a2a8d3;}
+	    20%, 80% {color: #eee;}
+    }
+   
 </style>
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
@@ -47,8 +55,8 @@
         </div>
 
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="UnderConstruction">
-                <i class="fas fa-solid fa-person-digging"></i> <div style="font-size: .75em">Under Construction</div>
+            <NavLink class="nav-link fading" href="UnderConstruction">
+                <i class="fas fa-solid fa-person-digging"></i> <div class="" style="font-size: .75em">Under Construction</div>
             </NavLink>
         </div>
     </nav>

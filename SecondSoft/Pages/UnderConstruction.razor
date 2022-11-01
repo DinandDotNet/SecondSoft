@@ -1,10 +1,13 @@
 ﻿@page "/UnderConstruction"
 
 <style>
-
+    :root {
+        --tcolor: white;
+    }
     body {
         background-color: #222B31 !important;
     }
+  
 </style>
 <div class=" col-5" style="float:left;">
     <img class="imgcenter" src="./images/underconstruction.png" alt="under construction" />
@@ -17,11 +20,12 @@
 <div style="clear:both;"></div>
 <hr />
 
-<div style="color: white;">
+<div style="color: var(--tcolor);">
     <div class="col-6" style="font-size:.75em;float:left;">
+        <h4 style="color:var(--tcolor);">See how this site goes</h4>
         <i style="color:crimson" class="fa-solid fa-circle-right"></i> This site will be maintained between projects.  <br />
         <i style="color:#FAC533" class="fa-solid fa-circle-info"></i> About my recent projects and activities. <br />
-        <img style="width:20px; height:20px;" src="./images/blazor_icon.png" alt="under construction" />  &nbsp; &nbsp;This webapp is made in Blazor
+        <img style="width:20px; height:20px;background-color:var(--tcolor);" src="./images/blazor_icon.png" alt="under construction" />  &nbsp; &nbsp;This webapp is made in Blazor
     </div>
     <div class="col-6" style="font-size:.75em; float:left; margin-bottom:50px">
         <table>
