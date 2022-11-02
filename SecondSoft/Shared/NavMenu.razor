@@ -12,6 +12,12 @@
         display: inline-flex;
         max-width: 80px;
     }
+    .nav-link{
+        color: #d7d7d7 !important;
+    }
+    .bgBackground{
+    background-color: #212931;
+    }
 
     @@keyframes fadingText {
         0%, 100% {
@@ -23,7 +29,7 @@
         }
     }
 </style>
-<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm bgBackground box-shadow">
     <div class="container" style="font-size: 0.75rem;">
         @* <a class="navbar-brand" style="font-size:1.2rem" href="">2ndSoft</a>*@
         <button class="navbar-toggler" type="button" @onclick="ToggleNavMenu">
@@ -32,7 +38,7 @@
         <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
             <ul class="navbar-nav flex-grow-1">
                 <li class="nav-item" style="padding-top:0;">
-                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All" >
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                         <img class="brand" src="./images/logo/2nd Home Logo Border.png" />
                     </NavLink>
                 </li>
