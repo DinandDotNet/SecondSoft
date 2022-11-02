@@ -6,21 +6,79 @@
 <style>
     body {
         background-color: #222B31 !important;
-        font-family: Font Awesome 6 Free;
+        color: white;
     }
 
-    .sampleblock, .container>.dgrid {
-        /*float: left;*/
+    .headTitle {
+        font-family: 'Source Sans Pro', Helvetica, sans-serif;
+        font-size: 80px;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    #intro {
+        text-align: center;
+        transform: translateY(2rem);
+        margin-bottom: 240px;
+    }
+
+        #intro p {
+            font-style: italic;
+            padding-top: 1rem;
+        }
+
+    .sampleblock, .container > .dgrid {
         padding: 20px;
         --minmax: 240px;
     }
 
-    #technologies>.dgrid{
+    #technologies > .dgrid {
         --minmax: 90px;
     }
-    .dgrid>.dcard{
+
+    .dgrid > .dcard {
         font-size: 0.85em;
-        text-align:center;
+        text-align: center;
+    }
+
+    ul.actions {
+        display: flex;
+        cursor: default;
+        list-style: none;
+        margin-left: -1rem;
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .button {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 2px #ffffff;
+        color: #ffffff !important;
+    }
+
+    .solid {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        line-height: 4rem;
+        border-radius: 4rem;
+        text-indent: 4rem;
+        overflow: hidden;
+        padding: 0;
+        white-space: nowrap;
+        cursor: pointer;
+        display: inline-block;
+        text-align: center;
+        list-style: none;
+    }
+    
+    .button.large {
+        font-size: 0.9rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        padding: 0 2.75rem;
+        display: inline-block;
+        /*color: white !important;*/
     }
 </style>
 
@@ -31,10 +89,12 @@
 
         <!-- Intro -->
         <div id="intro">
-            <h1>My Portfolio</h1>
+            <h1 class="headTitle">My Portfolio</h1>
             <p>A showcase of my projects and abilities</p>
             <ul class="actions ">
-                <li><AnchorLink href="#Passioned" class="button letterspacesm icon solid solo fa-arrow-down scrolly"></AnchorLink></li>
+                <li>
+                    <AnchorLink href="#Passioned" class="button solid"><i style="margin-left: -108px;margin-top:16px;" class="fa-solid fa-arrow-down fa-2x fa-inverse"></i></AnchorLink>
+                </li>
             </ul>
         </div>
         <br />
@@ -48,12 +108,11 @@
                     Passionate .net developer <br /> and <br /> software architect
                 </div><br />
                 <div style="width:250px; margin:auto;">
-                    <a href="Dinand" class="image fit"><img src="images/code.jpg" alt="" /></a>
+                    <a href="Dinand"><img style="width:100%;" src="images/code.jpg" alt="" /></a>
                 </div>
                 <div>
                     <ul class="actions special">
                         <li><a href="Dinand" class="button large">My story</a></li>
-                        @*<li><a href="Showcase" class="button large">Showcase</a></li>*@
                     </ul>
                 </div>
             </div>
@@ -61,7 +120,7 @@
                 <div style="clear:both;"></div>
                 <h2>Blazor projects</h2> <br />
                 <section class="card-list" style="font-size: 0.85em;">
-                   
+
                     <div class="card">
                         <SecondsoftOverview Carousel=false />
                     </div>
@@ -75,7 +134,7 @@
                 <div style="clear:both"></div>
                 <h2 class="body ">MVC projects</h2> <br />
                 <section class="card-list" style="font-size: 0.85em;">
-                    
+
                     <div class="card ">
                         <FitmateOverview Carousel=false />
                     </div>
@@ -89,21 +148,22 @@
 
                 <div style="clear:both;">
                     <br />
-                    <div id="technologies">Technologies used overall
-                    <section class="dgrid">
-                        <div class="dcard">Blazor</div>
-                        <div class="dcard">MVC</div>
-                        <div class="dcard">C#</div>
-                        <div class="dcard">Razor</div>
-                        <div class="dcard">Bootstrap</div>
-                        <div class="dcard">HTML</div>
-                        <div class="dcard">CSS</div>
-                        <div class="dcard">XML</div>
-                        <div class="dcard">Javascript</div>
-                        <div class="dcard">Jquery</div>
-                        <div class="dcard">SQL</div>
-                        <div class="dcard">LinQ</div>
-                    </section>
+                    <div id="technologies">
+                        Technologies used overall
+                        <section class="dgrid">
+                            <div class="dcard">Blazor</div>
+                            <div class="dcard">MVC</div>
+                            <div class="dcard">C#</div>
+                            <div class="dcard">Razor</div>
+                            <div class="dcard">Bootstrap</div>
+                            <div class="dcard">HTML</div>
+                            <div class="dcard">CSS</div>
+                            <div class="dcard">XML</div>
+                            <div class="dcard">Javascript</div>
+                            <div class="dcard">Jquery</div>
+                            <div class="dcard">SQL</div>
+                            <div class="dcard">LinQ</div>
+                        </section>
                     </div>
                 </div>
             </div>
