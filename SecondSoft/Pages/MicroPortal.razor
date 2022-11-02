@@ -12,8 +12,8 @@
         font-size: 100px;
         font-weight: bold
     }
-    .imgDetail
-    {
+
+    .imgDetail {
         max-width: 80px;
         height: auto;
         float: left;
@@ -41,21 +41,19 @@
         <div class="upperblock maintext">All-in-one medical portal</div>
 
         <!-- Main -->
-        <div id="main" style="padding-left:20px">
+        <div id="main" style="padding: 1rem 0 0 2rem;">
             <!-- Post -->
-            <section class="post">
+            <section>
                 <h3>About..</h3>
-                <DashNotes Notes="Dnotes"/>
+                <DashNotes Notes="Dnotes" FontSize="0.75rem" />
 
-                <div><h5 style="float:left; margin-left:1rem;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
-                    <h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                <div>
+                    <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                    <h5 style="float:left;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
                 </div>
-                <br/>
-                <br />
                 <div hidden="@ShowDetails" class="dhidden_bg_color">
                     <div class="image main"><img class="imgDetail" src="images/MicroPortal/Mini lab.png" alt="" /></div>
                     <div style="clear:both;"></div>
-                    <br/>
                     <br />
                     <h5>Handsome</h5>
                     Web-service to collect the results from different brands of microlabs sending their measurements.<br />
@@ -99,7 +97,7 @@
                         <div style="clear:both;"></div>
                         <h5>Service</h5>
                         My own 2ndLog service (project)
-                    </a><br/>
+                    </a><br />
                     Logging all messages from this app and services to store for a long time.
                     For security, no personal information is allowed, only reference codes.
                     Every x days the rules are archived to a separate big data service.
@@ -107,10 +105,10 @@
                     Service desk has access to the data and can search with unique references what has been recorded.
                     Systems analyst reports on multiple concurrent issues and can view all log data.
                 </div>
-            </section>
 
-            <section class="post">
                 <div hidden="@ShowArchitecture" class="dhidden_bg_color">
+                    <div class="image main"></div>
+                    <div style="clear:both;"></div>
                     <b>An architecture story</b><br /> about a large-scale global project.<br />
                     Global Databases<img style="width:40px; height:40px;" src="./images/microportal/clouddb.png" /> share lab data <img style="width:40px; height:40px;" src="./images/microportal/lab.png" /> and MicroLabs<img style="width:40px; height:40px;" src="./images/microportal/mini lab.png" />.<br />
                     These labs large and small communicated through web services<img style="width:40px; height:40px;" src="./images/microportal/webservice.png" />.<br />
@@ -135,9 +133,11 @@
                         <li>A central logging service with tenants and tags for use by the service desk. This service uses the standard .net log routine.</li>
                     </ul>
                 </div>
-                <Contact/>
-                <br />
             </section>
+            <br />
+            <Contact />
+            <br />
+
         </div>
 
     </div>
@@ -146,7 +146,7 @@
     private bool ShowDetails { get; set; } = true;
     private bool ShowArchitecture { get; set; } = true;
     private List<DashNote> Dnotes { get; set; }
-    
+
     protected override async Task OnParametersSetAsync()
     {
         Dnotes = new List<DashNote>();

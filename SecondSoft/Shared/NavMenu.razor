@@ -3,16 +3,87 @@
         display: inline-block;
         margin-right: 1em;
     }
-    .fading{
-	animation:fadingText 12s infinite;
-}
-    @@keyframes fadingText{
-        0%, 100% {color: #a2a8d3;}
-	    20%, 80% {color: #eee;}
+
+    .fading {
+        animation: fadingText 12s infinite;
     }
-   
+
+    .brand {
+        display: inline-flex;
+        max-width: 80px;
+    }
+
+    @@keyframes fadingText {
+        0%, 100% {
+            color: #a2a8d3;
+        }
+
+        20%, 80% {
+            color: #eee;
+        }
+    }
 </style>
-<div class="top-row ps-3 navbar navbar-dark">
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+    <div class="container" style="font-size: 0.75rem;">
+        @* <a class="navbar-brand" style="font-size:1.2rem" href="">2ndSoft</a>*@
+        <button class="navbar-toggler" type="button" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item" style="padding-top:0;">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All" >
+                        <img class="brand" src="./images/logo/2nd Home Logo Border.png" />
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="PortFolio">
+                        <a class="fas" style="height:2rem;"> <img src="./Images/Portfolio_Icon.png" style="width:20px; height:20px" /></a>&nbsp; &nbsp;  Portfolio
+                    </NavLink>
+                </li>
+                <li class="nav-item">
+                    <NavLink class="nav-link" href="Barmate">
+                        <i class="fas fa-solid fa-champagne-glasses"></i> Barmate
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink class="nav-link" href="MicroPortal">
+                        <i class="fas fa-solid fa-vial"></i> MicroPortal
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink class="nav-link" target="_blank" href="http://fitmate.secondsoft.nl/">
+                        <a class="fas" style="height:2rem;"> <img src="./Images/Fitmatlogosmall32_white.png" style="width:20px; height:20px" /></a>&nbsp; &nbsp;  Fitmate &nbsp;  <i class="fa-solid fa-up-right-from-square"></i>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink class="nav-link " target="_blank" href="https://logservice.secondsoft.nl/">
+                        <a class="fas" style="height:2rem;"> <img src="./Images/logo/2ndLogWhite.png" style="width:20px; height:20px" /></a>&nbsp; &nbsp;  2ndLog &nbsp; <i class="fa-solid fa-up-right-from-square"></i>
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink class="nav-link fading" href="UnderConstruction">
+                        <i class="fas fa-solid fa-person-digging"></i> Under Construction
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@code {
+    bool collapseNavMenu = true;
+
+    string baseMenuClass = "navbar-collapse d-sm-inline-flex flex-sm-row-reverse";
+
+    string NavMenuCssClass => baseMenuClass + (collapseNavMenu ? " collapse" : "");
+
+    void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+@*<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="">SecondSoft</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -72,3 +143,4 @@
         collapseNavMenu = !collapseNavMenu;
     }
 }
+*@

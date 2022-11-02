@@ -1,7 +1,7 @@
 ﻿@using SecondSoft.Models
 <link href="./css/dashnotes.css" rel="stylesheet" />
 
-<div class="page-content container note-has-grid">
+<div class="page-content container note-has-grid" style="font-size: @FontSize;">
     <div class="tab-content bg-transparent">
         <div id="note-full-container" class="note-has-grid row">
             @if (Notes.Count() != 0 )
@@ -19,4 +19,6 @@
 @code {
     [Parameter]
     public List<DashNote> Notes {get;set;}
+    [Parameter]
+    public string FontSize { get; set; }
 }

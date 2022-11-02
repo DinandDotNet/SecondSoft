@@ -4,17 +4,11 @@
     body {
         background-color: #222B31 !important;
     }
-
     .title {
         color: black;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 100px;
         font-weight: bold
-    }
-
-    img {
-        width: 80%;
-        height: 300px;
     }
 </style>
 
@@ -28,50 +22,47 @@
         </header>
         <div class="upperblock maintext">Barmate</div>
         <!-- Main -->
-        <div id="main" style="padding-left:20px;">
-
+        <div id="main" style="padding:1rem 0 0 2rem;">
+            
+            <div><img style="width:20%; height:auto; float: left;" src="./Images/Terrace.jpg" alt="" /></div>
             <div>
-                <div><img style="width:20%; height:100%; float: left;" src="./Images/Terrace.jpg" alt="" /></div>
-                <div>
-                    <h3 style="float: left; margin : 10%">
-                        The best overview of many seats <br />or large outdoor spaces with few staff
-                    </h3></div>
+                <h3 style="float: left; margin : 10%">
+                    The best overview of many seats <br />or large outdoor spaces with few staff
+                </h3>
             </div>
 
             <div style="clear: both;"></div>
             <br />
-            <DashNotes Notes="Dnotes" />
-            <br/>
+            <DashNotes Notes="Dnotes" FontSize="0.75rem" />
+            <br />
             <div>
-                <h5 style="float:left; margin-left:1rem;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
                 @*<h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>*@
             </div>
             <br />
-            <br />
             <div hidden="@ShowDetails" class="dhidden_bg_color">
-                Barmate represents the best digital service partner for hotels, restaurants and bars with indoor and outdoor seating.<br/> 
-                Barmate works for food courts and also for collaborating Street food trucks. <br/>
-                Customers and staff can place a complete order, Barmate does the rest.<br/>
-                The program is able to split the order and send it to the appropriate station such as bar, kitchen, dessert shop, grill, coffee corner and more.<br/>
-                <br/>
-                Each order has its own notifications. All stations will announce when they are ready to serve. <br/>
-                Staff will take care of the payment, which includes tools such as group payment, but also individual member payments.<br/>
-                Tips are kept separate, informs staff if customer demands attention.<br/>
-                It will even prompt staff to walk past a customer after a while so they feel seen and ready to order more.<br/>
-                <br/>                
-                With Barmate you can handle large sites with less staff.<br/>
-                <br/>
+                Barmate represents the best digital service partner for hotels, restaurants and bars with indoor and outdoor spaces.<br />
+                Barmate works for food courts and also for collaborating Street food trucks. <br />
+                Customers and staff can place a complete order, Barmate does the rest.<br />
+                The program is able to split the order and send it to the appropriate station such as bar, kitchen, dessert shop, food truck, grill, coffee corner and more.<br />
+                <br />
+                Each order has its own notifications. All stations will announce when they are ready to serve. <br />
+                Staff will take care of the payment, which includes tools such as group payment, but also individual member payments.<br />
+                Tips are kept separate, informs staff if customer demands attention.<br />
+                It will even prompt staff to walk past a customer after a while so they feel seen and ready to order more.<br />
+                <br />
+                With Barmate you can handle large sites with less staff.<br />
+                <br />
                 <i class="fa-solid fa-thumbs-up"></i>That's why Barmate is your best partner you've ever had.
-                <br/>
-                <br/>
-                <br/>
+                <br />
+                <br />
             </div>
-            <p style="font-size:.75rem">
+            <div style="font-size:.75rem;">
                 The web app is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
                 Dynamically designed to accommodate all different situations on site. <br />
                 Convenient design with colors and quick popups to enter information in a logical way. <br />
                 Colors that indicate the status of each order without the need for details.<br />
-            </p>
+            </div>
             <br />
             <br />
         </div>
