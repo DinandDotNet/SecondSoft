@@ -24,7 +24,7 @@ h1:focus {
 }
 
 a, .btn-link {
-    /*color: black;*/
+    color: black;
 }
 
 .btn-primary {
@@ -159,13 +159,14 @@ i.fas, i.fab, a.fas {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    /*width:30%;*/
 }
 
 .upperblock {
     background: rgba(255, 255, 255, 0.175);
     color: #ffffff;
     height: 4rem;
-    margin: 0 4rem;
+    margin: 0 2rem;
     max-width: 72rem;
     text-align: center !important
 }
