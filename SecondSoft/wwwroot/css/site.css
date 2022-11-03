@@ -14,6 +14,7 @@ a.navbar-brand {
     text-align: center;
     word-break: break-all;
 }
+
 a:hover {
     border-bottom-color: transparent;
     color: #18bfef !important;
@@ -24,7 +25,8 @@ h1:focus {
 }
 
 a, .btn-link {
-    color: black;
+    /*color: black;*/
+    text-decoration: none;
 }
 
 .btn-primary {
@@ -54,8 +56,8 @@ a, .btn-link {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /*background: #565353;
-    font-size: 1rem;
+    /*background: #565353;*/
+    /*font-size: 1rem;
     color: #fff;*/
 }
 
@@ -65,15 +67,32 @@ a, .btn-link {
 }
 
 .dbutton {
-    border-radius: 37px 37px;
-    border-width: 2px;
+    margin: 2px;
+    border-radius: 37px;
+    /*color: @mycolor !important;*/
+    background-color: transparent;
+    appearance: none;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
     font-family: "Source Sans Pro", Helvetica, sans-serif;
     font-size: 0.8rem;
     font-weight: 900;
     letter-spacing: 0.075em;
+    /*height: 3rem;*/
+    line-height: 3rem;
+    padding: 0 2rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
     white-space: nowrap;
-    --bs-btn-padding-x: 1.75rem;
 }
+    .dbutton:hover {
+        box-shadow: inset 0 0 0 2px #18bfef;
+        color: #18bfef !important;
+        border-bottom-color: transparent;
+    }
 
 .dhidden_bg_color {
     background-color: whitesmoke;
@@ -159,14 +178,13 @@ i.fas, i.fab, a.fas {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /*width:30%;*/
 }
 
 .upperblock {
     background: rgba(255, 255, 255, 0.175);
     color: #ffffff;
     height: 4rem;
-    margin: 0 2rem;
+    margin: 0 4rem;
     max-width: 72rem;
     text-align: center !important
 }
@@ -214,9 +232,9 @@ i.fas, i.fab, a.fas {
         letter-spacing: -0.925em !important;
     }
 }
+
 @media screen and (max-width: 480px) {
     .upperblock {
         margin: 0 0rem;
     }
 }
-
