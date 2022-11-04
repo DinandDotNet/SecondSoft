@@ -5,6 +5,9 @@
         background-color: #222B31 !important;
         color: #888B8D !important;
     }
+     #wrapper {
+        color: white;
+    }
 
     .title {
         color: black;
@@ -20,8 +23,9 @@
         padding-right: 20px;
     }
 
-    .subtitle {
-        color: #888B8D !important;
+    .dhidden_bg_color {
+        color: black;
+        padding: 15px;
     }
 
     @@media screen and (max-width: 640px) {
@@ -36,7 +40,7 @@
     <!-- Wrapper -->
     <div id="wrapper">
         <header id="header">
-            <a href="MicroPortal.html" class="logo">Micro Portal project</a>
+            <div class="dheadline dheadlinebox">Micro Portal project</div>
         </header>
         <div class="upperblock maintext">All-in-one medical portal</div>
 
@@ -45,12 +49,16 @@
             <!-- Post -->
             <section>
                 <h3>About..</h3>
-                <DashNotes Notes="Dnotes" FontSize="0.75rem" />
+                <div id="dashnotes" style="color:black;">
+                    <br />
+                    <DashNotes Notes="Dnotes" FontSize="0.75rem" />
+                </div>
 
                 <div>
                     <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
                     <h5 style="float:left;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
                 </div>
+                <br/>
                 <div hidden="@ShowDetails" class="dhidden_bg_color">
                     <div class="image main"><img class="imgDetail" src="images/MicroPortal/Mini lab.png" alt="" /></div>
                     <div style="clear:both;"></div>
@@ -135,7 +143,7 @@
                 </div>
             </section>
             <br />
-            <Contact />
+            <Contact mycolor="white" />
             <br />
 
         </div>

@@ -1,19 +1,21 @@
 ﻿@page "/Dinand"
 
 <style>
+    :root{
+        --color: white;
+    }
     body {
         background-color: #222B31 !important;
-        color: #888B8D !important;
+    }
+
+    #wrapper {
+        color: var(--color);
     }
 
     .main {
-        font-family: "Source Sans Pro", Helvetica, sans-serif;
     }
 
-    .subtitle {
-        color: #888B8D !important;
-    }
-    .imgsize{
+  .imgsize{
         transform:scale(0.7);
         top:-20px;
     }
@@ -30,18 +32,18 @@
 <!-- Wrapper -->
 <div id="wrapper">
     <header id="header">
-        <a href="Dinand" class="logo">Developer or architect</a>
+        <div class="dheadline dheadlinebox">Developer or architect</div>
     </header>
     <div class="upperblock maintext">Choose?</div>
 
     <!-- Main -->
-    <div id="main">
+    <div id="main" style="padding:0 40px; 0 20px">
         <a target="_blank" href="https://airtable.com/shr4bkeuciESQk03D" class="requestbutton" style="transform:scale(0.9)">
             <i style="float: right;" class="fas fa-circle-info"></i><br />Request<br /> my<br />Resume.
         </a>
         <br />
-        <div class="container col-5 ">
-            <div class="subtitle " style="float:left;">
+        <div class="container col-5 " style="float:left;">
+            <div class="subtitle" style="text-align:center;" >
                 Looking for a developer? <br />
                 <div style="font-size: 0.85em;">I dream in code</div>
 
@@ -49,8 +51,8 @@
 
             </div>
         </div>
-        <div class="container">
-            <div class="subtitle" style="text-align: center; float:right;">
+        <div class="container col-5" style="float:right">
+            <div class="subtitle" style="text-align: center; ">
                 Need a softwarearchitect?
                 <div style="font-size: 0.75em">
                     I create cost efficient, easy maintainable<br />
@@ -84,7 +86,7 @@
 
         <br />
         <br />
-        <Contact />
+        <Contact mycolor="var(--color)" />
         <br />
         <br />
     </div>

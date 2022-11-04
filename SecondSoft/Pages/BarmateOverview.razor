@@ -1,14 +1,15 @@
 ﻿@page "/BarmateOverview"
+
 <div style="transform:scale(@scalesize)">
     <header>
-        <h3><a href="Barmate">Barmate</a></h3>
+        <h3><a style="color:@mycolor;" href="Barmate">Barmate</a></h3>
     </header>
     <a href="barmate" style="text-decoration:underline;">
         <img style="max-width:100%;" src="./Images/bar.jpg" /><br />
     </a>
-    <p>Barmate is an order webapp for any bar or restaurant. </p>
+    <p style="color:@mycolor;">Barmate is an order webapp for any bar or restaurant. </p>
     <div>
-        <a href="secondsoft" class="btn btn-outline-dark dbutton ">Full Story</a>
+        <a href="secondsoft" class="dbutton btn btn-outline-dark" style="color: @mycolor;box-shadow: inset 0 0 0 2px @mycolor">Full Story</a>
     </div>
 </div>
 
@@ -19,7 +20,8 @@
     public bool Carousel { get; set; } = true;
     [Parameter]
     public string scalesize { get; set; }
-
+    [Parameter]
+    public string mycolor { get; set; } = "black";
     protected override async Task OnParametersSetAsync()
     {
         if (Carousel)

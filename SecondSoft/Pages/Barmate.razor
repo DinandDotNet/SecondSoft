@@ -4,11 +4,20 @@
     body {
         background-color: #222B31 !important;
     }
+
+    #wrapper {
+        color: white;
+    }
     .title {
         color: black;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 100px;
         font-weight: bold
+    }
+
+    .dhidden_bg_color {
+        color: black;
+        padding: 15px;
     }
 </style>
 
@@ -16,24 +25,23 @@
 <body class="is-preload">
     <div id="wrapper">
         <header id="header">
-            <a href="barmate.html" class="logo">
-                Your mate is ready for orders
-            </a>
+            <div class="dheadline dheadlinebox">Your mate is ready for orders</div>
         </header>
         <div class="upperblock maintext">Barmate</div>
         <!-- Main -->
         <div id="main" style="padding:1rem 0 0 2rem;">
-            
-            <div><img style="width:20%; height:auto; float: left;" src="./Images/Terrace.jpg" alt="" /></div>
+
+            <div><img style="width:20%; height:auto; float: left; padding-left:2rem;" src="./Images/Terrace.jpg" alt="" /></div>
             <div>
                 <h3 style="float: left; margin : 10%">
                     The best overview of many seats <br />or large outdoor spaces with few staff
                 </h3>
             </div>
 
-            <div style="clear: both;"></div>
-            <br />
-            <DashNotes Notes="Dnotes" FontSize="0.75rem" />
+            <div style="clear: both;color: black;">
+                <br />
+                <DashNotes Notes="Dnotes" FontSize="0.75rem" />
+            </div>
             <br />
             <div>
                 <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
@@ -55,8 +63,9 @@
                 <br />
                 <i class="fa-solid fa-thumbs-up"></i>That's why Barmate is your best partner you've ever had.
                 <br />
-                <br />
+
             </div>
+            <br />
             <div style="font-size:.75rem;">
                 The web app is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
                 Dynamically designed to accommodate all different situations on site. <br />

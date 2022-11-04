@@ -25,7 +25,6 @@ h1:focus {
 }
 
 a, .btn-link {
-    /*color: black;*/
     text-decoration: none;
 }
 
@@ -61,48 +60,6 @@ a, .btn-link {
     color: #fff;*/
 }
 
- .button.large {
-/*        font-size: 0.9rem;
-        height: 3.5rem;
-        line-height: 3.5rem;
-        padding: 0 2.75rem;
-        display: inline-block;*/
-        /*color: white !important;*/
-}
-
-.button {
-    margin: 2px;
-    border-radius: 37px;
-    color: white !important;
-    background-color: transparent;
-    box-shadow: inset 0 0 0 2px #ffffff;
-    appearance: none;
-    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
-    border: 0;
-    cursor: pointer;
-    display: inline-block;
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
-    font-size: 0.8rem;
-    font-weight: 900;
-    letter-spacing: 0.075em;
-    /*height: 3rem;*/
-    line-height: 3rem;
-    padding: 0 2rem;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-    .button:hover {
-        box-shadow: inset 0 0 0 2px #18bfef;
-        color: #18bfef !important;
-    }
-
-a:hover {
-    border-bottom-color: transparent;
-}
-
 .dbutton:hover {
     background-color: transparent;
     border-color: #18bfef;
@@ -111,7 +68,6 @@ a:hover {
 .dbutton {
     margin: 2px;
     border-radius: 37px;
-    /*color: @mycolor !important;*/
     background-color: transparent;
     appearance: none;
     transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -130,8 +86,9 @@ a:hover {
     text-transform: uppercase;
     white-space: nowrap;
 }
+
     .dbutton:hover {
-        box-shadow: inset 0 0 0 2px #18bfef;
+        box-shadow: inset 0 0 0 2px #18bfef !important;
         color: #18bfef !important;
         border-bottom-color: transparent;
     }
@@ -139,6 +96,30 @@ a:hover {
 .dhidden_bg_color {
     background-color: whitesmoke;
 }
+
+#header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 20rem;
+    padding-bottom: 8rem;
+    text-align: center;
+}
+
+    #header .dheadline {
+        font-family: "Source Sans Pro", Helvetica, sans-serif;
+        font-size: 2.25rem;
+        letter-spacing: 0.075em;
+        line-height: 1;
+        padding: 1rem 1.75rem;
+        text-transform: uppercase;
+    }
+
+        .dheadline.dheadlinebox {
+            border-style: solid;
+            border-width: 5px !important;
+        }
 
 .requestbutton {
     background-color: #888B8D;
@@ -154,15 +135,9 @@ a:hover {
 }
 
 .subtitle {
-    font-family: 'Merriweather, Georgia, serif';
-    font-size: 1.5rem;
     font-weight: 900;
     font-style: italic;
 }
-
-    .subtitle.grey {
-        color: #888B8D !important;
-    }
 
 .content {
     padding-top: 1.1rem;
@@ -260,7 +235,6 @@ i.fas, i.fab, a.fas {
     }
 
     .requestbutton {
-        /*width:28%;*/
         width: 7rem;
         font-size: 12px;
     }

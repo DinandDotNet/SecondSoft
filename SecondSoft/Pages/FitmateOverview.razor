@@ -1,17 +1,18 @@
 ﻿@page "/FitmateOverview"
+
 <div style="transform:scale(@scalesize)">
     <header>
-        <h3><a target="_blank" href="http://fitmate.secondsoft.nl/">Fitmate</a></h3>
+        <h3><a style="color:@mycolor;" target="_blank" href="http://fitmate.secondsoft.nl/">Fitmate</a></h3>
     </header>
     <a target="_blank" href="http://fitmate.secondsoft.nl/" style="text-decoration:underline;">
         <img style="max-width:100%;" src="./Images/Group1.jpg" /><br />
     </a>
-    <p>
+    <p style="color:@mycolor;">
         A gym program. Members can track and review their performance. Gyms can monitor and ajust the
         developments of their members..
     </p>
     <div>
-        <a target="_blank" href="http://fitmate.secondsoft.nl/" class="btn btn-outline-dark dbutton ">
+        <a target="_blank" href="http://fitmate.secondsoft.nl/" class="btn btn-outline-dark dbutton" style="color: @mycolor;box-shadow: inset 0 0 0 2px @mycolor">
             Fitmate &nbsp;<i class="fa-solid fa-up-right-from-square"></i>
         </a>
     </div>
@@ -21,8 +22,10 @@
     [Parameter]
     public bool Carousel { get; set; } = true;
     [Parameter]
-    public string scalesize { get; set; } = "1.0";
-
+    public string scalesize { get; set; }
+    [Parameter]
+    public string mycolor { get; set; } = "black";
+   
     protected override async Task OnParametersSetAsync()
     {
         if (Carousel)

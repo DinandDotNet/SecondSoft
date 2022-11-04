@@ -1,21 +1,33 @@
 ﻿@page "/contact"
 <style>
-   
-</style>
+    #contactmain{
+        font-size: 0.85em;
+        margin-left: 15px;
+        color: @mycolor !important;
+    }
 
-<div class="subtitle" style="font-size:0.85em;margin-left:15px;color:@mycolor !important;">
-    <div class="subtitle" style="font-size:2em">Curious - questions - interest.</div>
+    #contactmain .dbutton{
+            box-shadow: inset 0 0 0 2px @mycolor
+    }
+
+    #contactmain a{
+            color: @mycolor;
+    }
+</style>
+<div id="contactmain">
+    <div class="subtitle" style="font-size:2em"><i>Curious - questions - interest.</i></div>
     <!-- Calendly link widget begin -->
-    <a href="" class="subtitle button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;">
-        Meet with me</a>
+    <div href="" class="dbutton subtitle" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;">
+        Meet with me
+    </div>
     <!-- Calendly link widget end -->
-    
-    <div class="button subtitle" @onclick="@SiteBarShow" style="">
+
+    <div class="dbutton subtitle" @onclick="@SiteBarShow" style="color:@mycolor">
         Call me
-        </div>
-    <a class="subtitle button" target="_blank" href="https://www.secondsoft.nl/businesscard">see my Business card</a>
+    </div>
+    <a class="subtitle dbutton" target="_blank" href="https://www.secondsoft.nl/businesscard">see my Business card</a>
     <div style="clear:both; padding-bottom:10px;"></div>
-    <p><a @onclick="() => Alert(message)">or contact me by <i class="fas fa-arrow-circle-down"></i></a></p>
+    <p><a @onclick="() => Alert(message)" >or contact me by <i class="fas fa-arrow-circle-down"></i></a></p>
 </div>
 
 @if (showSitebar)
