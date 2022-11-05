@@ -1,18 +1,22 @@
 ﻿@page "/FitmateOverview"
-
-<div style="transform:scale(@scalesize)">
+<style>
+    #fitmateoverview .mycolor{
+    color: @mycolor;
+    }
+</style>
+<div id="fitmateoverview" style="transform:scale(@scalesize)">
     <header>
-        <h3><a style="color:@mycolor;" target="_blank" href="http://fitmate.secondsoft.nl/">Fitmate</a></h3>
+        <h3><a class="mycolor" target="_blank" href="http://fitmate.secondsoft.nl/">Fitmate</a></h3>
     </header>
     <a target="_blank" href="http://fitmate.secondsoft.nl/" style="text-decoration:underline;">
         <img style="max-width:100%;" src="./Images/Group1.jpg" /><br />
     </a>
-    <p style="color:@mycolor;">
+    <p class="mycolor">
         A gym program. Members can track and review their performance. Gyms can monitor and ajust the
         developments of their members..
     </p>
     <div>
-        <a target="_blank" href="http://fitmate.secondsoft.nl/" class="btn btn-outline-dark dbutton" style="color: @mycolor;box-shadow: inset 0 0 0 2px @mycolor">
+        <a target="_blank" href="http://fitmate.secondsoft.nl/" class="btn btn-outline-dark dbutton mycolor" style="box-shadow: inset 0 0 0 2px @mycolor">
             Fitmate &nbsp;<i class="fa-solid fa-up-right-from-square"></i>
         </a>
     </div>

@@ -4,32 +4,48 @@
     :root {
         --tcolor: white;
     }
+
     body {
         background-color: #222B31 !important;
     }
-  
+
+    #note-full-container>.col-lg-6 {
+        width: 100%;
+    }
 </style>
-<br/>
-<div class="col-5" style="float:left;">
-    <img class="imgcenter" src="./images/underconstruction.png" alt="under construction" />
-    <div style="font-size:.80em; text-align:center; color:#FAC533">And thank you for your understanding.</div>
-</div>
+<br />
 <div class="main col-5" style="text-align:center; font-size:2em; margin:10px; float:left; color: var(--tcolor);">
-    Worklist
+    List of activities
+</div>
+<div class="col-5" style="float:left;">
+    <img class="imgcenter" style="max-width:150px;" src="./images/underconstruction.png" alt="under construction" />
+    <div style="font-size:.80em; text-align:center; color:#FAC533">And thank you for your understanding.</div>
 </div>
 
 <div style="clear:both;"></div>
-<hr />
+<br />
 
-<div style="color: var(--tcolor);">
-    <div class="col-6" style="font-size:.75em;float:left;">
-        <h4 style="color:var(--tcolor);">See how this site goes</h4>
-        <i style="color:crimson" class="fa-solid fa-circle-right"></i> This site will be maintained between projects.  <br />
-        <i style="color:#FAC533" class="fa-solid fa-circle-info"></i> About my recent projects and activities. <br />
-        <img style="width:20px; height:20px;background-color:var(--tcolor);" src="./images/blazor_icon.png" alt="under construction" />  &nbsp; &nbsp;This webapp is made in Blazor
+<div>
+    <div class="col-6" style="float:left;">
+        <div id="dashnotes" style="color:black;">
+            <DashNotes Notes="Dnotes" FontSize="0.75rem" />
+        </div>
     </div>
-    <div class="col-6" style="font-size:.75em; float:left; margin-bottom:50px">
+
+    <div class="col-6" style="font-size:.75em; float:left; margin-bottom:50px; color: var(--tcolor); ">
+        <div>
+            <h4 style="color:var(--tcolor);">See how this site goes</h4>
+            <i style="color:crimson" class="fa-solid fa-circle-right"></i> This site will be maintained between projects.  <br />
+            <i style="color:#FAC533" class="fa-solid fa-circle-info"></i> About my recent projects and activities. <br />
+            <img style="width:20px; height:20px;background-color:var(--tcolor);" src="./images/blazor_icon.png" alt="under construction" />  &nbsp; &nbsp;This webapp is a project made in Blazor, HTML and CSS
+        </div>
+        <br />
+        <div style="clear:both;"></div>
         <table>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Set Buttons in cards in one line (bottom left) dynamicly. Still looking for a solution.</td>
+            </tr>
             <tr>
                 <td><input type="checkbox" /></td>
                 <td>Create a page for 2ndLog with content </td>
@@ -44,8 +60,10 @@
             </tr>
             <tr>
                 <td><input type="checkbox" /></td>
-                <td>Clean up old CSS and replace / rebuild old with newer css level. (Clean-up leftovers from the merge of three sites).
-                    Over 80% decreased by restyling on a higher css level (4-11)</td>
+                <td>
+                    Clean up old CSS and replace / rebuild old with newer css level. (Clean-up leftovers from the merge of three sites).
+                    Over 80% decreased by restyling on a higher css level (4-11)
+                </td>
             </tr>
             <tr>
                 <td><input type="checkbox" checked /></td>
@@ -138,5 +156,14 @@
 <br />
 <br />
 @code {
-
+    private List<DashNote> Dnotes { get; set; }
+    protected override async Task OnParametersSetAsync()
+    {
+        Dnotes = new List<DashNote>();
+        Dnotes.Add(new DashNote() { Title = "Point of sale webapp", Text0 = $"First webapp to create with Vue.js. Contains -Authentication -Product management, -Splitted screen for staff and client", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "Made for healthcare providers", Text0 = "Push, analyze and receive results from a reliable service.", Group = "important" });
+        Dnotes.Add(new DashNote() { Title = "The system connects and secures", Text0 = "With easy management for secure access.", Group = "social" });
+        Dnotes.Add(new DashNote() { Title = "Patient data", Text0 = "Only visible to theire own healthcare provider.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "This application has been tested", Text0 = "and approved by hackers and security officers.", Group = "important" });
+    }
 }

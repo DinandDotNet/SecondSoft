@@ -15,11 +15,6 @@
         font-weight: bold
     }
 
-    .dhidden_bg_color {
-        color: black;
-        padding: 15px;
-    }
-
     .bmFrame{
         width:20%
     }
@@ -76,7 +71,7 @@
                 @*<h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>*@
             </div>
             <br />
-            <div hidden="@ShowDetails" class="dhidden_bg_color">
+            <div hidden="@ShowDetails" class="dhidden_block">
                 Barmate represents the best digital service partner for hotels, restaurants and bars with indoor and outdoor spaces.<br />
                 Barmate works for food courts and also for collaborating Street food trucks. <br />
                 Customers and staff can place a complete order, Barmate does the rest.<br />
@@ -107,17 +102,18 @@
 </body>
 @code {
     private string? imageSource;
-    private List<DashNote> Dnotes { get; set; } = new List<DashNote>();
+    private List<DashNote> Dnotes { get; set; }
     private bool ShowDetails { get; set; } = true;
     private bool ShowArchitecture { get; set; } = true;
     protected override async Task OnParametersSetAsync()
     {
-        Dnotes.Add(new DashNote() { Title = "Staff and customers can order", Text = "Barmate takes care of it all.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Sends the order through the stations", Text = "Various bars or cuisines.", Group = "" });
-        Dnotes.Add(new DashNote() { Title = "Able to serve a food court", Text = "With multiple bars and restaurants or food trucks.", Group = "important" });
-        Dnotes.Add(new DashNote() { Title = "Customers can", Text = "enable staff, can see their order history and status.", Group = "social" });
-        Dnotes.Add(new DashNote() { Title = "Staff takes care of the payment", Text = "While customers will be able to pay themselves in the near future.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Staff is always aware", Text = "And can check status in real time.", Group = "important" });
+        Dnotes = new List<DashNote>();
+        Dnotes.Add(new DashNote() { Title = "Staff and customers can order", Text0 = "Barmate takes care of it all.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "Sends the order through the stations", Text0 = "Various bars or cuisines.", Group = "" });
+        Dnotes.Add(new DashNote() { Title = "Able to serve a food court", Text0 = "With multiple bars and restaurants or food trucks.", Group = "important" });
+        Dnotes.Add(new DashNote() { Title = "Customers can", Text0 = "enable staff, can see their order history and status.", Group = "social" });
+        Dnotes.Add(new DashNote() { Title = "Staff takes care of the payment", Text0 = "While customers will be able to pay themselves in the near future.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "Staff is always aware", Text0 = "And can check status in real time.", Group = "important" });
         ShowImage();
     }
     private void ShowImage()

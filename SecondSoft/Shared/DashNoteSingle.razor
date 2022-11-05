@@ -5,7 +5,11 @@
         <div class="dashcard dashcard-body">
             <span class="side-stick"></span>
             <h5 class="note-title">@Note.Title</h5>
-            <div>@Note.Text</div>
+            @if (!string.IsNullOrEmpty(Note.Text0))
+            {
+                <div>@Note.Text0</div>
+            }
+           
         </div>
     </div>
 }

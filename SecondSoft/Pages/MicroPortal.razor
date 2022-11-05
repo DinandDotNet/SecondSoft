@@ -5,7 +5,8 @@
         background-color: #222B31 !important;
         color: #888B8D !important;
     }
-     #wrapper {
+
+    #wrapper {
         color: white;
     }
 
@@ -23,14 +24,21 @@
         padding-right: 20px;
     }
 
-    .dhidden_bg_color {
-        color: black;
-        padding: 15px;
+    @@media screen and (max-width: 992px) {
+        .maintext {
+            font-size: 35px;
+        }
+    }
+
+    @@media screen and (max-width: 768px) {
+        .maintext {
+            font-size: 28px;
+        }
     }
 
     @@media screen and (max-width: 640px) {
         .maintext {
-            font-size: 20px;
+            font-size: 23px;
         }
     }
 </style>
@@ -55,12 +63,11 @@
                 </div>
 
                 <div style="padding-bottom:20px;">
-                    <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                    <h5 style="float:left;padding-right:40px;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
                     <h5 style="float:left;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
                 </div>
-                <br/>
                 <br />
-                <div hidden="@ShowDetails" class="dhidden_bg_color">
+                <div hidden="@ShowDetails" class="dhidden_block">
                     <div class="image main"><img class="imgDetail" src="images/MicroPortal/Mini lab.png" alt="" /></div>
                     <div style="clear:both;"></div>
                     <br />
@@ -115,7 +122,7 @@
                     Systems analyst reports on multiple concurrent issues and can view all log data.
                 </div>
 
-                <div hidden="@ShowArchitecture" class="dhidden_bg_color">
+                <div hidden="@ShowArchitecture" class="dhidden_block">
                     <div class="image main"></div>
                     <div style="clear:both;"></div>
                     <b>An architecture story</b><br /> about a large-scale global project.<br />
@@ -159,11 +166,11 @@
     protected override async Task OnParametersSetAsync()
     {
         Dnotes = new List<DashNote>();
-        Dnotes.Add(new DashNote() { Title = "This one-stop-shop", Text = "Contains a range of programs with collected and analyzed results.", Group = "" });
-        Dnotes.Add(new DashNote() { Title = "Made for healthcare providers", Text = "Push, analyze and receive results from a reliable service.", Group = "important" });
-        Dnotes.Add(new DashNote() { Title = "The system connects and secures", Text = "With easy management for secure access.", Group = "social" });
-        Dnotes.Add(new DashNote() { Title = "Patient data", Text = "Only visible to theire own healthcare provider.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "This application has been tested", Text = "and approved by hackers and security officers.", Group = "important" });
+        Dnotes.Add(new DashNote() { Title = "This one-stop-shop", Text0 = "Contains a range of programs with collected and analyzed results.", Group = "" });
+        Dnotes.Add(new DashNote() { Title = "Made for healthcare providers", Text0 = "Push, analyze and receive results from a reliable service.", Group = "important" });
+        Dnotes.Add(new DashNote() { Title = "The system connects and secures", Text0 = "With easy management for secure access.", Group = "social" });
+        Dnotes.Add(new DashNote() { Title = "Patient data", Text0 = "Only visible to theire own healthcare provider.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "This application has been tested", Text0 = "and approved by hackers and security officers.", Group = "important" });
     }
 
     private void Details()

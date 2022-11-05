@@ -93,8 +93,12 @@ a, .btn-link {
         border-bottom-color: transparent;
     }
 
-.dhidden_bg_color {
+.dhidden_block {
     background-color: whitesmoke;
+    color: black;
+    padding: 15px;
+    border-radius: 15px;
+    margin-top:20px;
 }
 
 #header {
