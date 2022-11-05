@@ -17,7 +17,7 @@
         <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
             <ul class="navbar-nav flex-grow-1" style="white-space: nowrap;">
                 <li class="nav-item" style="padding-top:0;">
-                    <NavLink class="nav-link" href="PortFolio">
+                    <NavLink class="nav-link" href="PortFolio" @onclick="() => expandSubNavSettings=false">
                         <a class="fas" style="height:2rem;"> <img src="./Images/Portfolio_Icon.png" style="width:20px; height:20px" /></a>
                         &nbsp;&nbsp; Portfolio
                     </NavLink>
@@ -55,7 +55,7 @@
                     }
                 </li>
                 <li class="nav-item">
-                    <NavLink class="nav-link text-white" href="UnderConstruction">
+                    <NavLink class="nav-link text-white" href="UnderConstruction" @onclick="() => expandSubNavSettings=false">
                         <i class="fas fa-solid fa-person-digging"></i> &nbsp; Me at work
                     </NavLink>
                 </li>
