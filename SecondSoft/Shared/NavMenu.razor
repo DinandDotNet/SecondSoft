@@ -1,105 +1,77 @@
 ﻿<style>
-    .container {
-        line-height: 2.375;
-    }
-
-    i {
-        display: inline-block;
-        margin-right: 1em;
-    }
-
-    .fading {
-        animation: fadingText 4s infinite;
-    }
-
     .brand {
         display: inline-flex;
         max-width: 80px;
     }
 
-    .nav-link {
-        color: #d7d7d7 !important;
-    }
-
-    ul li {
-        padding-left: 0.5rem;
-    }
-
     .bgBackground {
         background-color: #212931;
-    }
-
-    @@keyframes fadingText {
-        0%, 100% {
-            color: #a2a8d3;
-        }
-
-        20%, 80% {
-            color: #eee;
-        }
     }
 </style>
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm bgBackground box-shadow">
     <div class="container">
-        @* <a class="navbar-brand" style="font-size:1.2rem" href="">2ndSoft</a>*@
+        <a class="navbar-brand" href="#" style=""><img class="brand" src="./images/logo/2nd Home Logo Border.png" /></a>
         <button class="navbar-toggler" type="button" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
             <ul class="navbar-nav flex-grow-1" style="white-space: nowrap;">
                 <li class="nav-item" style="padding-top:0;">
-                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                        <img class="brand" src="./images/logo/2nd Home Logo Border.png" />
-                    </NavLink>
-                </li>
-                <li class="nav-item">
                     <NavLink class="nav-link" href="PortFolio">
                         <a class="fas" style="height:2rem;"> <img src="./Images/Portfolio_Icon.png" style="width:20px; height:20px" /></a>
                         &nbsp;&nbsp; Portfolio
                     </NavLink>
                 </li>
-                <li class="nav-item">
-                    <NavLink class="nav-link" @onclick="()=>expandSubNav = !expandSubNav">
-                        <span class="oi oi-list-rich" aria-hidden="true"></span> Projects
+                <li class="nav-item dropdown show">
+                    <NavLink class="nav-link dropdown-toggle text-white" @onclick="() => expandSubNavSettings = !expandSubNavSettings" id="navbarDropdown">
+                        <i class="fas fa-solid fa-ellipsis"></i> &nbsp; Projects
                     </NavLink>
-                    @if (expandSubNav)
+                    @if (expandSubNavSettings)
                     {
+                    <li class="dropdown-menu show bgBackground" aria-labelledby="navbarDropdown" @onclick="() => expandSubNavSettings = !expandSubNavSettings">
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="Barmate" @onclick="()=>expandSubNav = !expandSubNav">
-                            <i class="fas fa-solid fa-champagne-glasses"></i> Barmate
+                        <NavLink class="nav-link text-white" href="Barmate">
+                            <i class="fas fa-solid fa-champagne-glasses"></i> &nbsp; Barmate
                         </NavLink>
                     </li>
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="MicroPortal" @onclick="()=>expandSubNav = !expandSubNav">
-                            <i class="fas fa-solid fa-vial"></i> MicroPortal
+                        <NavLink class="nav-link text-white" href="MicroPortal">
+                            <i class="fas fa-solid fa-vial"></i> &nbsp; MicroPortal
                         </NavLink>
                     </li>
                     <li class="nav-item">
-                        <NavLink class="nav-link" target="_blank" href="http://fitmate.secondsoft.nl/" @onclick="()=>expandSubNav = !expandSubNav">
+                        <NavLink class="nav-link text-white" target="_blank" href="http://fitmate.secondsoft.nl/">
                             <a class="fas" style="height:2rem;"> <img src="./Images/Fitmatlogosmall32_white.png" style="width:20px; height:20px" /></a>
                             &nbsp;&nbsp; Fitmate &nbsp;<i class="fa-solid fa-up-right-from-square"></i>
                         </NavLink>
                     </li>
                     <li class="nav-item">
-                        <NavLink class="nav-link" target="_blank" href="https://logservice.secondsoft.nl/" @onclick="()=>expandSubNav = !expandSubNav">
-                            <a class="fas" style="height:2rem;"> <img src="./Images/logo/2ndLogWhite.png" style="width:20px; height:20px" /></a>&nbsp;  2ndLog &nbsp; <i class="fa-solid fa-up-right-from-square"></i>
+                        <NavLink class="nav-link text-white" target="_blank" href="https://logservice.secondsoft.nl/">
+                            <a class="fas" style="height:2rem;"> <img src="./Images/logo/2ndLogWhite.png" style="width:20px; height:20px" /></a>
+                            &nbsp;  2ndLog &nbsp; <i class="fa-solid fa-up-right-from-square"></i>
                         </NavLink>
+                    </li>
                     </li>
                     }
                 </li>
                 <li class="nav-item">
-                    <NavLink class="nav-link fading" href="UnderConstruction">
-                        <i class="fas fa-solid fa-person-digging"></i>Me at work
+                    <NavLink class="nav-link text-white" href="UnderConstruction">
+                        <i class="fas fa-solid fa-person-digging"></i> &nbsp; Me at work
                     </NavLink>
                 </li>
+
+
+
             </ul>
         </div>
     </div>
 </nav>
-
 @code {
+
     bool collapseNavMenu = true;
-    private bool expandSubNav;
+
+    private bool expandSubNavSettings;
+
 
     string baseMenuClass = "navbar-collapse d-sm-inline-flex flex-sm-row-reverse";
 
@@ -107,6 +79,11 @@
 
     void ToggleNavMenu()
     {
-        collapseNavMenu = !collapseNavMenu;
+        if (!expandSubNavSettings)
+        {
+            collapseNavMenu = !collapseNavMenu;
+        }
+
+
     }
 }
