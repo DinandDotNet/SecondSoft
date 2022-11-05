@@ -1,12 +1,25 @@
 ﻿@page "/BlazorOverview"
+<style>
+    @@media screen and (max-width: 1000px) {
+        a.fsize {
+        font-size:.65rem;
+        }
+    }
 
+    @@media screen and (max-width: 768px) {
+        a.fsize {
+            font-size:.75rem;
+            white-space:normal;
+        }
+    }
+</style>
 <div style="transform:scale(@scalesize)">
      <header>
     <h3><i class="fa-regular fa-comment-dots"></i>More to come.</h3>
      </header>
     <br/>
     <div>
-        <a class="btn btn-outline-dark dbutton" style="color: @mycolor;box-shadow: inset 0 0 0 2px @mycolor" href="Blazor">Why Dinand chooses Blazor</a>
+        <a class="btn btn-outline-dark dbutton fsize" style="color: @mycolor;box-shadow: inset 0 0 0 2px @mycolor" href="Blazor">Why Dinand choose Blazor</a>
     </div>
 </div>
 

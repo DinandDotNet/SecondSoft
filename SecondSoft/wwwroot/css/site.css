@@ -228,29 +228,33 @@ i.fas, i.fab, a.fas {
         margin: 0 2rem;
     }
 }
-
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1000px) {
     .imgcenter {
-        width: 50%;
-    }
-
-    .requestbutton {
-        width: 7rem;
-        font-size: 12px;
-    }
-
-    .maintext {
-        font-size: 1.5rem;
-        line-height: 2.5;
-    }
-
-    .letterspacesm {
-        letter-spacing: -0.925em !important;
+        width: 70%;
     }
 }
+    @media screen and (max-width: 640px) {
+        .imgcenter {
+            width: 50%;
+        }
 
-@media screen and (max-width: 480px) {
-    .upperblock {
-        margin: 0 0rem;
+        .requestbutton {
+            width: 7rem;
+            font-size: 12px;
+        }
+
+        .maintext {
+            font-size: 1.5rem;
+            line-height: 2.5;
+        }
+
+        .letterspacesm {
+            letter-spacing: -0.925em !important;
+        }
     }
-}
+
+    @media screen and (max-width: 480px) {
+        .upperblock {
+            margin: 0 0rem;
+        }
+    }

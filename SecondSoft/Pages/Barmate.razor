@@ -19,6 +19,32 @@
         color: black;
         padding: 15px;
     }
+
+    .bmFrame{
+        width:20%
+    }
+    .bmImage{
+        width:100%;
+        height: auto;
+        float: left;
+        padding-left: 2rem;
+    }
+
+    @@media screen and (max-width: 1000px) {
+        #main h3 {
+            font-size: 1.2rem;
+        }
+    }
+    @@media screen and (max-width: 768px) {
+        .bmFrame{
+            width:50%;
+            margin:auto;
+        }
+        .bmImage{
+            float: none;
+            padding-left: unset;
+        }
+    }
 </style>
 
 <PageTitle>The best Mate you ever have</PageTitle>
@@ -30,8 +56,10 @@
         <div class="upperblock maintext">Barmate</div>
         <!-- Main -->
         <div id="main" style="padding:1rem 0 0 2rem;">
-
-            <div><img style="width:20%; height:auto; float: left; padding-left:2rem;" src="./Images/Terrace.jpg" alt="" /></div>
+            <div class="bmFrame" >
+                <img class="bmImage" src="./Images/Terrace.jpg" alt="" />
+            </div>
+            @*<div><img style="width:20%; height:auto; float: left; padding-left:2rem;" src="./Images/Terrace.jpg" alt="" /></div>*@
             <div>
                 <h3 style="float: left; margin : 10%">
                     The best overview of many seats <br />or large outdoor spaces with few staff
