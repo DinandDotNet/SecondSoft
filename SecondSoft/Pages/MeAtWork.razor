@@ -1,0 +1,220 @@
+﻿@page "/MeAtWork"
+
+<style>
+    :root {
+        --tcolor: white;
+        --rbgcolor: #3498db;
+    }
+
+    body {
+        background-color: #222B31 !important;
+    }
+
+    .yellowNote>li>a:hover {
+    color:black !important;
+    }
+
+</style>
+<br />
+<div class="main col-12 col-md-7" style="text-align:center; font-size:2em; margin:10px; float:left; color: var(--tcolor);">
+    List of activities<br />
+    <br />
+    <link href="css/YellowNote.css" rel="stylesheet" />
+    <link href="css/Ribbon.css" rel="stylesheet" />
+
+    <ul class="yellowNote" style="font-size: 0.75rem;color:black;text-align:left;">
+        <li>
+            <a>
+                <div class="ribbon ribbon-top-right"><span style="background-color:brown;">In progress &nbsp; &nbsp; &nbsp; &nbsp; </span></div>
+                <h4>Secondsoft &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h4>
+                <h6>Product and Portfolio webapp </h6>
+                <div style="font-style:italic;">Build in Blazor, html and css</div><br />
+                <AnchorLink href="#thispage" class="btn btn-dark" style="font-size: 0.75rem; background-color:brown;">See how this site goes.  <iconify-icon inline icon="bi:arrow-down-circle-fill" width="15" rotate="270deg" /> Specs</AnchorLink>
+            </a>
+        </li>
+        <li>
+            <a>
+
+                <div class="ribbon ribbon-top-right"><span>Architectural phase &nbsp; &nbsp; &nbsp; &nbsp; </span></div>
+                <h4>SecondPOS</h4><h5>Point of sale webapp</h5><div style="font-style:italic;">First webapp to create with Vue.js.</div><br /> Contains<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Authentication <br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Product management<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Split screens for staff and client<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Payment<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Pin entry for staff<br />
+                <br />
+                Next release options<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Vouchers<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Stock Control<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Daily reports<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Customer registration to reserve products<br />
+                <iconify-icon icon="bx:dots-horizontal-rounded"></iconify-icon>
+            </a>
+        </li>
+        <li>
+            <a>
+                <div class="box">
+                    <div class="ribbon ribbon-top-right"><span style="background-color:saddlebrown;">Collecting phase &nbsp; &nbsp;  &nbsp; &nbsp; </span></div>
+                </div>
+                <h4>I was there</h4><h5>Access controll webapp</h5><div style="font-style:italic;">Webapp to create in Blazor (or in Vue.js)</div><br /> Contains<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Access registration for staff by QR code or easy access list<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Time/date registration of in and out checks<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Easy access to the cloud for emergency services<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Access control Management<br />
+                <br />
+                Next release options<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Registration with uniek (pin) code<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Unique links to prevent re-use<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Valid code to use in a time window<br />
+                &nbsp;&nbsp; <iconify-icon icon="fluent-mdl2:location-dot" width="10" /> Every entrance code is hashed<br />
+                &nbsp;&nbsp; <iconify-icon icon="fluent-mdl2:location-dot" width="10" /> Time window Management<br />
+                <iconify-icon icon="bi:plus-circle-dotted" /> Visitors can register. Their host will be notified immediately<br />
+                <iconify-icon icon="bx:dots-horizontal-rounded"></iconify-icon>
+            </a>
+        </li>
+        <li>
+            <a>
+                <div class="box">
+                    <div class="ribbon ribbon-top-right"><span style="background-color:gray;">On stock &nbsp; &nbsp;  &nbsp; &nbsp; </span></div>
+                </div>
+                <h5>Add-on for sorting and displaying files</h5><div style="font-style:italic;">Webapp to create in Blazor</div><br /> Contains<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Management Access for maintaining system<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Generic files reading tool with filename splitter<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Easy search started with two characters<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Download links to the right file<br />
+                <iconify-icon icon="fluent-mdl2:location-dot" /> Secure authentication for connetion to an existing website<br />
+
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="col-12 col-md-4" style="font-size:.75em; float:left; margin-bottom:50px; color: var(--tcolor); ">
+    <img class="imgcenter" style="max-width:150px;" src="./images/underconstruction.png" alt="under construction" />
+    <div style="clear:both;"></div>
+    <div style="font-size:.80em; text-align:center; color:#FAC533">And thank you for your understanding.</div>
+    <br/>
+
+    <div>
+        <h4 id="thispage" style="color:var(--tcolor);">See how this site goes</h4>
+        <i style="color:crimson" class="fa-solid fa-circle-right"></i> This site will be maintained between projects.  <br />
+        <i style="color:#FAC533" class="fa-solid fa-circle-info"></i> About my recent projects and activities. <br />
+        <img style="width:20px; height:20px;background-color:var(--tcolor);" src="./images/blazor_icon.png" alt="under construction" />  &nbsp; &nbsp;This webapp is a project made in Blazor, HTML and CSS
+    </div>
+    <br />
+    <div style="clear:both;"></div>
+    <table>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>Set Buttons in cards in one line (bottom left) dynamicly. Still looking for a solution.</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>Create a page for 2ndLog with content </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>Create a page for Fitmate with content </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /> </td>
+            <td>Restyle menu to top menu </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>
+                Clean up old CSS and replace / rebuild old with newer css level. (Clean-up leftovers from the merge of three sites).
+                Over 80% decreased by restyling on a higher css level (4-11)
+            </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Blazor choose page (26-10) </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Merge showcase page with portfolio (24-10) </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Rewrite full story for Barmate and add to page by a link or button (19-10) </td>
+        </tr>
+
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Contact part modification, too busy and to many styles now (18-10) </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Add carousel on homepage and add pages to it (15-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Replace about and bullet area's with design (14-10) </td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Content for Home page (12-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Make content for the Home page and restyle it (11-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Rewrite MicroPortal page and restyle it(9-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" /></td>
+            <td>Rewrite and restyle Barmate page</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Restore styling in MicroPortal page(8/10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Restore styling in Barmate page(8-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Restore styling in About me page (7/10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Restore styling in portfolio (7/10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Insert About me (raw data) into secondsoft.nl(6/10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Insert Portfolio page (raw data) into secondsoft.nl(5/10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Insert Barmate page (raw data) into secondsoft.nl(4-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Insert Microportal page (raw data) into secondsoft.nl(2-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Quick fix: Iframe my github site into the portfolio page(2-10)</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" checked /></td>
+            <td>Bring this website, my github portfolio page, and several project descriptions together into one website. Preparation (30-09)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><i class=" fa-solid fa-ellipsis fa-2x"></i></td>
+        </tr>
+    </table>
+</div>
+<br />
+<br />
+@code {
+
+}
