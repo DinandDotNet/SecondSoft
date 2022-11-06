@@ -1,27 +1,5 @@
 ﻿https://code.tutsplus.com/tutorials/create-a-sticky-note-effect-in-5-easy-steps-with-css3-and-html5--net-13934
 
-/*body {*/
-    /*margin: 20px auto;*/
-    /*font-family: 'Lato';
-    background: #666;
-    color: rgb(0 0 0 / 0,65);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-}
-
-h2 {
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-p {
-    font-family: 'Reenie Beanie';
-    font-size: 1rem;
-}*/
-
 .yellowNote>li {
     list-style: none;
 }
