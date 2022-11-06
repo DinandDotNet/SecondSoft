@@ -37,6 +37,7 @@ p {
         color: #000;
         background: #ffc;
         display: block;
+        border-radius:5px;
         /*height: 10em;
         width: 10em;*/
         padding: 1em;

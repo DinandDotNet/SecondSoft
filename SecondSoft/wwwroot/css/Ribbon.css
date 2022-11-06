@@ -1,12 +1,12 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Lato:700);
 https://codepen.io/nxworld/pen/oLdoWb
-/*body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #f0f0f0;
-}*/
+/*You can change the color with the root elements.
+To center the text use (trick) &nbsp; at the end.
+*/
+:root {
+    --rbgcolor: #3498db;
+}
+
 .ribbonbox {
     position: relative;
     max-width: 500px;
@@ -30,7 +30,7 @@ https://codepen.io/nxworld/pen/oLdoWb
         z-index: -1;
         content: '';
         display: block;
-        border: 5px solid #2980b9;
+        border: 5px solid #757779;
     }
 
     .ribbon span {
@@ -38,7 +38,7 @@ https://codepen.io/nxworld/pen/oLdoWb
         display: block;
         width: 225px;
         padding: 15px 0;
-        background-color: #3498db;
+        background-color: var(--rbgcolor);
         box-shadow: 0 5px 10px rgba(0,0,0,.1);
         color: #fff;
         font: 700 10px/1 'Lato', sans-serif;
