@@ -1,48 +1,60 @@
 ﻿@page "/Blazor"
 
 <style>
+    :root {
+        --fontColor: white;
+        --fontSize: 0.85rem;
+    }
     body {
         background-color: #222B31 !important;
     }
 
     .title {
-        color: black;
+        color: var(--fontColor);
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 100px;
+        font-size: 5em;
         font-weight: bold
     }
 
-    img {
+    @@media screen and (max-width: 1200px) {
+        .title {
+            font-size: 3em ;
+        }
+    }
+    .imgBlazor {
         width: 80%;
         height: 300px;
     }
 </style>
 
 <PageTitle>Why Blazor</PageTitle>
-<body class="is-preload">
+<body class="is-preload" >
     <div id="wrapper">
         <header id="header">
-            <a href="blazor" class="logo">
-                Why Dinand chooses Blazor
+            <a href="blazor" class="title">
+                Why I choose for Blazor
             </a>
         </header>
         <div class="upperblock maintext">The right choice</div>
         <!-- Main -->
-        <div id="main" style="padding-left:20px;">
+        <div id="main" style="padding-left:20px;color:white">
             <p>
                 <h4> NATIVE</h4>
-                Blazor framework gives you the most native way to work with backend code right in your front-end.<br />
+                Blazor framework let you work in the most native way with backend code, right in your frontend.<br />
+                Easily combined with HTML and CSS to create a powerful and standardized UI<br />
                 <br />
                 <h4>NO CONVERSION</h4>
                 The first framework that shows you the data without converting it. <br />
                 <br />
                 <h4>Work DRY</h4>
-                Working with <img style="height:2em;width:auto;" src="./images/blazor_icon.png" /> blazor means you can program DRY (Don't Repeat Yourself)<br />
+                Working with <img class="imgBlazor" style="height:2em;width:auto;" src="./images/blazor_icon.png" /> blazor means you can program DRY (Don't Repeat Yourself)<br />
                 <br />
 
                 <h4>COMPONENTS</h4>
                 You create (razor) components to store your content and functionality.<br />
                 Add that as a tag on the page or use it as a page itself. You can influence behavior with parameters.<br />
+                By creating these re-useble components is it for architectural, development and maintenance the most smart way to work.
+                <br/>
 
                 <br />
                 <img style="height:1.5em;width:auto;" src="./images/Showcase/nojs_red.png" /><br />
@@ -59,6 +71,7 @@
                 <a target="_blank" href="https://www.htmlelements.com/blazor/blazor-ui/demos/"> <img style="height:1.5em;width:auto;background-color:ThreeDDarkShadow;" src="./images/Showcase/SmartHtml.png" /></a>&nbsp;
                 <a target="_blank" href="https://blazor.syncfusion.com/demos/"> <img style="height:1.5em;width:auto;background-color:white;" src="./images/Showcase/SyncFusion.png" /></a>&nbsp;
 
+                <br />
                 <br />
                 <h4>JS Regrets? Solved!</h4>
                 Even better, you can work with JS if needed.

@@ -1,0 +1,117 @@
+﻿@page "/Vue"
+
+<style>
+    :root {
+        --fontColor: white;
+        --fontSize: 0.85rem;
+    }
+
+    body {
+        background-color: #222B31 !important;
+    }
+
+    .title {
+        color: var(--fontColor);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 5em;
+        font-weight: bold
+    }
+
+    .maintext {
+        font-size: 1.5em;
+    }
+
+    @@media screen and (max-width: 1200px) {
+        .title {
+            font-size: 3em;
+        }
+    }
+
+    @@media screen and (max-width: 990px) {
+        .maintext {
+            font-size: 1em;
+        }
+    }
+
+    @@media screen and (max-width: 640px) {
+        .maintext {
+            font-size: .85em;
+        }
+    }
+</style>
+
+<PageTitle>Why Vue</PageTitle>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header">
+            <a href="Vue" class="title">
+                Why Vue is on the list
+            </a>
+        </header>
+        <div class="upperblock maintext">Lightweight and can be added to existing projects</div>
+        <!-- Main -->
+        <div id="main" style="padding-left:20px;color:white">
+            <p>
+                <h4>Lightweight framework</h4>
+                Unlike most other JS libraries, Vue is a real lightweight. That means fast and stripping of unnecessary ballast.<br/>
+                Also, Vue is easy to combine with HTML and CSS to create a powerful and standardized user interface<br />
+                <br />
+                <h4>For existing projects</h4>
+                Vue can be easily added to existing projects and runs side-by-side with existing technologies.<br />
+                That saves rebuilding and guarantees you an lifetime extension of your applications to fit into the modern era.<br />
+                <br />
+                <h4>Work DRY</h4>
+                Working with Vue gives you a simulair ability to program DRY (Don't Repeat Yourself)<br />
+                <br />
+
+                <h4>Re-useble</h4>
+                Vue has the ability to create reusable components <br />
+                Vue is basically a SPA framework. But with its smart structure and with smart architecture you can spend it<br />
+                to be used in larger and more complex web apps.
+                <br />
+                <br />
+                <br />
+                <h4>Vue beside Blazor</h4>
+                Vue thinks about how web development should work and why you prefer it over other JS libraries, similar to Blazor.<br/>
+                Perfect for exiting projects or team how are into Javascipt.
+
+                <br />
+                <br />
+                <br />
+            </p>
+        </div>
+    </div>
+</body>
+@code {
+    private string? imageSource;
+    private List<DashNote> Dnotes { get; set; } = new List<DashNote>();
+    private bool ShowDetails { get; set; } = true;
+    private bool ShowArchitecture { get; set; } = true;
+    protected override async Task OnParametersSetAsync()
+    {
+        Dnotes.Add(new DashNote() { Title = "Staff and customers can order", Text0 = "Barmate takes care of it all.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "Sends the order through the stations", Text0 = "Various bars or cuisines.", Group = "" });
+        Dnotes.Add(new DashNote() { Title = "Able to serve a food court", Text0 = "With multiple bars and restaurants or food trucks.", Group = "important" });
+        Dnotes.Add(new DashNote() { Title = "Customers can", Text0 = "enable staff, can see their order history and status.", Group = "social" });
+        Dnotes.Add(new DashNote() { Title = "Staff takes care of the payment", Text0 = "While customers will be able to pay themselves in the near future.", Group = "business" });
+        Dnotes.Add(new DashNote() { Title = "Staff is always aware", Text0 = "And can check status in real time.", Group = "important" });
+        ShowImage();
+    }
+    private void ShowImage()
+    {
+        imageSource = $"welcome.jpg";
+    }
+    private void Details()
+    {
+        ShowDetails = !ShowDetails;
+        ShowArchitecture = true;
+    }
+    private void Architecture()
+    {
+        ShowArchitecture = !ShowArchitecture;
+        ShowDetails = true;
+    }
+}
+
+
+
