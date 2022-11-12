@@ -18,7 +18,7 @@
     }
 
     .maintext {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 
     @@media screen and (max-width: 1200px) {
@@ -45,35 +45,102 @@
     <div id="wrapper">
         <header id="header">
             <a href="Vue" class="title">
-                Why Vue is on the list
+                I researched to answer 
+                
             </a>
         </header>
-        <div class="upperblock maintext">Lightweight and can be added to existing projects</div>
+        <div class="upperblock maintext">Why Vue is on the list</div>
         <!-- Main -->
         <div id="main" style="padding-left:20px;color:white">
             <p>
+                <br />
+                <h3>Research</h3>
+                I've researched the three most popular JS frameworks. <br />
+                <ul>
+                    <li>Angular by Google</li>
+                    <li>React by Meta</li>
+                    <li>Vue</li>
+                </ul>
+                <br />
+                <h4>Goals</h4>
+                <ul>
+                    <li>Understand the differences between the frameworks</li>
+                    <li>Architectural structures</li>
+                    <li>For which type of application are they best suited</li>
+                    <li>Difficult to learn</li>
+                    <li>Long Term Support (TLS)</li>
+                    <li>Most compatible with existing well-known technologies</li>
+                    <li>Data binding</li>
+                    <li>Data source support</li>
+                </ul>
+
+                <br />
+                <h4>Short re-cap of the final result</h4>
+                <br />
+                <h5>Angular by Google</h5>
+                Angular(2+) has been rebuilt by Google for enterpice environments.<br />
+                With its extensions included and Typescript integrated, it is a heavyweight framework. It creates a Real DOM for its dynamic loading system.<br />
+                Works really well on mobile and web apps. <br />
+                Best used for complex large-scale apps.<br />
+                You have to start from scratch, It can't be easily added to an existing application.<br />
+                A drawback: you have to work within the boundaries and the 'guided' lines of the framework.<br />
+                It requires more from your developers to learn 'Angular' specific coding knowledge and the knowledge of the Angular system to do it.<br />
+                <br />
+                <br />
+
+                <h5>React and Vue similarities</h5>
+                <ul>
+                    <li>A framework based on creating a virtual DOM</li>
+                    <li>An easy-to-learn framework</li>
+                    <li>Component-based architecture</li>
+                </ul>
+                <br />
+                <br />
+                <h5>React by Meta</h5>
+                It is currently the most popular and widely used JS framew ork.<br/>
+                React can handle large apps.<br/>
+                 It is SEO friendly and supports JSX.<br />     Their active community (under pressure from Meta) pushed very frequent updates (mostly from Meta),<br />
+                besides a positive point, it also has a negative impact on your environment and makes maintenance costs 'unnecessarily' high. <br/>
+                The update often goes beyond backward compatibility, wich costs a lot of extra development time. <br />
+                <br />
+                <br />
+
+                <h5>Vue</h5>
+                Along with its similarities to React, Vue is a bit of both worlds.<br />
+                Angular's two way data binding and React's virtual DOM.<br />
+                This makes it extremely flexible and lightweight. <br />
+                Best suited for SPAs and 'smaller' web app environments.<br />
+                This small means no enterprice or huge environments, which less than 20% of the companies have.<br />
+                So still suitable for the other 80% of companies.<br />
+                Easier to learn for developers, Vue is the fastest and most lightweight framework of all.<br />
+                Best suited for integration with other libraries and combinations of script and HTML/CSS.<br />
+                Currently, Vue is the fastest growing JS framework with the highest star rating on Github. <br />
+                <br />
+                <br />
                 <h4>Lightweight framework</h4>
-                Unlike most other JS libraries, Vue is a real lightweight. That means fast and stripping of unnecessary ballast.<br/>
-                Also, Vue is easy to combine with HTML and CSS to create a powerful and standardized user interface<br />
+                Unlike most other JS libraries, Vue is really lightweight. That means fast and is stripped of unnecessary ballast.<br />
+                Vue also easily combines with HTML and CSS to create a powerful and standardized UI<br />
                 <br />
                 <h4>For existing projects</h4>
                 Vue can be easily added to existing projects and runs side-by-side with existing technologies.<br />
                 That saves rebuilding and guarantees you an lifetime extension of your applications to fit into the modern era.<br />
                 <br />
                 <h4>Work DRY</h4>
-                Working with Vue gives you a simulair ability to program DRY (Don't Repeat Yourself)<br />
+                All three fraeworks gives you a simulair ability to program DRY (Don't Repeat Yourself)<br />
                 <br />
 
-                <h4>Re-useble</h4>
-                Vue has the ability to create reusable components <br />
-                Vue is basically a SPA framework. But with its smart structure and with smart architecture you can spend it<br />
-                to be used in larger and more complex web apps.
+                <h4>Reusable</h4>
+                Vue and React have the best ability to create reusable components <br />
+                Vue is basically a SPA framework for non-hugh or enterprice environments.<br />
+                During my research I discovered when you combine smart structure with smart architecture,<br />
+                you can extend it to use it in larger and more complex web apps.
                 <br />
                 <br />
                 <br />
-                <h4>Vue beside Blazor</h4>
-                Vue thinks about how web development should work and why you prefer it over other JS libraries, similar to Blazor.<br/>
-                Perfect for exiting projects or team how are into Javascipt.
+
+               <h4>Vue next to Blazor</h4>
+                Vue thinks about how web development should work and why you prefer it over other JS libraries, similar to Blazor.<br />
+                Perfect for existing projects or for teams into Javascipt.
 
                 <br />
                 <br />
@@ -83,33 +150,9 @@
     </div>
 </body>
 @code {
-    private string? imageSource;
-    private List<DashNote> Dnotes { get; set; } = new List<DashNote>();
-    private bool ShowDetails { get; set; } = true;
-    private bool ShowArchitecture { get; set; } = true;
     protected override async Task OnParametersSetAsync()
     {
-        Dnotes.Add(new DashNote() { Title = "Staff and customers can order", Text0 = "Barmate takes care of it all.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Sends the order through the stations", Text0 = "Various bars or cuisines.", Group = "" });
-        Dnotes.Add(new DashNote() { Title = "Able to serve a food court", Text0 = "With multiple bars and restaurants or food trucks.", Group = "important" });
-        Dnotes.Add(new DashNote() { Title = "Customers can", Text0 = "enable staff, can see their order history and status.", Group = "social" });
-        Dnotes.Add(new DashNote() { Title = "Staff takes care of the payment", Text0 = "While customers will be able to pay themselves in the near future.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Staff is always aware", Text0 = "And can check status in real time.", Group = "important" });
-        ShowImage();
-    }
-    private void ShowImage()
-    {
-        imageSource = $"welcome.jpg";
-    }
-    private void Details()
-    {
-        ShowDetails = !ShowDetails;
-        ShowArchitecture = true;
-    }
-    private void Architecture()
-    {
-        ShowArchitecture = !ShowArchitecture;
-        ShowDetails = true;
+       
     }
 }
 

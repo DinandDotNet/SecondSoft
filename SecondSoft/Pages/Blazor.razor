@@ -84,34 +84,7 @@
     </div>
 </body>
 @code {
-    private string? imageSource;
-    private List<DashNote> Dnotes { get; set; } = new List<DashNote>();
-    private bool ShowDetails { get; set; } = true;
-    private bool ShowArchitecture { get; set; } = true;
-    protected override async Task OnParametersSetAsync()
-    {
-        Dnotes.Add(new DashNote() { Title = "Staff and customers can order", Text0 = "Barmate takes care of it all.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Sends the order through the stations", Text0 = "Various bars or cuisines.", Group = "" });
-        Dnotes.Add(new DashNote() { Title = "Able to serve a food court", Text0 = "With multiple bars and restaurants or food trucks.", Group = "important" });
-        Dnotes.Add(new DashNote() { Title = "Customers can", Text0 = "enable staff, can see their order history and status.", Group = "social" });
-        Dnotes.Add(new DashNote() { Title = "Staff takes care of the payment", Text0 = "While customers will be able to pay themselves in the near future.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Staff is always aware", Text0 = "And can check status in real time.", Group = "important" });
-        ShowImage();
-    }
-    private void ShowImage()
-    {
-        imageSource = $"welcome.jpg";
-    }
-    private void Details()
-    {
-        ShowDetails = !ShowDetails;
-        ShowArchitecture = true;
-    }
-    private void Architecture()
-    {
-        ShowArchitecture = !ShowArchitecture;
-        ShowDetails = true;
-    }
+   
 }
 
 
