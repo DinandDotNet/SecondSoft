@@ -1,0 +1,199 @@
+﻿@page "/ResearchFramework"
+
+<style>
+    :root {
+        --fontColor: white;
+        --fontSize: 0.85rem;
+    }
+
+    body {
+        background-color: #222B31 !important;
+    }
+
+    .title {
+        color: var(--fontColor);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 5em;
+        font-weight: bold
+    }
+
+    .maintext {
+        font-size: 2em;
+    }
+
+    @@media screen and (max-width: 1200px) {
+        .title {
+            font-size: 3em;
+        }
+    }
+
+    @@media screen and (max-width: 990px) {
+        .maintext {
+            font-size: 1em;
+        }
+    }
+
+    @@media screen and (max-width: 640px) {
+        .maintext {
+            font-size: .85em;
+        }
+    }
+</style>
+
+<PageTitle>Why Vue</PageTitle>
+<body class="is-preload">
+    <div id="wrapper">
+        <header id="header" style="margin-top:30px;">
+            <a href="ResearchFramework" class="title">What framework should I use<br/> and why?</a>
+        </header>
+        <div class="upperblock maintext">I did a research to answer this</div>
+        <!-- Main -->
+        <div id="main" style="padding-left:20px;color:white">
+            <p>
+                <br />
+                <h3>Research</h3>
+                I've researched the four most popular frameworks. <br />
+                <ul>
+                    <li>Blazor</li>
+                    <li>Angular by Google</li>
+                    <li>React by Meta</li>
+                    <li>Vue</li>
+                </ul>
+                <br />
+                <h4>Goals</h4>
+                From an architecture and development perspective, I came up with a list of goals.<br />
+                Keep in mind I often get into teams working on long standing projects.<br />
+                <ul>
+                    <li>Understand the differences between the frameworks</li>
+                    <li>Architectural structures</li>
+                    <li>Type of application they are best suited for</li>
+                    <li>Difficulty to learn</li>
+                    <li>Long Term Support (TLS)</li>
+                    <li>Most compatible with existing well-known technologies</li>
+                    <li>Data management</li>
+                    <li>Data source support</li>
+                    <li>* Ability to implement into an existing application</li>
+                    <li>* Suitable for non .net teams</li>
+                </ul>
+
+                <br />
+                <h4>Short re-cap of the final result</h4>
+                <br />
+                <h5>Blazor from Microsoft</h5>
+                Blazor was developed by Microsoft, which initially used the experimental project 'Electron Webwindow'.<br />
+                By adding SignalR, it created a complete environment where backend and frontend work as one engine, responding to every change in every layer.<br />
+                Inside, it separates how to calculate the UI and render other requests.<br />
+                Blazor doesn't make a differents between calculating any of the UI request (mobile, web, form, module).<br />
+                <br/>
+                Working inside the framework with the back and front-end makes data more secure and less vulnerable.<br />
+                Architecturally and programmatically a highly efficient and productive model to work with.<br/>
+                That separates Blazor from others (mostly JS) frameworks that only calculate UI changes.<br />
+                <br/>
+                Blazor is fully developed to work with HTML and CSS, without Javascript or converting data and data bindings at any scale.<br />
+                Blazor server runs a bit on a distance on its own, with the highest security because everything happens on the server and only Ui data is sent.<br />
+                Blazor web assembly comes closer to the JS frameworks, as they also send data to the client to use the device for rendering.<br/>
+                Besides a 'less data security*' in Blazor web assembly, the pros become clear when the device has a poor connection or interruptions. <br />
+                Where the server stops, webassambly remains an independent device. <br/>
+                If the implementation is done well, it can cache the data and still serve the user.<br/>
+                It uses the background 'bad' connection to update the data on both sides.<br />
+                <br/>
+                --End --<br/>
+                After my research, Blazor separated itself in many ways. For new and complex apps, Blazor is undoubtedly the framework.<br/>
+                <a class="btn btn-outline-dark " style="color:var(--fontColor); border-color:white;" href="Blazor">So I choose Blazor</a><br />
+                <br/>
+                <br/>
+                <br/>
+                <div><img style="width:3em" src="./images/but.png" /></div>
+                Even Blazor is not the holy grail.<br />
+                As a good architect I must be aware that not everything can or will with .net Blazor.<br/>
+                Especially for existing projects or teams that don't work with .net. Those two notes became new conditions.<br />
+                Since the investigation was already done, I push Blazor out of the results.<br />
+                I re-examined the other three JS frameworks to see if they could meet my desired condition.<br />
+                <br />
+                I am delighted with the end result.<br/>
+                <br/>
+                <br />
+                <h5>Angular by Google</h5>
+                Angular(2+) has been rebuilt by Google for enterpice environments.<br />
+                With its extensions included and Typescript integrated, it is a heavyweight framework. It creates a Real DOM for its dynamic loading system.<br />
+                Works really well on mobile and web apps. <br />
+                Best used for complex large-scale apps.<br />
+                You have to start from scratch, It can't be easily added to an existing application.<br />
+                A drawback: you have to work within the boundaries and the 'guided' lines of the framework.<br />
+                It requires more from your developers to learn 'Angular' specific coding knowledge and the knowledge of the Angular system to do it.<br />
+                <br />
+                <br />
+
+                <h5>React and Vue similarities</h5>
+                <ul>
+                    <li>A framework based on creating a virtual DOM</li>
+                    <li>An easy-to-learn framework</li>
+                    <li>Component-based architecture</li>
+                </ul>
+                <br />
+                <br />
+                <h5>React by Meta</h5>
+                It is currently the most popular and widely used JS framew ork.<br />
+                React can handle large apps.<br />
+                It is SEO friendly and supports JSX.<br />     Their active community (under pressure from Meta) pushed very frequent updates (mostly from Meta),<br />
+                besides a positive point, it also has a negative impact on your environment and makes maintenance costs 'unnecessarily' high. <br />
+                The update often goes beyond backward compatibility, wich costs a lot of extra development time. <br />
+                <br />
+                <br />
+
+                <h5>Vue</h5>
+                Along with its similarities to React, Vue is a bit of both worlds.<br />
+                Angular's two way data binding and React's virtual DOM.<br />
+                This makes it extremely flexible and lightweight. <br />
+                Best suited for SPAs and 'smaller' web app environments.<br />
+                This small means no enterprice or huge environments, which less than 20% of the companies have.<br />
+                So still suitable for the other 80% of companies.<br />
+                Easier to learn for developers, Vue is the fastest and most lightweight framework of all.<br />
+                Best suited for integration with other libraries and combinations of script and HTML/CSS.<br />
+                Currently, Vue is the fastest growing JS framework with the highest star rating on Github. <br />
+                <br />
+                <br />
+                <h4>Lightweight framework</h4>
+                Unlike most other JS libraries, Vue is really lightweight. That means fast and is stripped of unnecessary ballast.<br />
+                Vue also easily combines with HTML and CSS to create a powerful and standardized UI<br />
+                <br />
+                <h4>For existing projects</h4>
+                Vue can be easily added to existing projects and runs side-by-side with existing technologies.<br />
+                That saves rebuilding and guarantees you an lifetime extension of your applications to fit into the modern era.<br />
+                <br />
+                <h4>Work DRY</h4>
+                All three fraeworks gives you a simulair ability to program DRY (Don't Repeat Yourself)<br />
+                <br />
+
+                <h4>Reusable</h4>
+                Vue and React have the best ability to create reusable components <br />
+                Vue is basically a SPA framework for non-hugh or enterprice environments.<br />
+                During my research I discovered when you combine smart structure with smart architecture,<br />
+                you can extend it to use it in larger and more complex web apps.
+                <br />
+                <br />
+                <br />
+
+                <h4>Vue next to Blazor</h4>
+                How web development should work tells you also why you prefer it over other JS libraries and frameworks. <br />
+                Vue and Blazor mindsets are simular about that.<br />
+                Vue is perfect for existing projects or for teams (who want) into Javascipt.<br/>
+                <br/>
+                <a class="btn btn-outline-dark " style="color:var(--fontColor); border-color:white;" href="Vue">That is why I choose Vue next to Blazor</a><br />
+                
+                <br />
+                <br />
+                <br />
+            </p>
+        </div>
+    </div>
+</body>
+@code {
+    protected override async Task OnParametersSetAsync()
+    {
+
+    }
+}
+
+
+
