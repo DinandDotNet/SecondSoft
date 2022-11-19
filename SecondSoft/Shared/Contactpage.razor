@@ -1,0 +1,23 @@
+﻿@page "/contactpage/{*colors}"
+<div class="col-6" style="background-color:@mybackcolor;">
+    <Contact mycolor="@mycolor" mybackcolor="@mybackcolor" />
+</div>
+@code {
+    [Parameter]
+    public string colors { get; set; }
+
+    private string mycolor { get; set; } = "black";
+    private string mybackcolor { get; set; } = "transparent";
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!string.IsNullOrEmpty(colors))
+        {
+            var arrColors = colors.Split("/");
+            mycolor = arrColors[0];
+            if (arrColors.Count() > 1)
+            {
+                mybackcolor = arrColors[1];
+            }
+        }
+    }
+}

@@ -1,6 +1,25 @@
 ﻿@page "/secondsoft"
 
 <style>
+    :root {
+        --fontColor: white;
+        --fontSize: 0.85rem;
+    }
+
+    body {
+        background-color: #222B31 !important;
+    }
+
+    header a {
+        color: var(--fontColor);
+        font-size: 3rem;
+        font-weight: 900;
+    }
+
+    #wrapper {
+        color: var(--fontColor);
+    }
+
     .content {
         background-color: #222B31 !important;
         color: whitesmoke !important;
@@ -21,12 +40,12 @@
     }
 </style>
 
-<PageTitle>About Dinand</PageTitle>
+<PageTitle>About this website</PageTitle>
 
 <!-- Wrapper -->
 <div id="wrapper">
     <header id="header">
-        <a href="secondsoft" class="logo">My own blazor showcase</a>
+        <a href="secondsoft">My own <br /> blazor showcase</a>
     </header>
     <div class="upperblock maintext">About this website</div>
 
@@ -34,45 +53,48 @@
     <div id="content">
         <br />
         <p>
-            On this company and portfolio site I try to show sweet technologies created with just Blazor, HTML and CSS.<br/>
-            With the examples I show you the power Blazor has to let you correctly program a webapplication.<br/>
-            <br/>
-            This webapp runs on Blazor server. <br/>
-
+            On this company and portfolio site, I try to showcase beautiful technologies created using only Blazor, HTML, and CSS.<br />
+            With these examples I will show you the power that Blazor has to let you program a web application correctly.<br />
+            <br />
+            This web app runs on the Blazor server. <br />
         </p>
 
-        <div style="float:left; margin-left:1rem;"><a @onclick="() => Details(1)" style="text-decoration:underline">Example 1 Contact component<i class="fa-solid fa-square-caret-down"></i></a></div>
-        <div style="float:left; margin-left:1rem;"><a @onclick="() => Details(2)" style="text-decoration:underline">Example 2 Project overview components<i class="fa-solid fa-square-caret-down"></i></a></div>
+        <div style="float:left; margin-left:1rem;"><a @onclick="() => Details(1)" style="text-decoration:underline">Example 1 Contact component <i class="fa-solid fa-square-caret-down"></i></a></div>
+        <div style="float:left; margin-left:1rem;"><a @onclick="() => Details(2)" style="text-decoration:underline">Example 2 Project overview components <i class="fa-solid fa-square-caret-down"></i></a></div>
         <div style="float:left; margin-left:1rem;"><a @onclick="() => Details(3)" style="text-decoration:underline">Example 3 Security <i class="fa-solid fa-square-caret-down"></i></a></div>
         <br />
         <div hidden="@ShowExample1">
             <br />
-            <a class="link" target="_blank" href="contact"> Contact component &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
-            <img src="./images/showcase/component_contact.jpg" /><br />
-            To get all text white, on this page, was set by a parameter. <i class="fa-solid fa-bullseye"></i> <br />
-            As the same parameter turned all text black on the <a class="link" target="_blank" href="Portfolio">Portfolio page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a>
+            The contact component is a great example of what you can do with Blazor.<br/>
+            The component is simply used on multiple pages with all text white and background transparent by <br /> parameters
             <br />
-            On the <a class="link" target="_blank" href="Dinand">Dinand page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a>it was set to turn the text grey and some (in the buttons) black, to present them better.
+            On this component you can change colors, such as the background, to gold, as shown below.<br />
             <br />
-            Now we simply used the same component 3 times differently.<br />
-            <br />
+            
+            <Contactpage colors="white/dark goldenrod"></Contactpage>
+            
+            
             And it even gets better.
         </div>
         <div hidden="@ShowExample2">
             <br />
-            I have created an overview component of every project <br />
+            I made an overview component for each project <br />
 
-            Those pages are used in the SampleBlocks on the <a target="_blank" class="link" href="portfolio">Portfolio page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a> and the carousel on the<a class="link" target="_blank" href="/"> home page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
+            Those pages are used in the SampleBlocks on the <a target="_blank" class="link" href="portfolio">Portfolio page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a> and the carousel on the<a class="link" target="_blank" href="/"> homepage &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
             <img style="max-height:4em;" src="./images/showcase/samplepages.jpg" />&nbsp; <img style="max-height:4em;" src="./images/showcase/samplecarousel.jpg" /><br />
-            As all pages are responsive, I still had to scale the pages for the carousel with a parameter to 70 %.<br />
+            Since all pages are responsive, I still had to scale the pages for the carousel with a parameter to 70%.<br />
             <br />
-            The project pages are without background. When you visit them native they don't look that nice.<br />
+            The project pages are without background. If you visit them natively, they don't look so nice.<br />
             <a target="_blank" class="link" href="secondsoftOverview">Secondsoft Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
             <a target="_blank" class="link" href="secondlogOverview">Secondlog Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
             <a target="_blank" class="link" href="MicroportalOverview">Microportal Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
             <a target="_blank" class="link" href="BarmateOverview">Barmate Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
             <a target="_blank" class="link" href="FitmateOverview">Fitmate Overview page &nbsp; <i class="fa-solid fa-up-right-from-square"></i></a><br />
-            With a ligth background, by design all text turns black and all other behavior will be done with Parameters.
+            With a ligth background, by design all text becomes black and all other behavior will be done with Parameters.
+        </div>
+        <div hidden="@ShowExample3">
+            <br />
+            Under construction !!!
         </div>
         <br />
         <br />

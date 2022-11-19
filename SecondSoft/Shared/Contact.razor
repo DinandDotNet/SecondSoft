@@ -4,10 +4,11 @@
         font-size: 0.85em;
         margin-left: 15px;
         color: @mycolor !important;
+        background-color: @mybackcolor;
     }
 
         #contactmain .dbutton {
-            box-shadow: inset 0 0 0 2px @mycolor
+            box-shadow: inset 0 0 0 2px @mycolor;
         }
 
     #contactTitle {
@@ -16,9 +17,9 @@
         font-weight: 900;
     }
 
-    #contactmain a {
+/*    #contactmain a {
         color: @mycolor;
-    }
+    }*/
 
     @@media screen and (max-width: 640px) {
         #contactTitle {
@@ -27,18 +28,18 @@
     }
 </style>
 <div id="contactmain">
-    <div id="contactTitle">Curious - questions - interest.</div>
+    <div id="contactTitle" style="color:@mycolor">Curious - questions - interest.</div>
     <!-- Calendly link widget begin -->
-    <div class="dbutton subtitle" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;">
+    <div class="dbutton subtitle" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/dinand-dotnet/60min'});return false;" style="color:@mycolor">
         Meet with me
     </div>
     <!-- Calendly link widget end -->
     <div class="dbutton subtitle" @onclick="@SiteBarShow" style="color:@mycolor">
         Call me
     </div>
-    <a class="subtitle dbutton" target="_blank" href="https://www.secondsoft.nl/businesscard">see my Business card</a>
+    <a class="subtitle dbutton" target="_blank" href="https://www.secondsoft.nl/businesscard" style="color:@mycolor">see my Business card</a>
     <div style="clear:both; padding-bottom:10px;"></div>
-    <p><a @onclick="() => Alert(message)">or contact me by <i class="fas fa-arrow-circle-down"></i></a></p>
+    <p><a @onclick="() => Alert(message)" style="color:@mycolor">or contact me by <i class="fas fa-arrow-circle-down"></i></a></p>
 </div>
 
 @if (showSitebar)
@@ -49,6 +50,8 @@
 @code {
     [Parameter]
     public string mycolor { get; set; } = "black";
+    [Parameter]
+    public string mybackcolor { get; set; } = "transparent";
     string message = "You can choose from the icons below how to contact me ";
     public bool showSitebar { get; set; }
     void SiteBarShow() => showSitebar = true;
