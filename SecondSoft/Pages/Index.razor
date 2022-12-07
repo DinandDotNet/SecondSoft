@@ -2,14 +2,24 @@
 
 <style>
     body {
-        background-color: white !important;
+        background-color: #212931 !important;
+    }
+
+    div.b {
+        margin-top: 10px;
+        margin-bottom: 50px;
+        width: auto;
+        height: 340px;
+        transform: skewY(-5deg);
+    }
+    .blinkanimation{
+        animation: fadeIn ease 15s;
     }
 
     .dlogo {
         width: 426px;
         display: block;
         margin: 2.5rem 0;
-       
     }
 
     .title {
@@ -17,7 +27,6 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 50px;
         text-align: center;
-
     }
 
 
@@ -25,6 +34,7 @@
         .dlogo {
             width: 340px;
         }
+
         .title {
             font-size: 40px;
         }
@@ -34,6 +44,7 @@
         .dlogo {
             width: 260px;
         }
+
         .title {
             font-size: 30px;
         }
@@ -43,6 +54,7 @@
         .dlogo {
             width: 200px;
         }
+
         .title {
             padding-top: 23px;
             font-size: 20px;
@@ -51,29 +63,55 @@
 
     @@media screen and (max-width: 640px) {
         .title {
-            float:right;
+            float: right;
             font-size: 17px;
         }
     }
+
     @@keyframes fadeIn {
-  10% { opacity: 0.15; }
-  100% { opacity: 1; }
-}
+        10% {
+            opacity: 0.15;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 
 </style>
 <link rel="icon" type="image/ico" href="./Images/logo/2ndSoftWhite.ico" />
 <PageTitle>SecondSoft</PageTitle>
 <div class="container">
-    <div class="row">
-        <div class="col-7" style=" animation: fadeIn ease 15s;"><img src="@imageSource" class="dlogo" /></div>
+    <div class="b row" style="background-color: brown;">
+        <div class="blinkanimation col-7"><img src="@imageSource" class="dlogo" /></div>
         <div class="col-5 title"> Thinking twice makes the differents</div>
+    </div>
+    <div class="b row" style="background-color: white;">
+        <div>
+            <div class="blinkanimation title">Projects</div><br />
+          This place will be an entrance to my showcase of projects.<br/>
+       I'm working on it, not finished yet.<br/>
+       Thank you for your patients.<br/>
+        </div>
+        <div class=""></div>
+    </div>
+    <div class="b row" style="background-color: blue; color: white; ">
+        <a href="ResearchFramework">
+        <div class="blinkanimation col-7" style="font-size:66px">Reseach report</div>
+        <div>Javascript frameworks and Blazor</div>
+        </a>
+        <a href="meatwork">
+        <div class="blinkanimation col-7" style="font-size:66px">Me @@ work</div>
+        <div>This is all about my planning</div>
+        </a>
+        @*<div class="col-5 title"> Thinking twice makes the differents</div>*@
     </div>
 </div>
 <br />
 
 <br />
 <br />
-<Carousel Components="types" DelayTime="5000" />
+@*<Carousel Components="types" DelayTime="5000" />*@
 @code {
     private string? imageSource;
     protected override async Task OnParametersSetAsync()
@@ -83,7 +121,7 @@
 
     private void ShowImage()
     {
-        imageSource = $"./images/logo/2ndsoft.png";
+        imageSource = $"./images/logo/2ndsoftWhite.png";
     }
 
     Type[] types =
