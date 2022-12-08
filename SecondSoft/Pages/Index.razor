@@ -5,11 +5,9 @@
         background-color: #212931 !important;
     }
 
-    div.b {
+    div.square {
         margin-top: 10px;
         margin-bottom: 50px;
-        width: auto;
-        height: 340px;
         transform: skewY(-5deg);
     }
     .blinkanimation{
@@ -82,36 +80,36 @@
 <link rel="icon" type="image/ico" href="./Images/logo/2ndSoftWhite.ico" />
 <PageTitle>SecondSoft</PageTitle>
 <div class="container">
-    <div class="b row" style="background-color: brown;">
+    <div class="square row" style="background-color: brown;">
         <div class="blinkanimation col-7"><img src="@imageSource" class="dlogo" /></div>
         <div class="col-5 title"> Thinking twice makes the differents</div>
     </div>
-    <div class="b row" style="background-color: white;">
+    <div class="square row" style="background-color: white;">
         <div>
-            <div class="blinkanimation title">Projects</div><br />
+            <div class=" title" style="float:left;">Projects</div>
+           <div style="clear:both;">
           This place will be an entrance to my showcase of projects.<br/>
        I'm working on it, not finished yet.<br/>
        Thank you for your patients.<br/>
+            </div>
         </div>
         <div class=""></div>
     </div>
-    <div class="b row" style="background-color: blue; color: white; ">
-        <a href="ResearchFramework">
-        <div class="blinkanimation col-7" style="font-size:66px">Reseach report</div>
+    <div class="square row" style="background-color: blue; color: white; ">
+        <a href="ResearchFramework" class="btn btn-outline-light">
+        <div class=" " style="font-size:60px">Reseach report</div>
         <div>Javascript frameworks and Blazor</div>
         </a>
-        <a href="meatwork">
-        <div class="blinkanimation col-7" style="font-size:66px">Me @@ work</div>
+        <a href="meatwork" class="btn btn-outline-light">
+        <div style="font-size:66px;">Me @@ work</div>
         <div>This is all about my planning</div>
         </a>
-        @*<div class="col-5 title"> Thinking twice makes the differents</div>*@
     </div>
 </div>
 <br />
 
 <br />
 <br />
-@*<Carousel Components="types" DelayTime="5000" />*@
 @code {
     private string? imageSource;
     protected override async Task OnParametersSetAsync()
