@@ -1,0 +1,76 @@
+﻿@page "/Songs"
+<style>
+    :root {
+        --fontColor: white;
+        --fontSize: 0.85rem;
+    }
+    body{
+        overflow: scroll;
+    }
+    #songs .mycolor{
+    color: @mycolor;
+    }
+    .card{
+    height:260px !important;
+    width:100% !important;
+    }
+
+    .dfontSize {
+        font-size: var(--fontSize);
+    }
+</style>
+<div id="songs" style="transform:scale(@scalesize); ">
+    <header>
+        <h3><a class="mycolor">Songs</a></h3>
+        @*<h3><a class="mycolor" href="Barmate">Barmate</a></h3>*@
+    </header>
+    
+    <section class="card-list dfontSize" >
+        @foreach (var item in ScreenShots)
+        {
+            <a class="card" @onclick="@(() => OpenModal(item.Item1))">
+                <img src="@item.Item1" />
+            </a>
+        }
+    </section>
+    <ScreenShotModal CurrentImage="@currentImage" Collapse="@collapse" ScreenShots="@ScreenShots" />
+</div>
+
+
+
+@code {
+    [Parameter]
+    public string scalesize { get; set; }
+    [Parameter]
+    public string mycolor { get; set; } = "black";
+    List<(string, string)> ScreenShots = new();
+    private string currentImage { get; set; }
+    private string collapse { get; set; } = "none";
+    protected override async Task OnParametersSetAsync()
+    {
+
+        ScreenShots.Add(("./images/songs/01 login.png", ""));
+        ScreenShots.Add(("./images/songs/02 MusicUp.png", ""));
+        ScreenShots.Add(("./images/songs/03 MusicUPBrowse.png", ""));
+        ScreenShots.Add(("./images/songs/04 MucisUpLoaded.png", ""));
+        ScreenShots.Add(("./images/songs/05 MucisUpEdit.png", ""));
+        ScreenShots.Add(("./images/songs/06 MucisUpEdited.png", ""));
+        ScreenShots.Add(("./images/songs/07 Menu.png", ""));
+        ScreenShots.Add(("./images/songs/08 RepertoireFileFromMusicUP.png", ""));
+        ScreenShots.Add(("./images/songs/09 RepertoirePaging.png", ""));
+        ScreenShots.Add(("./images/songs/10 RepertoireSearch.png", ""));
+        ScreenShots.Add(("./images/songs/11 RepertoireFiles.png", ""));
+        ScreenShots.Add(("./images/songs/12 RepertoireSongToPlay.png", ""));
+        ScreenShots.Add(("./images/songs/13 RepertoireMusicSheet.png", ""));
+        ScreenShots.Add(("./images/songs/14 RepertoireDownloadInfo.png", ""));
+        ScreenShots.Add(("./images/songs/15 Music Live File back.png", ""));
+    }
+    public void OpenModal(string currentScreenShot)
+    {
+        currentImage = currentScreenShot;
+        collapse = "block";
+
+
+    }
+}
+

@@ -8,6 +8,7 @@
     #wrapper {
         color: white;
     }
+
     .title {
         color: black;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -15,11 +16,12 @@
         font-weight: bold
     }
 
-    .bmFrame{
-        width:20%
+    .bmFrame {
+        width: 20%
     }
-    .bmImage{
-        width:100%;
+
+    .bmImage {
+        width: 100%;
         height: auto;
         float: left;
         padding-left: 2rem;
@@ -30,12 +32,14 @@
             font-size: 1.2rem;
         }
     }
+
     @@media screen and (max-width: 768px) {
-        .bmFrame{
-            width:50%;
-            margin:auto;
+        .bmFrame {
+            width: 50%;
+            margin: auto;
         }
-        .bmImage{
+
+        .bmImage {
             float: none;
             padding-left: unset;
         }
@@ -51,7 +55,7 @@
         <div class="upperblock maintext">Barmate</div>
         <!-- Main -->
         <div id="main" style="padding:1rem 0 0 2rem;">
-            <div class="bmFrame" >
+            <div class="bmFrame">
                 <img class="bmImage" src="./Images/Terrace.jpg" alt="" />
             </div>
             @*<div><img style="width:20%; height:auto; float: left; padding-left:2rem;" src="./Images/Terrace.jpg" alt="" /></div>*@
@@ -68,7 +72,8 @@
             <br />
             <div>
                 <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
-                @*<h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>*@
+                <h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
+                <h5 style="float:left; margin-left:1rem;"><a @onclick="@WalkThrough" style="text-decoration:underline">Walkthrough <i class="fa-solid fa-square-caret-down"></i></a></h5>
             </div>
             <br />
             <div hidden="@ShowDetails" class="dhidden_block">
@@ -89,11 +94,15 @@
 
             </div>
             <br />
-            <div style="font-size:.75rem;">
+            <div hidden="@ShowArchitecture" style="font-size:.75rem;" class="dhidden_block">
                 The web app is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
                 Dynamically designed to accommodate all different situations on site. <br />
                 Convenient design with colors and quick popups to enter information in a logical way. <br />
                 Colors that indicate the status of each order without the need for details.<br />
+            </div>
+            <br />
+            <div hidden="@ShowWalkThrough" style="font-size:.75rem;" class="dhidden_block">
+                pictures
             </div>
             <br />
             <br />
@@ -105,6 +114,8 @@
     private List<DashNote> Dnotes { get; set; }
     private bool ShowDetails { get; set; } = true;
     private bool ShowArchitecture { get; set; } = true;
+    private bool ShowWalkThrough { get; set; } = true;
+
     protected override async Task OnParametersSetAsync()
     {
         Dnotes = new List<DashNote>();
@@ -122,14 +133,30 @@
     }
     private void Details()
     {
+        CloseAll();
         ShowDetails = !ShowDetails;
-        ShowArchitecture = true;
+        
     }
     private void Architecture()
     {
+        CloseAll();
         ShowArchitecture = !ShowArchitecture;
-        ShowDetails = true;
     }
+    private void WalkThrough()
+    {
+        CloseAll();
+        ShowWalkThrough = !ShowWalkThrough;
+     
+    }
+
+    private void CloseAll()
+    {
+        ShowWalkThrough = true;
+        ShowDetails = true;
+        ShowArchitecture = true;
+    }
+
+
 }
 
 
