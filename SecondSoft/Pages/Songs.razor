@@ -4,73 +4,139 @@
         --fontColor: white;
         --fontSize: 0.85rem;
     }
-    body{
+
+    body {
         overflow: scroll;
     }
-    #songs .mycolor{
-    color: @mycolor;
+
+    #songs {
+        color: var(--fontColor);
     }
-    .card{
-    height:260px !important;
-    width:100% !important;
+
+    .card {
+        height: 260px !important;
+        width: 100% !important;
     }
 
     .dfontSize {
         font-size: var(--fontSize);
     }
 </style>
-<div id="songs" style="transform:scale(@scalesize); ">
+<div id="songs">
     <header>
-        <h3><a class="mycolor">Songs</a></h3>
-        @*<h3><a class="mycolor" href="Barmate">Barmate</a></h3>*@
+        <h2>Songs</h2>
+        <div>
+            Songs was created as a small independent web app to serve as a song book for a choir.<br />
+            It provides users with a list of songs, including the ability to listen, view sheet music and other files associated with the music.<br/>
+            Smart management takes care of uploading and checking files to automatically add them to the repertoire list.<br />
+            Displayed language is Dutch.
+        </div>
     </header>
-    
-    <section class="card-list dfontSize" >
+
+    <section class="card-list dfontSize">
         @foreach (var item in ScreenShots)
         {
-            <a class="card" @onclick="@(() => OpenModal(item.Item1))">
-                <img src="@item.Item1" />
+            <a class="card" @onclick="@(() => OpenModal(item))">
+                <img src="@item.Url" />
+                <div>@item.Text</div>
             </a>
         }
     </section>
-    <ScreenShotModal CurrentImage="@currentImage" Collapse="@collapse" ScreenShots="@ScreenShots" />
+    @if (Portfolio)
+    {
+        <div>
+            <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Development <i class="fa-solid fa-square-caret-down"></i></a></h5>
+            <h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
+        </div>
+    }
+    <br />
+    <div hidden="@HideDetails" class="dhidden_block" style="font-size:.75rem;">
+        <br />
+        This app is developed in Blazor server (.net 7).<br />
+        The standard Duende is used for access control. With roles separation as access doors.<br />
+        As a table view, MudBlazor table best suited the requested functionality.<br />
+        Font-awesome supplied the necessary signs.<br />
+        Bootstrap Modal and the audio player are rewired into their own component and connected to Blazor. There fully functional<br />
+        In addition HTML, CSS, Linq and SQL database.<br />
+
+        <br />
+
+    </div>
+    <br />
+    <div hidden="@HideArchitecture" style="font-size:.75rem;" class="dhidden_block">
+        Blazor server was chosen as the framework to keep the data flows small. <br />
+        Duende is used in a secure mode, for authorization and authentication. <br />
+        The whole application is responsive, tested down to min. 412 px as default from Android 8+. <br />
+        The application is small-scale. A simple table component is combined used in the admin area of ​​Music Upload and Music Live. <br />
+        With its 3 pages and various components, it is a fast, reliable, easy to use and powerful web app.
+        The webapp is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
+        Dynamically designed to accommodate all different situations on site. <br />
+        Convenient design with colors and quick popups to enter information in a logical way. <br />
+        Colors that gives the user a standard view without the need for details.<br />
+        Special care was taken to keep it low for maintenance.
+    </div>
+    <br />
 </div>
-
-
+<div>
+    <ScreenShotModal CurrentImage="@currentImage" Collapse="@collapse" ReturnFunction="ReturnModal" ScreenShots="@ScreenShots" />
+</div>
 
 @code {
     [Parameter]
     public string scalesize { get; set; }
     [Parameter]
     public string mycolor { get; set; } = "black";
-    List<(string, string)> ScreenShots = new();
-    private string currentImage { get; set; }
+    List<(int Id, string Url, string Text)> ScreenShots = new();
+    private (int, string, string) currentImage { get; set; }
     private string collapse { get; set; } = "none";
+    [Parameter]
+    public bool Portfolio { get; set; }
+    private bool HideDetails { get; set; } = true;
+    private bool HideArchitecture { get; set; } = true;
+
     protected override async Task OnParametersSetAsync()
     {
-
-        ScreenShots.Add(("./images/songs/01 login.png", ""));
-        ScreenShots.Add(("./images/songs/02 MusicUp.png", ""));
-        ScreenShots.Add(("./images/songs/03 MusicUPBrowse.png", ""));
-        ScreenShots.Add(("./images/songs/04 MucisUpLoaded.png", ""));
-        ScreenShots.Add(("./images/songs/05 MucisUpEdit.png", ""));
-        ScreenShots.Add(("./images/songs/06 MucisUpEdited.png", ""));
-        ScreenShots.Add(("./images/songs/07 Menu.png", ""));
-        ScreenShots.Add(("./images/songs/08 RepertoireFileFromMusicUP.png", ""));
-        ScreenShots.Add(("./images/songs/09 RepertoirePaging.png", ""));
-        ScreenShots.Add(("./images/songs/10 RepertoireSearch.png", ""));
-        ScreenShots.Add(("./images/songs/11 RepertoireFiles.png", ""));
-        ScreenShots.Add(("./images/songs/12 RepertoireSongToPlay.png", ""));
-        ScreenShots.Add(("./images/songs/13 RepertoireMusicSheet.png", ""));
-        ScreenShots.Add(("./images/songs/14 RepertoireDownloadInfo.png", ""));
-        ScreenShots.Add(("./images/songs/15 Music Live File back.png", ""));
+        var i = 0;
+        ScreenShots.Add((i++, "./images/songs/01 login.png", "Users log in to access the environment"));
+        ScreenShots.Add((i++, "./images/songs/02 MusicUp.png", "Music admins can access the music upload page"));
+        ScreenShots.Add((i++, "./images/songs/03 MusicUPBrowse.png", "Select multiple files to upload"));
+        ScreenShots.Add((i++, "./images/songs/04 MucisUpLoaded.png", "Uploaded files are checked directly by naming rules."));
+        ScreenShots.Add((i++, "./images/songs/05 MucisUpEdit.png", "Rejected files can be edited."));
+        ScreenShots.Add((i++, "./images/songs/06 MucisUpEdited.png", "Approved files can be put live. One by one or all at once."));
+        ScreenShots.Add((i++, "./images/songs/07 Menu.png", "The drop-down menu allows administrators to jump to other pages"));
+        ScreenShots.Add((i++, "./images/songs/08 RepertoireFileFromMusicUP.png", "On the repertoire page you have a nice and easy overview."));
+        ScreenShots.Add((i++, "./images/songs/09 RepertoirePaging.png", "Paging and number of rows per page adjustable."));
+        ScreenShots.Add((i++, "./images/songs/10 RepertoireSearch.png", "Advanced search on all matching matches."));
+        ScreenShots.Add((i++, "./images/songs/11 RepertoireFiles.png", "Opening an item brings up an organized window. Color matches voice type."));
+        ScreenShots.Add((i++, "./images/songs/12 RepertoireSongToPlay.png", "Select the song you want to play. Then control your player."));
+        ScreenShots.Add((i++, "./images/songs/13 RepertoireMusicSheet.png", "Choose a PDF to view. It opens in a new window."));
+        ScreenShots.Add((i++, "./images/songs/14 RepertoireDownloadInfo.png", "Information about downloading the files"));
+        ScreenShots.Add((i++, "./images/songs/15 Music Live File back.png", "Music Live manages all files in Repertoire. Retrieve, delete or rename files."));
     }
-    public void OpenModal(string currentScreenShot)
+    public void OpenModal((int, string, string) currentScreenShot)
     {
         currentImage = currentScreenShot;
         collapse = "block";
+    }
+    private void ReturnModal(string value)
+    {
+        collapse = "none";
+    }
+    private void Details()
+    {
+        CloseAll();
+        HideDetails = !HideDetails;
+    }
+    private void Architecture()
+    {
+        CloseAll();
+        HideArchitecture = !HideArchitecture;
+    }
 
-
+    private void CloseAll()
+    {
+        HideDetails = true;
+        HideArchitecture = true;
     }
 }
 

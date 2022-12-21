@@ -1,28 +1,30 @@
 ﻿<style>
-    :root{
-     --bs-modal-width @bodyWidth*/
-    }
-    .modal{
-        width: @bodyWidth
+    .imagesize {
+        max-width: 80%;
     }
 </style>
 
-<div class="modal fade-scale-sidebar " id="myModal" style="display:@Collapse" aria-modal="true" role="dialog">
-    <div class="modal-dialog" style="width:@bodyWidth !important">
+<div class="modal fade-scale-sidebar " id="myModal" style="display:@Collapse;" aria-modal="true" role="dialog">
+    <div class="modal-dialog" style="max-width:@bodyWidth !important">
         <div class="modal-content">
-
             @*Modal Header *@
             <div class="modal-header" style="display:block; padding:0px 7px; border-bottom:none">
-                <a class="close" style="float: right; text-decoration: none;" @onclick="@ModalCancel"><h2 style="color:black;">&times;</h2></a>
+                <a class="close" style="float: right; text-decoration: none;" @onclick="@(() => ReturnFunction.InvokeAsync("none"))"><h2 style="color:black;">&times;</h2></a>
             </div>
             @*modal-body*@
-            <div class="modal-body">
-                <img src="@CurrentImage" />
+            <div class="modal-body row" style="text-align:center;">
+                <a class="btn" @onclick="@(()=>next(-1))"><i class="fa-solid fa-circle-arrow-left"></i></a>
+                <img class="imagesize" src="@CurrentImage.Url" />
+                <a class="btn" @onclick="@(()=>next(1))"><i class="fa-solid fa-circle-arrow-right"></i></a>
+                <div style="clear:both;"></div>
+                <br/>
+                <div style="color:#202124;text-align:center;">
+                    @CurrentImage.Text
+                </div>
             </div>
         </div>
     </div>
 </div>
-@*<hr />*@
 @code
 {
     public void ModalCancel() => Collapse = "none";
@@ -31,16 +33,23 @@
     [Parameter]
     public string Collapse { get; set; } = "none";
     [Parameter]
-    public EventCallback<string> OnClickFunction { get; set; }
+    public EventCallback<string> ReturnFunction { get; set; }
     [Parameter]
-    public List<(string, string)> ScreenShots { get; set; } = new();
+    public List<(int Id,string, string)> ScreenShots { get; set; } = new();
     [Parameter]
-    public string CurrentImage { get; set; }
+    public (int Id, string Url, string Text) CurrentImage { get; set; }
     private string bodyWidth;
 
     protected override async Task OnParametersSetAsync()
     {
-        bodyWidth = "1100px";
-        
+        bodyWidth = "850px";
+    }
+    private void next(int i)
+    {
+        var index = ScreenShots.IndexOf((CurrentImage));
+
+        if (index + i < 0) index = ScreenShots.Count();
+        else if (index == ScreenShots.Count() - 1 && i > 0) index = -1;
+        CurrentImage = ScreenShots[index + i];
     }
 }
