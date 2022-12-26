@@ -35,7 +35,7 @@
     [Parameter]
     public EventCallback<string> ReturnFunction { get; set; }
     [Parameter]
-    public List<(int Id,string, string)> ScreenShots { get; set; } = new();
+    public List<(int,string, string)> ScreenShots { get; set; } = new();
     [Parameter]
     public (int Id, string Url, string Text) CurrentImage { get; set; }
     private string bodyWidth;

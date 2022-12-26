@@ -1,163 +1,154 @@
 ﻿@page "/Barmate"
-
 <style>
+    :root {
+        --fontColor: white;
+        --fontSize: 0.85rem;
+    }
+
     body {
-        background-color: #222B31 !important;
+        overflow: scroll;
     }
 
-    #wrapper {
-        color: white;
+    #barmate {
+        color: var(--fontColor);
     }
 
-    .title {
-        color: black;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        font-size: 100px;
-        font-weight: bold
+    .barmatecard {
+        height: auto !important;
+        width: 100% !important;
     }
 
-    .bmFrame {
-        width: 20%
-    }
-
-    .bmImage {
-        width: 100%;
-        height: auto;
-        float: left;
-        padding-left: 2rem;
-    }
-
-    @@media screen and (max-width: 1000px) {
-        #main h3 {
-            font-size: 1.2rem;
-        }
-    }
-
-    @@media screen and (max-width: 768px) {
-        .bmFrame {
-            width: 50%;
-            margin: auto;
-        }
-
-        .bmImage {
-            float: none;
-            padding-left: unset;
-        }
+    .dfontSize {
+        font-size: var(--fontSize);
     }
 </style>
-
-<PageTitle>The best Mate you ever have</PageTitle>
-<body class="is-preload">
-    <div id="wrapper">
-        <header id="header">
-            <div class="dheadline dheadlinebox">Your mate is ready for orders</div>
-        </header>
-        <div class="upperblock maintext">Barmate</div>
-        <!-- Main -->
-        <div id="main" style="padding:1rem 0 0 2rem;">
-            <div class="bmFrame">
-                <img class="bmImage" src="./Images/Terrace.jpg" alt="" />
-            </div>
-            @*<div><img style="width:20%; height:auto; float: left; padding-left:2rem;" src="./Images/Terrace.jpg" alt="" /></div>*@
-            <div>
-                <h3 style="float: left; margin : 10%">
-                    The best overview of many seats <br />or large outdoor spaces with few staff
-                </h3>
-            </div>
-
-            <div style="clear: both;color: black;">
-                <br />
-                <DashNotes Notes="Dnotes" FontSize="0.75rem" />
-            </div>
+<div id="barmate">
+    <header>
+        <h2>Barmate</h2>
+        <div>
+            Barmate represents the best digital service partner for hotels, restaurants and bars with indoor and outdoor spaces.<br />
+            Barmate works for food courts and also for collaborating Street food trucks. <br />
+            Customers and staff can place a complete order, Barmate does the rest.<br />
+            The program is able to split the order and send it to the appropriate station such as bar, kitchen, dessert shop, food truck, grill, coffee corner and more.<br />
             <br />
-            <div>
-                <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Detailed description <i class="fa-solid fa-square-caret-down"></i></a></h5>
-                <h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
-                <h5 style="float:left; margin-left:1rem;"><a @onclick="@WalkThrough" style="text-decoration:underline">Walkthrough <i class="fa-solid fa-square-caret-down"></i></a></h5>
-            </div>
+            Each order has its own notifications. All stations will announce when they are ready to serve. <br />
+            Staff will take care of the payment, which includes tools such as group payment, but also individual member payments.<br />
+            Tips are kept separate, informs staff if customer demands attention.<br />
+            It will even prompt staff to walk past a customer after a while so they feel seen and ready to order more.<br />
             <br />
-            <div hidden="@ShowDetails" class="dhidden_block">
-                Barmate represents the best digital service partner for hotels, restaurants and bars with indoor and outdoor spaces.<br />
-                Barmate works for food courts and also for collaborating Street food trucks. <br />
-                Customers and staff can place a complete order, Barmate does the rest.<br />
-                The program is able to split the order and send it to the appropriate station such as bar, kitchen, dessert shop, food truck, grill, coffee corner and more.<br />
-                <br />
-                Each order has its own notifications. All stations will announce when they are ready to serve. <br />
-                Staff will take care of the payment, which includes tools such as group payment, but also individual member payments.<br />
-                Tips are kept separate, informs staff if customer demands attention.<br />
-                It will even prompt staff to walk past a customer after a while so they feel seen and ready to order more.<br />
-                <br />
-                With Barmate you can handle large sites with less staff.<br />
-                <br />
-                <i class="fa-solid fa-thumbs-up"></i>That's why Barmate is your best partner you've ever had.
-                <br />
-
-            </div>
+            With Barmate you can handle large sites with less staff.<br />
             <br />
-            <div hidden="@ShowArchitecture" style="font-size:.75rem;" class="dhidden_block">
-                The web app is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
-                Dynamically designed to accommodate all different situations on site. <br />
-                Convenient design with colors and quick popups to enter information in a logical way. <br />
-                Colors that indicate the status of each order without the need for details.<br />
-            </div>
+            <i class="fa-solid fa-thumbs-up"></i>That's why Barmate is your best partner you've ever had.
             <br />
-            <div hidden="@ShowWalkThrough" style="font-size:.75rem;" class="dhidden_block">
-                pictures
-            </div>
-            <br />
-            <br />
+            Displayed language is Dutch.
         </div>
+    </header>
+
+    <section class="card-list dfontSize">
+        @foreach (var item in ScreenShots)
+        {
+            <a class="card barmatecard" @onclick="@(() => OpenModal(item))">
+                <img src="@item.Url" />
+                <div>@item.Text</div>
+            </a>
+        }
+    </section>
+    @if (Portfolio)
+    {
+        <div>
+            <h5 style="float:left;"><a @onclick="@Details" style="text-decoration:underline">Development <i class="fa-solid fa-square-caret-down"></i></a></h5>
+            <h5 style="float:left; margin-left:1rem;"><a @onclick="@Architecture" style="text-decoration:underline">Architecture <i class="fa-solid fa-square-caret-down"></i></a></h5>
+        </div>
+    }
+    <br />
+    <div hidden="@HideDetails" class="dhidden_block" style="font-size:.75rem;">
+        <br />
+        This app is developed in Blazor server (.net 6).<br />
+        The standard Duende is used for access control. With roles separation as access doors.<br />
+        Tables are manually created as they must represent custom functionality.<br />
+        Font-awesome supplied the necessary signs.<br />
+        Bootstrap Modal was rewired into their own component and connected to Blazor. Now fully functional<br />
+        In addition HTML, CSS, Linq and SQL database.<br />
+
+        <br />
+
     </div>
-</body>
+    <br />
+    <div hidden="@HideArchitecture" style="font-size:.75rem;" class="dhidden_block">
+        Blazor server was chosen as the framework to keep the data flows small and the financial system secure. <br />
+        Duende is used in a secure mode, for authorization and authentication. and also used for staff fast entry with pin.<br />
+        The whole application is responsive, tested down to min. 412 px as default from Android 8+. <br />
+        The application is small-scale. Some components are used several times (like product-amount and product-info components). <br />
+        With its 3 pages and various components, it is a fast, reliable, easy to use and powerful web app.
+        The webapp is compatible with all newer and most older (Android 4+, Apple 7+, Edge, Chrome, Firefox, safari etc.) devices and browsers.<br />
+        Dynamically designed to accommodate all different situations on site. <br />
+        Convenient design with colors and quick popups to enter information in a logical way. <br />
+        Colors that gives the user a standard view without the need for details.<br />
+        Special care was taken to keep it low for maintenance.
+    </div>
+    <br />
+</div>
+<div>
+    <ScreenShotModal CurrentImage="@currentImage" Collapse="@collapse" ReturnFunction="ReturnModal" ScreenShots="@ScreenShots" />
+</div>
+
 @code {
-    private string? imageSource;
-    private List<DashNote> Dnotes { get; set; }
-    private bool ShowDetails { get; set; } = true;
-    private bool ShowArchitecture { get; set; } = true;
-    private bool ShowWalkThrough { get; set; } = true;
+    [Parameter]
+    public string scalesize { get; set; }
+    [Parameter]
+    public string mycolor { get; set; } = "black";
+    List<(int Id, string Url, string Text)> ScreenShots = new();
+    private (int, string, string) currentImage { get; set; }
+    private string collapse { get; set; } = "none";
+    [Parameter]
+    public bool Portfolio { get; set; }
+    private bool HideDetails { get; set; } = true;
+    private bool HideArchitecture { get; set; } = true;
 
     protected override async Task OnParametersSetAsync()
     {
-        Dnotes = new List<DashNote>();
-        Dnotes.Add(new DashNote() { Title = "Staff and customers can order", Text0 = "Barmate takes care of it all.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Sends the order through the stations", Text0 = "Various bars or cuisines.", Group = "" });
-        Dnotes.Add(new DashNote() { Title = "Able to serve a food court", Text0 = "With multiple bars and restaurants or food trucks.", Group = "important" });
-        Dnotes.Add(new DashNote() { Title = "Customers can", Text0 = "enable staff, can see their order history and status.", Group = "social" });
-        Dnotes.Add(new DashNote() { Title = "Staff takes care of the payment", Text0 = "While customers will be able to pay themselves in the near future.", Group = "business" });
-        Dnotes.Add(new DashNote() { Title = "Staff is always aware", Text0 = "And can check status in real time.", Group = "important" });
-        ShowImage();
+        var i = 0;
+        ScreenShots.Add((i++, "./images/barmate/01.png", "User login on device"));
+        ScreenShots.Add((i++, "./images/barmate/02.png", "Staff fast login with pin"));
+        ScreenShots.Add((i++, "./images/barmate/03.png", "Workareas with spot overview"));
+        ScreenShots.Add((i++, "./images/barmate/04.png", "All spots of a workarea"));
+        ScreenShots.Add((i++, "./images/barmate/05.png", "Orderscreen (mobile)."));
+        ScreenShots.Add((i++, "./images/barmate/06.png", "Orderscreen (tablet)."));
+        ScreenShots.Add((i++, "./images/barmate/07.png", "Category picker"));
+        ScreenShots.Add((i++, "./images/barmate/08.png", "Choosen category"));
+        ScreenShots.Add((i++, "./images/barmate/09.png", "Amount screen."));
+        ScreenShots.Add((i++, "./images/barmate/10.png", "Product details"));
+        ScreenShots.Add((i++, "./images/barmate/11.png", "Status of the spot"));
+        ScreenShots.Add((i++, "./images/barmate/12.png", "Move poeple to another spot"));
+        ScreenShots.Add((i++, "./images/barmate/13.png", "Search in products"));
+        ScreenShots.Add((i++, "./images/barmate/14.png", "Order overview"));
+        ScreenShots.Add((i++, "./images/barmate/15.png", "Edit the order"));
+        ScreenShots.Add((i++, "./images/barmate/16.png", "Payment (long order)  with a groupsplit (on top). And per person payment posible. Overview is what still needs to come."));
     }
-    private void ShowImage()
+    public void OpenModal((int, string, string) currentScreenShot)
     {
-        imageSource = $"welcome.jpg";
+        currentImage = currentScreenShot;
+        collapse = "block";
+    }
+    private void ReturnModal(string value)
+    {
+        collapse = "none";
     }
     private void Details()
     {
         CloseAll();
-        ShowDetails = !ShowDetails;
-        
+        HideDetails = !HideDetails;
     }
     private void Architecture()
     {
         CloseAll();
-        ShowArchitecture = !ShowArchitecture;
-    }
-    private void WalkThrough()
-    {
-        CloseAll();
-        ShowWalkThrough = !ShowWalkThrough;
-     
+        HideArchitecture = !HideArchitecture;
     }
 
     private void CloseAll()
     {
-        ShowWalkThrough = true;
-        ShowDetails = true;
-        ShowArchitecture = true;
+        HideDetails = true;
+        HideArchitecture = true;
     }
-
-
 }
-
-
 

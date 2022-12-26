@@ -1,7 +1,7 @@
 ﻿@page "/Songs"
-<style>
+<style scoped>
     :root {
-        --fontColor: white;
+        --fontColor: @fontColor;
         --fontSize: 0.85rem;
     }
 
@@ -13,7 +13,7 @@
         color: var(--fontColor);
     }
 
-    .card {
+    .songscard {
         height: 260px !important;
         width: 100% !important;
     }
@@ -36,7 +36,7 @@
     <section class="card-list dfontSize">
         @foreach (var item in ScreenShots)
         {
-            <a class="card" @onclick="@(() => OpenModal(item))">
+            <a class="card songscard" @onclick="@(() => OpenModal(item))">
                 <img src="@item.Url" />
                 <div>@item.Text</div>
             </a>
@@ -82,10 +82,6 @@
 </div>
 
 @code {
-    [Parameter]
-    public string scalesize { get; set; }
-    [Parameter]
-    public string mycolor { get; set; } = "black";
     List<(int Id, string Url, string Text)> ScreenShots = new();
     private (int, string, string) currentImage { get; set; }
     private string collapse { get; set; } = "none";
@@ -93,9 +89,11 @@
     public bool Portfolio { get; set; }
     private bool HideDetails { get; set; } = true;
     private bool HideArchitecture { get; set; } = true;
+    private string fontColor { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
+        fontColor = Portfolio ? "white" : "gray";
         var i = 0;
         ScreenShots.Add((i++, "./images/songs/01 login.png", "Users log in to access the environment"));
         ScreenShots.Add((i++, "./images/songs/02 MusicUp.png", "Music admins can access the music upload page"));
