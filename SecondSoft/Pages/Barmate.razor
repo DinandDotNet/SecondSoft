@@ -7,8 +7,30 @@
 <div id="barmate" >
     <header>
         <h2 class="mycolor">Barmate</h2>
+        <div>
+            Barmate represents the best digital service partner for hotels, restaurants and bars with indoor and outdoor spaces.<br />
+            Barmate works for food courts and also for collaborating Street food trucks. <br />
+            Customers and staff can place a complete order, Barmate does the rest.<br />
+            The program is able to split the order and send it to the appropriate station such as bar, kitchen, dessert shop, food truck, grill, coffee corner and more.<br />
+            <br />
+            Each order has its own notifications. All stations will announce when they are ready to serve. <br />
+            Staff will take care of the payment, which includes tools such as group payment, but also individual member payments.<br />
+            Tips are kept separate, informs staff if customer demands attention.<br />
+            It will even prompt staff to walk past a customer after a while so they feel seen and ready to order more.<br />
+            <br />
+            With Barmate you can handle large sites with less staff.<br />
+            <br />
+            <i class="fa-solid fa-thumbs-up"></i> That's why Barmate is your best partner you've ever had.
+            <br />
+            Displayed language is Dutch.
+        </div>
     </header>
-   <Barmate/>
+    <br/>
+    <a target="_blank" href="@ServiceUrl"><img src="./Images/Barmate/Topframe.jpg" /></a>
+    <br />
+    <br />
+    <br />
+   
 </div>
 
 
@@ -17,10 +39,12 @@
     [Parameter]
     public bool Portfolio { get; set; }
     private string fontColor { get; set; }
+    private string ServiceUrl { get; set; }
     protected override async Task OnParametersSetAsync()
     {
         fontColor = Portfolio ? "white" : "gray";
-
+        var pfolio = Portfolio ? "/true" : "";
+        ServiceUrl = $"/BarmateService{pfolio}";
     }
 }
 

@@ -1,4 +1,4 @@
-﻿@page "/BarmateService"
+﻿@page "/BarmateService/{Portfolio:bool?}"
 <style>
     :root {
         --fontColor: white;
@@ -24,24 +24,12 @@
 </style>
 <div id="barmate">
     <header>
-        <h2>Barmate</h2>
-        <div>
-            Barmate represents the best digital service partner for hotels, restaurants and bars with indoor and outdoor spaces.<br />
-            Barmate works for food courts and also for collaborating Street food trucks. <br />
-            Customers and staff can place a complete order, Barmate does the rest.<br />
-            The program is able to split the order and send it to the appropriate station such as bar, kitchen, dessert shop, food truck, grill, coffee corner and more.<br />
-            <br />
-            Each order has its own notifications. All stations will announce when they are ready to serve. <br />
-            Staff will take care of the payment, which includes tools such as group payment, but also individual member payments.<br />
-            Tips are kept separate, informs staff if customer demands attention.<br />
-            It will even prompt staff to walk past a customer after a while so they feel seen and ready to order more.<br />
-            <br />
-            With Barmate you can handle large sites with less staff.<br />
-            <br />
-            <i class="fa-solid fa-thumbs-up"></i> That's why Barmate is your best partner you've ever had.
-            <br />
-            Displayed language is Dutch.
+        <h2>Barmate Service</h2>
+        <div>Service is the first to help the customer. It must be easy to take, control and pay. <br />
+            Barmate Service is your mate to do this simple and easy in a nick of time.
+            
         </div>
+       
     </header>
 
     <section class="card-list dfontSize">
@@ -107,6 +95,7 @@
 
     protected override async Task OnParametersSetAsync()
     {
+   
         var i = 0;
         ScreenShots.Add((i++, "./images/barmate/01.png", "User login on device"));
         ScreenShots.Add((i++, "./images/barmate/02.png", "Staff fast login with pin"));
