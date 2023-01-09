@@ -1,6 +1,13 @@
 ﻿<style>
     .imagesize {
+        max-width: 50%;
+        max-height:32em;
+    }
+
+    @@media screen and (max-width: 768px) {
+         .imagesize {
         max-width: 80%;
+    }
     }
 </style>
 
@@ -42,7 +49,7 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        bodyWidth = "850px";
+       // bodyWidth = "850px";
     }
     private void next(int i)
     {

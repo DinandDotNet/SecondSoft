@@ -36,7 +36,7 @@
         @foreach (var item in ScreenShots)
         {
             <a class="card barmatecard" @onclick="@(() => OpenModal(item))">
-                <img src="@item.Url" />
+                <img src="@item.Url"/>
                 <div>@item.Text</div>
             </a>
         }
